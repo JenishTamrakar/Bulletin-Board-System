@@ -1,4 +1,4 @@
-package sample;
+package BBS.controllers;
 
 public class registerScreenController {
 }
