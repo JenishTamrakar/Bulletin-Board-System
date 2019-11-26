@@ -26,7 +26,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
+        <TextField fx:id="uID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
         <Button layoutX="478.0" layoutY="491.0" mnemonicParsing="false" text="Register">
             <font>
                 <Font size="18.0" />
@@ -47,8 +47,8 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <PasswordField layoutX="438.0" layoutY="364.0" prefHeight="40.0" prefWidth="206.0" />
-        <PasswordField layoutX="438.0" layoutY="429.0" prefHeight="40.0" prefWidth="206.0" />
+        <PasswordField fx:id="password" layoutX="438.0" layoutY="364.0" prefHeight="40.0" prefWidth="206.0" />
+        <PasswordField fx:id="confirmPassword" layoutX="438.0" layoutY="429.0" prefHeight="40.0" prefWidth="206.0" />
       <Text layoutX="439.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account ?">
          <font>
             <Font name="System Bold" size="13.0" />
