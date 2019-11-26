@@ -26,7 +26,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="uID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="232.0" />
+      <TextField fx:id="UID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="232.0" />
       <Button fx:id="login" layoutX="520.0" layoutY="419.0" mnemonicParsing="false" text="Login">
          <font>
             <Font size="18.0" />

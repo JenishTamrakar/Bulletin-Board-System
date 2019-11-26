@@ -26,8 +26,8 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="uID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
-        <Button layoutX="478.0" layoutY="491.0" mnemonicParsing="false" text="Register">
+        <TextField fx:id="UID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
+        <Button fx:id="registerBtn" layoutX="478.0" layoutY="491.0" mnemonicParsing="false" onAction="#registerClicked" text="Register">
             <font>
                 <Font size="18.0" />
             </font>
@@ -54,7 +54,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Hyperlink fx:id="existingAcc" layoutX="598.0" layoutY="551.0" onAction="#loginClick" onMouseClicked="#createAcc" text="Login">
+      <Hyperlink fx:id="existingAcc" layoutX="598.0" layoutY="551.0" onAction="#loginClick" text="Login">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

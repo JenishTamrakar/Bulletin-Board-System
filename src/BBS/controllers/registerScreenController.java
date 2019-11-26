@@ -1,6 +1,7 @@
 package BBS.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -19,24 +20,31 @@ public class registerScreenController {
     private AnchorPane registerPane;
 
     @FXML
-    private TextField uID;
+    private TextField UID;
 
     @FXML
-    private Button login;
+    private Button registerBtn;
 
     @FXML
     private PasswordField password;
 
     @FXML
-    private Hyperlink createAccount;
+    private PasswordField confirmPassword;
 
     @FXML
-    void createAcc(MouseEvent event) {
-
-    }
+    private Hyperlink createAccount;
 
     @FXML
     void loginClick(ActionEvent event) throws IOException {AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
     registerPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void registerClicked(ActionEvent event) {
+        String  uID = UID.getText();
+        String Password = password.getText();
+        String conPw = confirmPassword.getText();
+
+        System.out.println(uID + Password + conPw);
     }
 }
