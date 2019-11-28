@@ -49,7 +49,7 @@ public class registerScreenController {
     void registerStudentClicked(ActionEvent event) {
         try
         {
-            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/HelloUser");
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/HelloRegister");
             Register r = new Register();
             r.setUID(UID.getText());
             r.setPassword(password.getText());
