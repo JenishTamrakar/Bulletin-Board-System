@@ -1,5 +1,7 @@
 package BBS.controllers;
 
+import BBS.bll.Register;
+import BBS.dao.RegisterDao;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,9 +14,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.rmi.Naming;
 
 public class registerScreenController {
-
 
     @FXML
     private AnchorPane registerPane;
@@ -23,7 +25,7 @@ public class registerScreenController {
     private TextField UID;
 
     @FXML
-    private Button registerBtn;
+    private Button registerStudentBtn;
 
     @FXML
     private PasswordField password;
@@ -32,19 +34,39 @@ public class registerScreenController {
     private PasswordField confirmPassword;
 
     @FXML
-    private Hyperlink createAccount;
+    private Hyperlink existingAcc;
 
     @FXML
-    void loginClick(ActionEvent event) throws IOException {AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
-    registerPane.getChildren().setAll(pane);
+    private Button registerFacultyBtn;
+
+    @FXML
+    void loginClick(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
+        registerPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void registerClicked(ActionEvent event) {
-        String  uID = UID.getText();
-        String Password = password.getText();
-        String conPw = confirmPassword.getText();
+    void registerStudentClicked(ActionEvent event) {
+        try
+        {
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/HelloUser");
+            Register r = new Register();
+            r.setUID(UID.getText());
+            r.setPassword(password.getText());
+            rd.addStudent(r);
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
 
-        System.out.println(uID + Password + conPw);
+
+        }
+
     }
+
+    @FXML
+    void registerFacultyClicked(ActionEvent event) {
+
+    }
+
 }

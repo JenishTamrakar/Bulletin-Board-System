@@ -1,30 +1,26 @@
 package BBS.bll;
 
-public class Register {
-    private int UID;
+import java.io.Serializable;
+
+public class Register implements Serializable {
+    private String UID;
     private String password;
 
-    public Register() {}
-
-    public Register(int UID, String password)
-    {
-        this.UID = UID;
-        this.password = password;
-    }
-
-    public int getUID() {
-        return UID;
-    }
-
-    public void setUID(int UID) {
+  public  String getUID(){
+      return UID;
+  }
+    public void setUID(String UID) {
         this.UID = UID;
     }
 
-    public String getPassword() {
-        return password;
-    }
+  public String getPassword(String  password){
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+      return  password;
+  }
+  public void  setPassword(String password){
+
+      this.password = password;
+  }
+
+
 }
