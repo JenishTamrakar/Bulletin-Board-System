@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 
+<<<<<<< Updated upstream:out/production/JavaFxApplication/fxml/studentDashboard.fxml
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="fxml.StudentDashboard"
             prefHeight="400.0" prefWidth="600.0">
+=======
+>>>>>>> Stashed changes:out/production/JavaFxApplication/BBS/fxml/studentDashboard.fxml
 
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: ace4aa;" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #49306b;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
