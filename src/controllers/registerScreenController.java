@@ -1,16 +1,14 @@
-package BBS.controllers;
+package controllers;
 
-import BBS.bll.Register;
-import BBS.dao.RegisterDao;
+import bll.Register;
+import dao.RegisterDao;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -49,17 +47,17 @@ public class registerScreenController {
     void registerStudentClicked(ActionEvent event) {
         try
         {
-            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/HelloRegister");
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/StudentRegister");
             Register r = new Register();
+
             r.setUID(UID.getText());
             r.setPassword(password.getText());
+            System.out.println(r.getPassword());
             rd.addStudent(r);
         }
         catch(Exception e)
         {
             System.out.print(e);
-
-
         }
 
     }

@@ -1,5 +1,5 @@
-package BBS.dao;
-import BBS.bll.Register;
+package dao;
+import bll.Register;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
