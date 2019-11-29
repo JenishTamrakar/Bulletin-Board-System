@@ -47,13 +47,13 @@ public class registerScreenController {
     void registerStudentClicked(ActionEvent event) {
         try
         {
-            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/StudentRegister");
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             Register r = new Register();
 
             r.setUID(UID.getText());
             r.setPassword(password.getText());
             System.out.println(r.getPassword());
-            rd.addStudent(r);
+            rd.addUser(r);
         }
         catch(Exception e)
         {

@@ -6,5 +6,5 @@ import java.rmi.RemoteException;
 
 
 public interface RegisterDao extends Remote {
-    void addStudent(Register r) throws RemoteException;
+    void addUser(Register r) throws RemoteException;
 }
