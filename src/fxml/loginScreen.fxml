@@ -47,7 +47,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Hyperlink fx:id="createAccount" layoutX="587.0" layoutY="465.0" onAction="#registerClick" onMouseClicked="#createAcc" text="Create Account">
+      <Hyperlink fx:id="createAccount" layoutX="587.0" layoutY="465.0" onAction="#registerClick" onMouseClicked="#registerClick" text="Create Account">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

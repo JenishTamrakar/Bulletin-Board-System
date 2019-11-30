@@ -1,21 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<<<<<<< Updated upstream:out/production/JavaFxApplication/fxml/studentDashboard.fxml
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.StudentDashboard"
-            prefHeight="400.0" prefWidth="600.0">
-=======
->>>>>>> Stashed changes:out/production/JavaFxApplication/BBS/fxml/studentDashboard.fxml
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: ace4aa;" BorderPane.alignment="CENTER" />
-   </top>
-   <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #49306b;" BorderPane.alignment="CENTER" />
-   </center>
+<top>
+   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: ace4aa;" BorderPane.alignment="CENTER">
+      <children>
+         <JFXButton layoutX="524.0" prefHeight="75.0" prefWidth="125.0" text="Dashboard" textFill="#49306b">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </JFXButton>
+         <JFXButton layoutX="649.0" prefHeight="75.0" prefWidth="125.0" text="Assignment" textFill="#49306b">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </JFXButton>
+         <JFXButton layoutX="774.0" prefHeight="75.0" prefWidth="125.0" text="Notices" textFill="#49306b">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </JFXButton>
+         <JFXButton layoutX="899.0" prefHeight="75.0" prefWidth="125.0" text="Profile" textFill="#49306b">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </JFXButton>
+      </children></Pane>
+</top>
+<center>
+   <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #49306b;" BorderPane.alignment="CENTER">
+      <children>
+         <Pane layoutX="100.0" layoutY="130.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: white;">
+            <children>
+               <Text layoutX="18.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+               <Text layoutX="19.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+            </children>
+         </Pane>
+         <Pane layoutX="550.0" layoutY="400.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: white;">
+            <children>
+               <Text layoutX="10.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+               <Text layoutX="10.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+            </children>
+         </Pane>
+         <Pane layoutX="100.0" layoutY="400.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: white;">
+            <children>
+               <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+               <Text layoutX="13.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+            </children>
+         </Pane>
+         <Pane layoutX="550.0" layoutY="130.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: white;">
+            <children>
+               <Text layoutX="12.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+               <Text layoutX="12.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBMITTION ON  3RD DECEMBER" />
+            </children>
+         </Pane>
+         <Label layoutX="550.0" layoutY="96.0" text="Notices" textFill="#ace4aa">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="550.0" layoutY="365.0" text="Fee due" textFill="#ace4aa">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="100.0" layoutY="365.0" text="Events" textFill="#ace4aa">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="100.0" layoutY="96.0" text="Asssignments" textFill="#ace4aa">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+      </children></Pane>
+</center>
 </BorderPane>
