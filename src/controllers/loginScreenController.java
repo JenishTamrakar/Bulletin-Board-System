@@ -41,11 +41,11 @@ public class loginScreenController {
     @FXML
     public void checkDetail(){
         System.out.println("login btn clicked");
-        String userID = UID.getText();
-        String userPassword = Password.getText();
-        System.out.println("UID = "+userID+" Password = "+userPassword);
+        String user_id = UID.getText();
+        String user_password = Password.getText();
+        System.out.println("UID = "+user_id+" Password = "+user_password);
         try {
-            LoginDao ld = (LoginDao) Naming.lookup("rmi://rmi://localhost/Login");
+            LoginDao ld = (LoginDao) Naming.lookup("rmi://localhost/Login");
             Boolean rs = ld.checkUser(UID.getText(), Password.getText());
             try {
                 if (rs) {
