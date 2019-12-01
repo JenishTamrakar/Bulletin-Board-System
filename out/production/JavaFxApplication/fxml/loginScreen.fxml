@@ -52,6 +52,5 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Hyperlink>
-      <Button fx:id="test" layoutX="112.0" layoutY="181.0" mnemonicParsing="false" onAction="#test" text="Rest" />
    </children>
 </AnchorPane>
