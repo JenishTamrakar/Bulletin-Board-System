@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentRecordsController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <top>
@@ -76,7 +75,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="AddStdRec" layoutX="700.0" layoutY="596.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+                  <JFXButton fx:id="AddStdRec" layoutX="700.0" layoutY="596.0" onAction="#addStdRecClicked" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -84,7 +83,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="UpdtStdRec" layoutX="820.0" layoutY="596.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+                  <JFXButton fx:id="UpdtStdRec" layoutX="820.0" layoutY="596.0" onAction="#updtStdRecClicked" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
