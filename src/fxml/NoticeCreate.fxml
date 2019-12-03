@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -16,7 +19,7 @@
    <top>
       <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton alignment="CENTER" layoutX="590.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="468.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -24,7 +27,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="690.0" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="567.0" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -32,7 +35,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="789.0" prefHeight="75.0" prefWidth="100.0" text="Classes" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="754.0" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -40,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Assignments" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -48,7 +51,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="416.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="294.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -62,11 +65,6 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
             <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="36.0" />
@@ -77,14 +75,14 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <JFXTextArea fx:id="NtcDesc" focusColor="#89009e" layoutX="630.0" layoutY="330.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
+            <JFXTextArea fx:id="NtcDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
             <JFXTextField fx:id="NtcTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Title " />
             <Text fill="#49306b" layoutX="525.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Text fill="#49306b" layoutX="525.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+            <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -107,8 +105,9 @@
             </JFXButton>
             <TreeTableView fx:id="NtcTable" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
                <columns>
-                  <TreeTableColumn fx:id="NtcTitle" prefWidth="180.66665649414062" text="Notice Title" />
-                  <TreeTableColumn fx:id="NtcDesc" minWidth="0.0" prefWidth="289.3333435058594" text="Description" />
+                  <TreeTableColumn fx:id="NtcTitleTbl" prefWidth="176.0" text="Notice Title" />
+                  <TreeTableColumn fx:id="NtcIssueDateTbl" prefWidth="97.0" text="Issued Date" />
+                  <TreeTableColumn fx:id="NtcDescTbl" minWidth="0.0" prefWidth="198.0" text="Description" />
                </columns>
             </TreeTableView>
             <Label layoutX="31.0" layoutY="170.0" text="List Of Notices" textFill="#49306b">
@@ -121,6 +120,24 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <MenuButton contentDisplay="BOTTOM" layoutX="890.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="122.0" style="-fx-background-color: #49306b;" text="Hello, Admin" textFill="#ace4aa">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Change Password" />
+                  <MenuItem mnemonicParsing="false" text="Sign Out" />
+               </items>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuButton>
+            <JFXDatePicker fx:id="IssueDate" defaultColor="#49306b" layoutX="630.0" layoutY="302.0" prefHeight="31.0" prefWidth="212.0" />
+            <Text fill="#49306b" layoutX="525.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </center>

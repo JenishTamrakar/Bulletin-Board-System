@@ -57,7 +57,7 @@ public class loginScreenController {
                 Boolean rs = ld.checkUser(UID.getText(), Password.getText());
                 try {
                     if (rs) {
-                        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+                        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml ")));
                         System.out.println("Next page");
                         loginPane.getChildren().setAll(pane);
                     } else {

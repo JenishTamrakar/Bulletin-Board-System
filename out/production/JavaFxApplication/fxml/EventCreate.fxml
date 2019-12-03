@@ -9,11 +9,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.control.TreeTableView?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -70,21 +65,12 @@
       <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
          <children>
 
-            <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa"/>
-
-            <JFXButton layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa">
-
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
+            <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa" />
             <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-
-            <Label layoutX="460.0" layoutY="100.0" text="EVENTS" textFill="#49306b" underline="true"/>
 
             <Label layoutX="500.0" layoutY="100.0" text="EVENTS" textFill="#49306b" underline="true">
 
@@ -95,49 +81,13 @@
 
             <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
             <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
-            <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title"/>
+            <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
 
-            <JFXTextArea focusColor="#89009e" layoutX="400.0" layoutY="350.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
-            <JFXTextField focusColor="#9d40a8" layoutX="400.0" layoutY="250.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
-            <Text fill="#49306b" layoutX="295.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+            <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
 
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
+            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
 
-            <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description"/>
-
-            <Text fill="#49306b" layoutX="295.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
-
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-
-            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa"/>
-
-            <JFXButton layoutX="379.0" layoutY="557.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Create" textFill="#ace4aa">
-
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
-
-            <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa"/>
-
-            <JFXButton layoutX="610.0" layoutY="557.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Cancel" textFill="#ace4aa">
-
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
+            <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa" />
 
             <JFXDatePicker fx:id="EventDate" defaultColor="#49306b" layoutX="630.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Date of event" />
             <Text fill="#49306b" layoutX="525.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time">
