@@ -5,8 +5,11 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<<<<<<< HEAD
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.control.TreeTableView?>
+=======
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -48,7 +51,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+<<<<<<< HEAD
             <JFXButton alignment="CENTER" layoutX="416.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+=======
+            <JFXButton alignment="CENTER" layoutX="415.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -62,7 +69,11 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
          <children>
+<<<<<<< HEAD
             <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa">
+=======
+            <JFXButton layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -72,24 +83,42 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <Label layoutX="470.0" layoutY="100.0" text="NOTICES" textFill="#49306b" underline="true">
+=======
+            <Label layoutX="500.0" layoutY="100.0" text="NOTICES" textFill="#49306b" underline="true">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <JFXTextArea fx:id="NtcDesc" focusColor="#89009e" layoutX="630.0" layoutY="330.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
             <JFXTextField fx:id="NtcTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Title " />
             <Text fill="#49306b" layoutX="525.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+=======
+            <JFXTextArea focusColor="#89009e" layoutX="400.0" layoutY="350.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
+            <JFXTextField focusColor="#9d40a8" layoutX="400.0" layoutY="250.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Title " />
+            <Text fill="#49306b" layoutX="295.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
+<<<<<<< HEAD
             <Text fill="#49306b" layoutX="525.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+=======
+            <Text fill="#49306b" layoutX="295.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
+<<<<<<< HEAD
             <JFXButton fx:id="AddNtc" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+=======
+            <JFXButton layoutX="379.0" layoutY="557.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Create" textFill="#ace4aa">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -97,7 +126,11 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
+<<<<<<< HEAD
             <JFXButton fx:id="UpdateNtc" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+=======
+            <JFXButton layoutX="610.0" layoutY="557.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Cancel" textFill="#ace4aa">
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -105,6 +138,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
+<<<<<<< HEAD
             <TreeTableView fx:id="NtcTable" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
                <columns>
                   <TreeTableColumn fx:id="NtcTitle" prefWidth="180.66665649414062" text="Notice Title" />
@@ -121,6 +155,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+=======
+>>>>>>> 6b1020ecdca15006af9fc90af2dee54f2a7312c5
          </children>
       </Pane>
    </center>
