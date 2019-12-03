@@ -12,7 +12,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FacultyRecordsController">
    <top>
       <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
          <children>
@@ -72,7 +73,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <JFXButton fx:id="AddFacRec" layoutX="700.0" layoutY="596.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+            <JFXButton fx:id="AddFacRec" layoutX="700.0" layoutY="596.0" onAction="#addFacRecClicked" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -80,7 +81,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="UpdtFacRec" layoutX="820.0" layoutY="596.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+            <JFXButton fx:id="UpdtFacRec" layoutX="820.0" layoutY="596.0" onAction="#updtFacRecClicked" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

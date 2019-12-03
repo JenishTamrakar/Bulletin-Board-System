@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 import javax.swing.event.TreeModelEvent;
 import java.io.IOException;
@@ -27,6 +28,12 @@ public class AdminDashboardController {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         adminDashboard.getChildren().setAll(pane);
 
+    }
+
+    @FXML
+    void goToFacultyRecords(ActionEvent event) throws IOException {
+        BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
+        adminDashboard.getChildren().setAll(pane);
     }
 
 }
