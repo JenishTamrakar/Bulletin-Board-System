@@ -5,10 +5,7 @@ import dao.RegisterDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -44,18 +41,28 @@ public class registerScreenController {
         registerPane.getChildren().setAll(pane);
     }
 
+
     @FXML
     void registerStudentClicked() throws RemoteException, NotBoundException {
         try
         {
             RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             Register r = new Register();
-
             r.setUID(UID.getText());
             r.setPassword(password.getText());
             System.out.println(r.getUID());
             System.out.println(r.getPassword());
             rd.addUser(r);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Registered");
+            alert.setContentText("You have successfully registered !");
+
+            if (alert.getResult() == ButtonType.YES) {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
+                registerPane.getChildren().setAll(pane);
+            }
+            alert.showAndWait();
+
         }
         catch(Exception e)
         {
