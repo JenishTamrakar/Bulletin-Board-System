@@ -13,6 +13,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
 public class registerScreenController {
 
@@ -31,8 +33,7 @@ public class registerScreenController {
     @FXML
     private PasswordField confirmPassword;
 
-    @FXML
-    private Hyperlink existingAcc;
+
 
     @FXML
     private Button registerFacultyBtn;
@@ -44,16 +45,17 @@ public class registerScreenController {
     }
 
     @FXML
-    void registerStudentClicked(ActionEvent event) {
+    void registerStudentClicked() throws RemoteException, NotBoundException {
         try
         {
-            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/StudentRegister");
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             Register r = new Register();
 
             r.setUID(UID.getText());
             r.setPassword(password.getText());
+            System.out.println(r.getUID());
             System.out.println(r.getPassword());
-            rd.addStudent(r);
+            rd.addUser(r);
         }
         catch(Exception e)
         {

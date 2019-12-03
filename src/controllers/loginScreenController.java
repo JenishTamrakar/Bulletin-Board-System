@@ -1,16 +1,18 @@
 package controllers;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import dao.LoginDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
 public class loginScreenController {
 
@@ -18,25 +20,61 @@ public class loginScreenController {
     private AnchorPane loginPane;
 
     @FXML
-    private TextField uID;
+    private TextField UID;
 
     @FXML
     private Button login;
 
     @FXML
-    private PasswordField password;
+    private PasswordField Password;
 
     @FXML
     private Hyperlink createAccount;
-
-    @FXML
-    void createAcc(MouseEvent event) {
-
-    }
 
     @FXML
     void registerClick(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/registerScreen.fxml"));
         loginPane.getChildren().setAll(pane);
     }
+    Alert a = new Alert((Alert.AlertType.NONE));
+
+    @FXML
+    public void checkDetail(){
+        System.out.println("login btn clicked");
+        String user_id = UID.getText();
+        String user_password = Password.getText();
+        System.out.println("UID = "+user_id+" Password = "+user_password);
+        try {
+            LoginDao ld = (LoginDao) Naming.lookup("rmi://localhost/Login");
+            Boolean rs = ld.checkUser(UID.getText(), Password.getText());
+            try {
+                if (rs) {
+                    AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+                    System.out.println("Next page");
+                    loginPane.getChildren().setAll(pane);
+                } else {
+                    a.setAlertType(Alert.AlertType.ERROR);
+                    a.setContentText("Invalid ID or Password");
+                    a.show();
+                }
+            } catch (IOException ex) {
+                System.out.println(ex);
+                System.out.println("Could not connect database");
+            }
+        }catch (RemoteException re){
+            System.out.println();
+            System.out.println("RemoteException");
+            System.out.println(re);
+        }catch (ArithmeticException ae){
+            System.out.println("java.lang.ArithematicException");
+            System.out.println(ae);
+        }catch (NotBoundException e){
+            e.printStackTrace();
+
+        }catch (MalformedURLException e){
+            e.printStackTrace();
+        }
+
+    }
+
 }

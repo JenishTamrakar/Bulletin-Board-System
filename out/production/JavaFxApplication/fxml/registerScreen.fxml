@@ -26,62 +26,51 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-<<<<<<< Updated upstream:src/fxml/registerScreen.fxml
-        <TextField fx:id="UID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
-        <Button fx:id="registerStudentBtn" layoutX="432.0" layoutY="524.0" mnemonicParsing="false" onAction="#registerStudentClicked" text="Student">
-=======
-        <TextField fx:id="uID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
-        <Button layoutX="478.0" layoutY="491.0" mnemonicParsing="false" text="Register">
->>>>>>> Stashed changes:out/production/JavaFxApplication/BBS/fxml/registerScreen.fxml
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Button>
-        <Text layoutX="463.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Note : Use College ID Card Number" wrappingWidth="181.0">
-            <font>
-                <Font size="11.0" />
-            </font>
-        </Text>
-        <Label layoutX="394.0" layoutY="197.0" prefHeight="40.0" prefWidth="270.0" text="Register To The System">
-            <font>
-                <Font name="System Bold" size="24.0" />
-            </font>
-        </Label>
         <Label layoutX="275.0" layoutY="429.0" prefHeight="40.0" prefWidth="156.0" text="Confirm Password">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+
+        <TextField fx:id="UID" layoutX="438.0" layoutY="288.0" prefHeight="40.0" prefWidth="206.0" />
+        <Text layoutX="463.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Note : Use College ID Card Number" wrappingWidth="181.0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Text>
         <PasswordField fx:id="password" layoutX="438.0" layoutY="364.0" prefHeight="40.0" prefWidth="206.0" />
         <PasswordField fx:id="confirmPassword" layoutX="438.0" layoutY="429.0" prefHeight="40.0" prefWidth="206.0" />
-<<<<<<< Updated upstream:src/fxml/registerScreen.fxml
-      <Text layoutX="432.0" layoutY="592.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account ?">
-=======
-      <Text layoutX="439.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account ?">
->>>>>>> Stashed changes:out/production/JavaFxApplication/BBS/fxml/registerScreen.fxml
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <Hyperlink fx:id="existingAcc" layoutX="600.0" layoutY="573.0" onAction="#loginClick" text="Login">
-         <font>
-            <Font name="System Bold Italic" size="13.0" />
-         </font>
-      </Hyperlink>
-      <Button fx:id="registerFacultyBtn" layoutX="560.0" layoutY="524.0" mnemonicParsing="false" onAction="#registerFacultyClicked" text="Faculty">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label layoutX="483.0" layoutY="477.0" prefHeight="40.0" prefWidth="117.0" text="Register As :-">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="527.0" layoutY="535.0" text="OR">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
+
+        <Text layoutX="431.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account ?">
+
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Hyperlink fx:id="existingAcc" layoutX="600.0" layoutY="573.0" onAction="#loginClick" text="Login">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Hyperlink>
+        <Label layoutX="483.0" layoutY="477.0" prefHeight="40.0" prefWidth="117.0" text="Register As :-">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="registerFacultyBtn" layoutX="560.0" layoutY="524.0" mnemonicParsing="false" onAction="#registerFacultyClicked" text="Faculty">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="registerStudentBtn" layoutX="432.0" layoutY="524.0" mnemonicParsing="false" onAction="#registerStudentClicked" prefHeight="40.0" prefWidth="80.0" text="Student">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+
+        <Label layoutX="527.0" layoutY="535.0" text="OR">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
     </children>
 </AnchorPane>
