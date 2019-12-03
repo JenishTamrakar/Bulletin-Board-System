@@ -18,7 +18,7 @@
    <top>
       <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton alignment="CENTER" layoutX="590.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="512.0" prefHeight="75.0" prefWidth="160.0" text="Faculty Records" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -26,7 +26,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="690.0" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="662.0" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="789.0" prefHeight="75.0" prefWidth="100.0" text="Classes" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="756.0" prefHeight="75.0" prefWidth="133.0" text="Assignments" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Assignments" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -50,7 +50,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="416.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+            <JFXButton alignment="CENTER" layoutX="343.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -85,7 +85,7 @@
 
             <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
 
-            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
+            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0"  prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
 
             <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa" />
 

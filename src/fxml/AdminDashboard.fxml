@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="adminDashboard" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminDashboardController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <top>
-            <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="75.0" prefWidth="1080.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
 
                   <JFXButton alignment="CENTER" layoutX="552.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
@@ -89,7 +89,7 @@
                   <Pane layoutX="29.0" layoutY="375.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;" />
                   <Pane layoutX="29.0" layoutY="145.0" prefHeight="203.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
                      <children>
-                        <JFXButton layoutX="-3.0" layoutY="-1.0" prefHeight="207.0" prefWidth="300.0" text="STUDENT RECORDS" textFill="#ace4aa">
+                        <JFXButton fx:id="studentRecordButton" layoutY="-2.0" onAction="#goToStudentRecords" prefHeight="207.0" prefWidth="300.0" text="STUDENT RECORDS" textFill="#ace4aa">
 
                            <font>
                               <Font name="System Bold" size="24.0" />
@@ -128,7 +128,7 @@
                   </Pane>
                   <Pane layoutX="670.0" layoutY="145.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
                      <children>
-                        <JFXButton prefHeight="200.0" prefWidth="300.0" text="NOTICES" textFill="#ace4aa">
+                        <JFXButton fx:id="noticebutton" onAction="#goToNotice" prefHeight="200.0" prefWidth="300.0" text="NOTICES" textFill="#ace4aa">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>

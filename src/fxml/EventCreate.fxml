@@ -85,7 +85,7 @@
 
             <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
 
-            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
+            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0"  prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
 
             <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa" />
 
