@@ -21,7 +21,7 @@
          <top>
             <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton alignment="CENTER" layoutX="468.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+                  <JFXButton fx:id="eventsTop" alignment="CENTER" layoutX="468.0" onAction="#eventsTop" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -29,7 +29,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="567.0" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
+                  <JFXButton fx:id="facultyTop" alignment="CENTER" layoutX="567.0" onAction="#facultyTop" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -37,7 +37,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="754.0" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
+                  <JFXButton fx:id="assignmentsTop" alignment="CENTER" layoutX="754.0" onAction="#assignmentsTop" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
+                  <JFXButton fx:id="feeDetailsTop" alignment="CENTER" layoutX="889.0" onAction="#feeDetailsTop" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -53,7 +53,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="294.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+                  <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="294.0" onAction="#studentRecordTop" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

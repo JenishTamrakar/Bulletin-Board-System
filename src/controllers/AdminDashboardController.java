@@ -20,18 +20,19 @@ public class AdminDashboardController {
     private JFXButton goToNotice;
     @FXML
     private JFXButton goToEvents;
+    @FXML
+    private JFXButton feeDetails;
+
 
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         adminDashboard.getChildren().setAll(pane);
-
     }
     @FXML
     void goToStudentRecords(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         adminDashboard.getChildren().setAll(pane);
-
     }
 
     @FXML
@@ -48,6 +49,15 @@ public class AdminDashboardController {
     void goToAssignments(ActionEvent event) throws  IOException{
         BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         adminDashboard.getChildren().setAll(pane);
+    }
+    @FXML
+    void assignmentsTop(ActionEvent event) throws IOException{
+        BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
+        adminDashboard.getChildren().setAll(pane);
+    }
+    @FXML
+    void gotoFeeDetails(ActionEvent event)throws IOException{
+
     }
 
 

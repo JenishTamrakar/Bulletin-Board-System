@@ -46,10 +46,7 @@ public class NoticeCreateController {
     @FXML
     private DatePicker pickDate;
 
-    @FXML
-    void showDate(ActionEvent event) {
-        LocalDate ld = pickDate.getValue();
-    }
+
     @FXML
     void addNotice(ActionEvent event) throws RemoteException, NotBoundException {
     try{

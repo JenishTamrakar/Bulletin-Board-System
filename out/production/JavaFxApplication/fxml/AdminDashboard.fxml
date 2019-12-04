@@ -18,7 +18,7 @@
             <Pane prefHeight="75.0" prefWidth="1080.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
 
-                  <JFXButton alignment="CENTER" layoutX="552.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="552.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
 
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -28,7 +28,7 @@
                      </cursor>
                   </JFXButton>
 
-                  <JFXButton alignment="CENTER" layoutX="652.0" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
+                  <JFXButton fx:id="noticeTop" alignment="CENTER" layoutX="652.0" onAction="#goToNotice" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
 
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -38,7 +38,7 @@
                      </cursor>
                   </JFXButton>
 
-                  <JFXButton alignment="CENTER" layoutX="752.0" prefHeight="75.0" prefWidth="144.0" text="Assignments" textFill="#49306b">
+                  <JFXButton fx:id="assignmentsTop" alignment="CENTER" layoutX="752.0" onAction="#assignmentsTop" prefHeight="75.0" prefWidth="144.0" text="Assignments" textFill="#49306b">
 
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -48,7 +48,7 @@
                      </cursor>
                   </JFXButton>
 
-                  <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
+                  <JFXButton fx:id="feeDetailsTop" alignment="CENTER" layoutX="889.0" onAction="#gotoFeeDetails" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -56,7 +56,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="403.0" prefHeight="75.0" prefWidth="159.0" text="Faculty Records" textFill="#49306b">
+                  <JFXButton fx:id="facultyTop" alignment="CENTER" layoutX="403.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="159.0" text="Faculty Records" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="236.0" prefHeight="75.0" prefWidth="174.0" text="Student Records" textFill="#49306b">
+                  <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="236.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="174.0" text="Student Records" textFill="#49306b">
 
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -141,7 +141,7 @@
                   <Pane layoutX="670.0" layoutY="375.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
                      <children>
 
-                        <JFXButton layoutX="-7.0" prefHeight="200.0" prefWidth="300.0" text="FEE DETAILS" textFill="#ace4aa">
+                        <JFXButton fx:id="feeDetails" layoutX="-7.0" prefHeight="200.0" prefWidth="300.0" text="FEE DETAILS" textFill="#ace4aa">
 
                            <font>
                               <Font name="System Bold" size="24.0" />
@@ -166,7 +166,7 @@
                      </font>
                   </Label>
 
-                  <JFXButton layoutX="29.0" layoutY="375.0" prefHeight="200.0" prefWidth="300.0" text="FACULTY RECORDS" textFill="#ace4aa">
+                  <JFXButton layoutX="29.0" layoutY="375.0" onAction="#goToFacultyRecords" prefHeight="200.0" prefWidth="300.0" text="FACULTY RECORDS" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
