@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.rmi.Naming;
@@ -19,7 +20,8 @@ import java.rmi.RemoteException;
 
 public class StudentRecordsController
 {
-
+    @FXML
+    private AnchorPane studentRecordPane;
     @FXML
     private JFXButton AddStdRec;
 
@@ -63,6 +65,39 @@ public class StudentRecordsController
     private TreeTableColumn<?, ?> StdEmail;
 
     @FXML
+    void goToNotices(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToFacultyRecords(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToEvents(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToAssignments(ActionEvent event) throws  IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToFeeDetails(ActionEvent event)throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToDashboard(ActionEvent event) throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+
+
+    @FXML
     void addStdRecClicked(ActionEvent event) throws RemoteException, NotBoundException {
         try
         {
@@ -97,6 +132,7 @@ public class StudentRecordsController
     void updtStdRecClicked(ActionEvent event) {
 
     }
+
 
 
 }

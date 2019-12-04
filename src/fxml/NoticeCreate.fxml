@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NoticeCreateController">
+<AnchorPane fx:id="noticePane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NoticeCreateController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <top>
@@ -45,7 +45,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="feeDetailsTop" alignment="CENTER" layoutX="889.0" onAction="#feeDetailsTop" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
+                  <JFXButton fx:id="feeDetailsTop" alignment="CENTER" layoutX="889.0" onAction="#goToFeeDetails" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -54,6 +54,14 @@
                      </cursor>
                   </JFXButton>
                   <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="294.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="studentRecordTop1" alignment="CENTER" layoutX="136.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="175.0" text="Dashboard" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

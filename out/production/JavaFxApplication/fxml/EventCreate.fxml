@@ -9,112 +9,125 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
-         <children>
-            <JFXButton alignment="CENTER" layoutX="512.0" prefHeight="75.0" prefWidth="160.0" text="Faculty Records" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="662.0" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="756.0" prefHeight="75.0" prefWidth="133.0" text="Assignments" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton alignment="CENTER" layoutX="343.0" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-         </children>
-      </Pane>
-   </top>
-   <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
-         <children>
-
-            <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa" />
-            <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
-
-            <Label layoutX="500.0" layoutY="100.0" text="EVENTS" textFill="#49306b" underline="true">
-
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-
-            <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
-            <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
-            <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
-
-            <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
-
-            <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0"  prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
-
-            <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa" />
-
-            <JFXDatePicker fx:id="EventDate" defaultColor="#49306b" layoutX="630.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Date of event" />
-            <Text fill="#49306b" layoutX="525.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <JFXTimePicker fx:id="EventTime" defaultColor="#49306b" layoutX="830.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Time of event" />
-            <TreeTableView fx:id="EventTbl" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
-              <columns>
-                <TreeTableColumn prefWidth="109.33334350585938" text="Event Title" />
-                <TreeTableColumn minWidth="0.0" prefWidth="94.0" text="Date" />
-                  <TreeTableColumn prefWidth="100.0" text="Time" />
-                  <TreeTableColumn prefWidth="167.0" text="Description" />
-              </columns>
-            </TreeTableView>
-            <Label layoutX="31.0" layoutY="170.0" text="List Of Events" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="521.0" layoutY="170.0" text="New Event" textFill="#49306b" underline="true">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-   </center>
-</BorderPane>
+<AnchorPane fx:id="eventPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.eventCreateController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+         <top>
+            <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton alignment="CENTER" layoutX="496.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="160.0" text="Faculty Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="656.0" onAction="#goToNotices" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="756.0" onAction="#goToAssignments" prefHeight="75.0" prefWidth="133.0" text="Assignments" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="889.0" onAction="#goToFeeDetails" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="319.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="160.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="175.0" text="Dashboard" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
+               <children>
+      
+                  <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa" />
+                  <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+      
+                  <Label layoutX="500.0" layoutY="100.0" text="EVENTS" textFill="#49306b" underline="true">
+      
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+      
+                  <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
+                  <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
+                  <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+      
+                  <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+      
+                  <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
+      
+                  <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa" />
+      
+                  <JFXDatePicker fx:id="EventDate" defaultColor="#49306b" layoutX="630.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Date of event" />
+                  <Text fill="#49306b" layoutX="525.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTimePicker fx:id="EventTime" defaultColor="#49306b" layoutX="830.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Time of event" />
+                  <TreeTableView fx:id="EventTbl" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
+                    <columns>
+                      <TreeTableColumn prefWidth="109.33334350585938" text="Event Title" />
+                      <TreeTableColumn minWidth="0.0" prefWidth="94.0" text="Date" />
+                        <TreeTableColumn prefWidth="100.0" text="Time" />
+                        <TreeTableColumn prefWidth="167.0" text="Description" />
+                    </columns>
+                  </TreeTableView>
+                  <Label layoutX="31.0" layoutY="170.0" text="List Of Events" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="170.0" text="New Event" textFill="#49306b" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

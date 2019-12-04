@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentRecordsController">
+<AnchorPane fx:id="studentRecordPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentRecordsController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <top>
@@ -43,7 +43,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="889.0" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="889.0" onAction="#goToFeeDetails" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -52,6 +52,14 @@
                      </cursor>
                   </JFXButton>
                   <JFXButton alignment="CENTER" layoutX="381.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="175.0" text="Faculty Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="223.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="175.0" text="Dashboard" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

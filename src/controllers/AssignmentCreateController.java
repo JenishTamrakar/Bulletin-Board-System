@@ -3,14 +3,20 @@ package controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 public class AssignmentCreateController {
 
 
-
+    @FXML
+    private AnchorPane assignmentPane;
     @FXML
     private JFXTextField AssignTitle;
 
@@ -55,4 +61,40 @@ public class AssignmentCreateController {
 
     @FXML
     private JFXTextField AssignUnit;
+
+    @FXML
+    void goToNotices(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
+        assignmentPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToStudentRecords(ActionEvent event) throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToFacultyRecords(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToEvents(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+    }
+
+
+    @FXML
+    void goToFeeDetails(ActionEvent event)throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToDashboard(ActionEvent event) throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+    }
+
 }

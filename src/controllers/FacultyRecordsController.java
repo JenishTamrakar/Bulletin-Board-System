@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.rmi.Naming;
@@ -19,7 +20,8 @@ import java.rmi.RemoteException;
 
 public class FacultyRecordsController
 {
-
+    @FXML
+    private AnchorPane facultyRecordPane;
     @FXML
     private JFXButton AddFacRec;
 
@@ -56,6 +58,39 @@ public class FacultyRecordsController
     @FXML
     private TreeTableColumn<?, ?> FacEmail;
 
+
+    @FXML
+    void goToNotices(javafx.event.ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
+        facultyRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToStudentRecords(javafx.event.ActionEvent event) throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
+        facultyRecordPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToEvents(javafx.event.ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
+        facultyRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToAssignments(javafx.event.ActionEvent event) throws  IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
+        facultyRecordPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToFeeDetails(javafx.event.ActionEvent event)throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
+        facultyRecordPane.getChildren().setAll(pane);
+    }
+    @FXML
+    void goToDashboard(javafx.event.ActionEvent event) throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
+        facultyRecordPane.getChildren().setAll(pane);
+    }
     @FXML
     void addFacRecClicked(ActionEvent event) {
         try
@@ -90,6 +125,7 @@ public class FacultyRecordsController
     void updtFacRecClicked(ActionEvent event) {
 
     }
+
 
 
 }
