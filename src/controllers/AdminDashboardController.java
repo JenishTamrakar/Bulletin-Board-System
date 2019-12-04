@@ -44,6 +44,11 @@ public class AdminDashboardController {
         BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         adminDashboard.getChildren().setAll(pane);
     }
+    @FXML
+    void goToAssignments(ActionEvent event) throws  IOException{
+        BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
+        adminDashboard.getChildren().setAll(pane);
+    }
 
 
 }
