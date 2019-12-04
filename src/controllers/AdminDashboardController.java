@@ -16,6 +16,8 @@ public class AdminDashboardController {
     private JFXButton noticebutton;
     @FXML
     private AnchorPane adminDashboard;
+    @FXML
+    private JFXButton goToNotice;
 
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
