@@ -19,7 +19,7 @@
          <top>
             <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton alignment="CENTER" layoutX="555.0" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="555.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -27,7 +27,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="655.0" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="655.0" onAction="#goToNotices" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -35,7 +35,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="754.0" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="754.0" onAction="#goToAssignments" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -51,7 +51,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="381.0" prefHeight="75.0" prefWidth="175.0" text="Faculty Records" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="381.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="175.0" text="Faculty Records" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -143,6 +143,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </MenuButton>
+                  <Label layoutX="569.0" layoutY="170.0" text="Add New Student" textFill="#49306b" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </center>

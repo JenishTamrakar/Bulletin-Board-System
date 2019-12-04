@@ -15,7 +15,7 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AssignmentCreateController">
    <top>
       <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
-         <JFXButton alignment="CENTER" layoutX="556.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+         <JFXButton alignment="CENTER" layoutX="529.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
@@ -23,7 +23,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </JFXButton>
-         <JFXButton alignment="CENTER" layoutX="656.0" onAction="#goToNotice" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
+         <JFXButton alignment="CENTER" layoutX="629.0" onAction="#goToNotice" prefHeight="75.0" prefWidth="100.0" text="Notices" textFill="#49306b">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
@@ -31,7 +31,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </JFXButton>
-         <JFXButton alignment="CENTER" layoutX="755.0" prefHeight="75.0" prefWidth="100.0" text="Classes" textFill="#49306b">
+         <JFXButton alignment="CENTER" layoutX="730.0" prefHeight="75.0" prefWidth="125.0" text="Fee Details" textFill="#49306b">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
@@ -47,7 +47,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </JFXButton>
-         <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="382.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+         <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="355.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
