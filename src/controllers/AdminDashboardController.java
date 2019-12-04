@@ -18,6 +18,8 @@ public class AdminDashboardController {
     private AnchorPane adminDashboard;
     @FXML
     private JFXButton goToNotice;
+    @FXML
+    private JFXButton goToEvents;
 
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
@@ -37,6 +39,12 @@ public class AdminDashboardController {
         BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         adminDashboard.getChildren().setAll(pane);
     }
+    @FXML
+    void goToEvents(ActionEvent event) throws IOException {
+        BorderPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
+        adminDashboard.getChildren().setAll(pane);
+    }
+
 
 }
 
