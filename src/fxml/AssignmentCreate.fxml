@@ -80,11 +80,6 @@
                      <Font name="System Bold" size="24.0" />
                   </font>
                </Label>
-               <JFXTextField fx:id="AssignTitle" focusColor="#9d40a8" layoutX="699.0" layoutY="267.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Title ">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
                <Text fill="#49306b" layoutX="575.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
                   <font>
                      <Font name="System Bold" size="14.0" />
@@ -95,7 +90,47 @@
                      <Font name="System Bold" size="14.0" />
                   </font>
                </Text>
-               <JFXButton fx:id="AddAssign" layoutX="689.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+               <Text fill="#49306b" layoutX="575.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Text>
+               <Text fill="#49306b" layoutX="575.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Text>
+               <Text fill="#49306b" layoutX="575.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment Unit">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Text>
+               <JFXTextField fx:id="AssignTitle" focusColor="#9d40a8" layoutX="699.0" layoutY="267.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Title ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXTextField fx:id="AssignLvl" focusColor="#9d40a8" layoutX="699.0" layoutY="317.0" prefHeight="30.0" prefWidth="251.0" promptText="Level">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXTextField fx:id="AssignCrse" focusColor="#9d40a8" layoutX="699.0" layoutY="367.0" prefHeight="30.0" prefWidth="251.0" promptText="Course ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXTextField fx:id="AssignUnit" focusColor="#9d40a8" layoutX="699.0" layoutY="417.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Unit ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXDatePicker fx:id="DeadDate" defaultColor="#49306b" layoutX="698.0" layoutY="478.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter Deadline Date">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXDatePicker>
+               <JFXButton fx:id="AddAssign" layoutX="689.0" layoutY="547.0" onAction="#addAssClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
@@ -113,12 +148,11 @@
                </JFXButton>
                <TreeTableView fx:id="NtcTable" layoutX="30.0" layoutY="215.0" prefHeight="391.0" prefWidth="517.0" scaleShape="false">
                   <columns>
-                     <TreeTableColumn fx:id="AssignIDTbl" prefWidth="96.33333587646484" resizable="false" text="Assignment ID" />
-                     <TreeTableColumn fx:id="AssignTitleTbl" minWidth="0.0" prefWidth="89.66666412353516" resizable="false" text="Title" />
-                     <TreeTableColumn fx:id="AssignLvlTbl" prefWidth="41.0" resizable="false" text="Level" />
-                     <TreeTableColumn fx:id="AssignCrseTbl" prefWidth="83.0" resizable="false" text="Course" />
-                     <TreeTableColumn fx:id="AssignUnitTbl" prefWidth="106.0" resizable="false" text="Assignment Unit" />
-                     <TreeTableColumn fx:id="DeadDateTbl" prefWidth="100.66665649414062" resizable="false" text="Deadline" />
+                     <TreeTableColumn fx:id="AssignTitleTbl" minWidth="0.0" prefWidth="77.0" resizable="false" text="Title" />
+                     <TreeTableColumn fx:id="AssignLvlTbl" prefWidth="97.0" resizable="false" text="Level" />
+                     <TreeTableColumn fx:id="AssignCrseTbl" prefWidth="63.0" resizable="false" text="Course" />
+                     <TreeTableColumn fx:id="AssignUnitTbl" prefWidth="155.0" resizable="false" text="Assignment Unit" />
+                     <TreeTableColumn fx:id="DeadDateTbl" prefWidth="124.0" resizable="false" text="Deadline" />
                   </columns>
                </TreeTableView>
                <Label layoutX="31.0" layoutY="170.0" text="List Of Assignment" textFill="#49306b">
@@ -131,51 +165,6 @@
                      <Font name="System Bold" size="18.0" />
                   </font>
                </Label>
-               <JFXDatePicker fx:id="DeadDate" defaultColor="#49306b" layoutX="698.0" layoutY="478.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter Deadline Date">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXDatePicker>
-               <Text fill="#49306b" layoutX="575.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <JFXTextField fx:id="AssignID" focusColor="#9d40a8" layoutX="699.0" layoutY="223.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment ID">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
-               <Text fill="#49306b" layoutX="575.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment ID">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <Text fill="#49306b" layoutX="575.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <Text fill="#49306b" layoutX="575.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment Unit">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <JFXTextField fx:id="AssignLvl" focusColor="#9d40a8" layoutX="699.0" layoutY="317.0" prefHeight="30.0" prefWidth="251.0" promptText="Level">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
-               <JFXTextField fx:id="AssignCrse" focusColor="#9d40a8" layoutX="699.0" layoutY="367.0" prefHeight="30.0" prefWidth="251.0" promptText="Add Course ">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
-               <JFXTextField fx:id="AssignUnit" focusColor="#9d40a8" layoutX="699.0" layoutY="417.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Unit ">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
             </Pane>
          </center>
       </BorderPane>

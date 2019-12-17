@@ -2,6 +2,7 @@ package controllers;
 
 import bll.FeeDetails;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import dao.FeeDetailsDao;
@@ -16,6 +17,9 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.rmi.Naming;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 
 public class FeeDetailsController {
 
@@ -75,8 +79,11 @@ public class FeeDetailsController {
     @FXML
     private JFXTextField FeeStdCourse;
 
+//    @FXML
+//    private JFXTextField FeeDedDate;
+
     @FXML
-    private JFXTextField FeeDedDate;
+    private JFXDatePicker FeeDedDate;
 
 
     @FXML
@@ -118,12 +125,14 @@ public class FeeDetailsController {
 
     @FXML
     void addFeeDet(ActionEvent event){
+        LocalDate ld= FeeDedDate.getValue();
+        System.out.println(ld);
         try
         {
             FeeDetailsDao fdd = (FeeDetailsDao) Naming.lookup("rmi://localhost/FeeDetails");
             FeeDetails fd = new FeeDetails();
             fd.setFee_Amt(FeeAmt.getText());
-            fd.setDeadline_Date(FeeDedDate.getText());
+            fd.setDeadline_Date(ld);
             fd.setFee_Details(FeeDet.getText());
             fd.setStudent_course(FeeStdCourse.getText());
             fd.setStudent_level(FeeStdLevel.getText());
@@ -134,11 +143,11 @@ public class FeeDetailsController {
             alert.setTitle("Fee Detail Added");
             alert.setContentText("Fee Details have been successfully added.");
             alert.showAndWait();
-            FeeAmt.setText(null);
+            FeeAmt.clear();
             FeeDet.setText(null);
-            FeeDedDate.setText(null);
+            //FeeDedDate.setDa
             FeeStdCourse.setText(null);
-            FeeStdLevel.setText(null);
+            FeeStdLevel.clear();
         }
         catch(Exception e){
             System.out.println(e);

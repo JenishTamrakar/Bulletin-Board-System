@@ -85,18 +85,9 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <JFXTextArea fx:id="NoticeDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
                   <JFXTextField fx:id="NoticeTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Title " />
-                  <Text fill="#49306b" layoutX="525.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
+                  <JFXTextField fx:id="NoticeDate" focusColor="#9d40a8" layoutX="632.0" layoutY="319.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Date" />
+                  <JFXTextArea fx:id="NoticeDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
                   <JFXButton fx:id="AddNtc" layoutX="629.0" layoutY="547.0" onAction="#addNotice" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -113,6 +104,16 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
+                  <Text fill="#49306b" layoutX="525.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
                   <TreeTableView fx:id="NtcTable" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
                      <columns>
                         <TreeTableColumn fx:id="NtcTitleTbl" prefWidth="176.0" text="Notice Title" />
@@ -147,7 +148,6 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTextField fx:id="NoticeDate" focusColor="#9d40a8" layoutX="632.0" layoutY="319.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Date" />
                </children>
             </Pane>
          </center>

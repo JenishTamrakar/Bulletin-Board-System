@@ -1,12 +1,14 @@
 package bll;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class FeeDetails implements Serializable
 {
     private String Fee_Amt;
-    private String Deadline_Date;
+    private LocalDate Deadline_Date;
     private String Fee_Details;
     private String Student_course;
     private String Student_level;
@@ -17,9 +19,9 @@ public class FeeDetails implements Serializable
 
     public void setFee_Amt(String Fee_Amt) { this.Fee_Amt = Fee_Amt; }
 
-    public String getDeadline_Date() {return Deadline_Date;}
+    public LocalDate getDeadline_Date() {return Deadline_Date;}
 
-    public void setDeadline_Date(String Deadline_Date) {this.Deadline_Date=Deadline_Date;}
+    public void setDeadline_Date(LocalDate Deadline_Date) {this.Deadline_Date=Deadline_Date;}
 
     public String getFee_Details() {return  Fee_Details;}
 

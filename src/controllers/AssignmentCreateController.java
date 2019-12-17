@@ -1,16 +1,21 @@
 package controllers;
 
+import bll.Assignment;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import dao.AssignmentDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.rmi.Naming;
+import java.time.LocalDate;
 
 public class AssignmentCreateController {
 
@@ -97,4 +102,28 @@ public class AssignmentCreateController {
         assignmentPane.getChildren().setAll(pane);
     }
 
+    @FXML
+    void addAssClicked(ActionEvent actionEvent)
+    {
+        LocalDate ld = DeadDate.getValue();
+        try
+        {
+            AssignmentDao ad = (AssignmentDao) Naming.lookup("rmi://localhost/Assignment");
+            Assignment as = new Assignment();
+            as.setAss_title(AssignTitle.getText());
+            as.setAss_level(AssignLvl.getText());
+            as.setAss_course(AssignCrse.getText());
+            as.setAss_unit(AssignUnit.getText());
+            as.setAss_date(ld);
+            ad.addAssDet(as);
+            Alert alert = new Alert((Alert.AlertType.INFORMATION));
+            alert.setTitle("Assignment Added");
+            alert.setContentText("Assignment has been successfully added.");
+            alert.showAndWait();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
 }

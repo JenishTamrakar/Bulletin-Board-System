@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -13,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="eventPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.eventCreateController">
+<AnchorPane fx:id="eventPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventCreateController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <top>
@@ -88,13 +90,21 @@
                      </font>
                   </Label>
                   <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
-                  <JFXTextField fx:id="EventDate" layoutX="629.0" layoutY="299.0" promptText="Date" />
-                  <JFXTextField fx:id="EventTime" layoutX="827.0" layoutY="299.0" promptText="Time" />
+                  <JFXDatePicker fx:id="DateEvent" defaultColor="#49306b" layoutX="630.0" layoutY="299.0" prefHeight="31.0" prefWidth="179.0" promptText="Date" />
+                  <JFXTimePicker fx:id="TimeEvent" defaultColor="#49306b" layoutX="831.0" layoutY="299.0" prefHeight="31.0" prefWidth="168.0" promptText="TIme" />
       
-                  <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
-                  <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+                  <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="628.0" layoutY="369.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
+                  <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="563.0" onAction="#addEventClicked" text="Add" />
+                  <JFXButton fx:id="UpdateEvent" layoutX="846.0" layoutY="563.0" onAction="#updateEvent" text="Update" />
+                  <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
       
-                  <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                  <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
                   <Text fill="#49306b" layoutX="525.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -118,8 +128,6 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="563.0" onAction="#addEventClicked" text="Add" />
-                  <JFXButton fx:id="UpdateEvent" layoutX="846.0" layoutY="563.0" onAction="#updateEvent" text="Update" />
                </children>
             </Pane>
          </center>
