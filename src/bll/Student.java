@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Student implements Serializable
 {
+    private String student_SN;
     private String student_ID;
     private String name;
     private String email;
@@ -11,6 +12,30 @@ public class Student implements Serializable
     private String level;
 
     private static final long serialVersionUID = 1L;
+
+    public Student(String student_SN, String student_ID, String name, String course, String email, String level)
+    {
+        this.student_SN = student_SN;
+        this.student_ID = student_ID;
+        this.name = name;
+        this.course = course;
+        this.email = email;
+        this.level = level;
+    }
+
+    public Student() {
+
+    }
+
+    public String getStudent_SN()
+    {
+        return student_SN;
+    }
+
+    public void setStudent_SN(String student_SN)
+    {
+        this.student_SN = student_SN;
+    }
 
     public String getStudent_ID()
     {

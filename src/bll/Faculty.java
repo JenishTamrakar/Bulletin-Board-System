@@ -4,12 +4,28 @@ import java.io.Serializable;
 
 public class Faculty implements Serializable
 {
+    private String faculty_SN;
     private String faculty_ID;
     private String name;
     private String email;
     private String course;
 
     private static final long serialVersionUID = 1L;
+
+    public Faculty()
+    {
+
+    }
+
+    public String getFaculty_SN()
+    {
+        return faculty_SN;
+    }
+
+    public void setFaculty_SN(String faculty_SN)
+    {
+        this.faculty_SN = faculty_SN;
+    }
 
     public String getFaculty_ID()
     {
@@ -50,5 +66,15 @@ public class Faculty implements Serializable
     {
         this.course = course;
     }
+
+    public Faculty(String faculty_SN, String faculty_ID, String name, String course, String email)
+    {
+        this.faculty_SN = faculty_SN;
+        this.faculty_ID = faculty_ID;
+        this.name = name;
+        this.course = course;
+        this.email = email;
+    }
+
 
 }
