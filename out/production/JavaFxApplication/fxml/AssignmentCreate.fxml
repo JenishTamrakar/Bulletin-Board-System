@@ -80,11 +80,6 @@
                      <Font name="System Bold" size="24.0" />
                   </font>
                </Label>
-               <JFXTextField fx:id="AssignTitle" focusColor="#9d40a8" layoutX="699.0" layoutY="267.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Title ">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
                <Text fill="#49306b" layoutX="575.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
                   <font>
                      <Font name="System Bold" size="14.0" />
@@ -95,6 +90,46 @@
                      <Font name="System Bold" size="14.0" />
                   </font>
                </Text>
+               <Text fill="#49306b" layoutX="575.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Text>
+               <Text fill="#49306b" layoutX="575.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Text>
+               <Text fill="#49306b" layoutX="575.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment Unit">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Text>
+               <JFXTextField fx:id="AssignTitle" focusColor="#9d40a8" layoutX="699.0" layoutY="267.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Title ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXTextField fx:id="AssignLvl" focusColor="#9d40a8" layoutX="699.0" layoutY="317.0" prefHeight="30.0" prefWidth="251.0" promptText="Level">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXTextField fx:id="AssignCrse" focusColor="#9d40a8" layoutX="699.0" layoutY="367.0" prefHeight="30.0" prefWidth="251.0" promptText="Course ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXTextField fx:id="AssignUnit" focusColor="#9d40a8" layoutX="699.0" layoutY="417.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Unit ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXTextField>
+               <JFXDatePicker fx:id="DeadDate" defaultColor="#49306b" layoutX="698.0" layoutY="478.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter Deadline Date">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </JFXDatePicker>
                <JFXButton fx:id="AddAssign" layoutX="689.0" layoutY="547.0" onAction="#addAssClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                   <cursor>
                      <Cursor fx:constant="HAND" />
@@ -130,41 +165,6 @@
                      <Font name="System Bold" size="18.0" />
                   </font>
                </Label>
-               <JFXDatePicker fx:id="DeadDate" defaultColor="#49306b" layoutX="698.0" layoutY="478.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter Deadline Date">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXDatePicker>
-               <Text fill="#49306b" layoutX="575.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <Text fill="#49306b" layoutX="575.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <Text fill="#49306b" layoutX="575.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment Unit">
-                  <font>
-                     <Font name="System Bold" size="14.0" />
-                  </font>
-               </Text>
-               <JFXTextField fx:id="AssignLvl" focusColor="#9d40a8" layoutX="699.0" layoutY="317.0" prefHeight="30.0" prefWidth="251.0" promptText="Level">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
-               <JFXTextField fx:id="AssignCrse" focusColor="#9d40a8" layoutX="699.0" layoutY="367.0" prefHeight="30.0" prefWidth="251.0" promptText="Course ">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
-               <JFXTextField fx:id="AssignUnit" focusColor="#9d40a8" layoutX="699.0" layoutY="417.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Unit ">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </JFXTextField>
             </Pane>
          </center>
       </BorderPane>
