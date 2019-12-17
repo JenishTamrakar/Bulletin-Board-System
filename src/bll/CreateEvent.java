@@ -1,17 +1,18 @@
 package bll;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
-public class CreateEvent {
+public class CreateEvent implements Serializable {
     public String eventTitle;
     public String eventDescription;
-    public LocalDate eventDate;
+    public String eventDate;
     public String eventTime;
+
     private static final long serialVersionUID = 1L;
 
-    public String getEventTitle() {
-        return eventTitle;
-    }
+    public String getEventTitle() { return eventTitle; }
 
     public void setEventTitle(String eventTitle) {
         this.eventTitle = eventTitle;
@@ -25,11 +26,11 @@ public class CreateEvent {
         this.eventDescription = eventDescription;
     }
 
-    public LocalDate getEventDate() {
+    public String getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(LocalDate eventDate) {
+    public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
     }
 

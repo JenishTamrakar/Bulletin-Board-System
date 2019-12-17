@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -89,24 +87,19 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
+                  <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
+                  <JFXTextField fx:id="EventDate" layoutX="629.0" layoutY="299.0" promptText="Date" />
+                  <JFXTextField fx:id="EventTime" layoutX="827.0" layoutY="299.0" promptText="Time" />
       
                   <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
-                  <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
                   <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
       
                   <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
-      
-                  <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa" />
-      
-                  <JFXButton fx:id="UpdateEvent" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa" />
-      
-                  <JFXDatePicker fx:id="EventDate" defaultColor="#49306b" layoutX="630.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Date of event" />
                   <Text fill="#49306b" layoutX="525.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTimePicker fx:id="EventTime" defaultColor="#49306b" layoutX="830.0" layoutY="300.0" prefHeight="25.0" prefWidth="175.0" promptText="Time of event" />
                   <TreeTableView fx:id="EventTbl" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
                     <columns>
                       <TreeTableColumn prefWidth="109.33334350585938" text="Event Title" />
@@ -125,6 +118,8 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
+                  <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="563.0" onAction="#addEventClicked" text="Add" />
+                  <JFXButton fx:id="UpdateEvent" layoutX="846.0" layoutY="563.0" onAction="#updateEvent" text="Update" />
                </children>
             </Pane>
          </center>

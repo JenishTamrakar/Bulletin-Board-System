@@ -30,8 +30,6 @@ public class registerScreenController {
     @FXML
     private PasswordField confirmPassword;
 
-
-
     @FXML
     private Button registerFacultyBtn;
 

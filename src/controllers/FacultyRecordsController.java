@@ -128,12 +128,6 @@ public class FacultyRecordsController implements Initializable
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Added");
             alert.setContentText("Faculty Record Successfully Added!");
-
-            //if (alert.getResult() == ButtonType.YES)
-            //{
-            //	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
-            //	registerPane.getChildren().setAll(pane);
-            //}
             alert.showAndWait();
             FacSN.setText(null);
             EntrFacID.setText(null);
