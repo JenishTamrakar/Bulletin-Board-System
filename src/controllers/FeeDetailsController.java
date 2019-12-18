@@ -152,7 +152,9 @@ public class FeeDetailsController implements Initializable {
     @FXML
     void addFeeDet(ActionEvent event){
         LocalDate ld= FeeDedDate.getValue();
+        LocalDate l = LocalDate.now();
 //        System.out.println(ld);
+
         try
         {
             FeeDetailsDao fdd = (FeeDetailsDao) Naming.lookup("rmi://localhost/FeeDetails");
@@ -162,18 +164,26 @@ public class FeeDetailsController implements Initializable {
             fd.setFee_Details(FeeDet.getText());
             fd.setStudent_course(FeeStdCourse.getText());
             fd.setStudent_level(FeeStdLevel.getText());
-            fdd.addFeeDet(fd);
-//            System.out.println(FeeStdLevel.getText());
-//            System.out.println(FeeStdCourse.getText());
-            Alert alert = new Alert((Alert.AlertType.INFORMATION));
-            alert.setTitle("Fee Detail Added");
-            alert.setContentText("Fee Details have been successfully added.");
-            alert.showAndWait();
-            FeeAmt.clear();
-            FeeDet.setText(null);
-            //FeeDedDate.setDa
-            FeeStdCourse.setText(null);
-            FeeStdLevel.clear();
+            if(ld.isAfter(l)) {
+                fdd.addFeeDet(fd);
+                Alert alert = new Alert((Alert.AlertType.INFORMATION));
+                alert.setTitle("Fee Detail Added");
+                alert.setContentText("Fee Details have been successfully added.");
+                alert.showAndWait();
+                FeeAmt.clear();
+                FeeDet.setText(null);
+                //FeeDedDate.setDa
+                FeeStdCourse.setText(null);
+                FeeStdLevel.clear();
+            }
+            else if(ld.isBefore(l))
+            {
+                Alert alert = new Alert((Alert.AlertType.WARNING));
+                alert.setTitle("Incorrect Date");
+                alert.setContentText("The date cannot be set.");
+                alert.showAndWait();
+            }
+
         }
         catch(Exception e){
             System.out.println(e);
@@ -233,6 +243,7 @@ public class FeeDetailsController implements Initializable {
     void updtFeeDetClicked(ActionEvent event)
     {
         LocalDate ld= FeeDedDate.getValue();
+        LocalDate l = LocalDate.now();
         try
         {
             FeeDetailsDao fdd = (FeeDetailsDao) Naming.lookup("rmi://localhost/FeeDetails");
@@ -244,21 +255,29 @@ public class FeeDetailsController implements Initializable {
             fd.setDeadline_Date(ld.toString());
             fd.setStudent_course(FeeStdCourse.getText());
             fd.setStudent_level(FeeStdLevel.getText());
-
-            fdd.updateFeeDet(fd);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Record Updated");
-            alert.setContentText("Fee Details Successfully Updated!");
-
-            alert.showAndWait();
-            FeeSN.clear();
-            FeeAmt.clear();
-            FeeDet.clear();
-            FeeDedDate.setValue(null);
-            FeeStdCourse.clear();
-            FeeStdLevel.clear();
-            FeeTbl.getItems().clear();
-            loadFeeDetails();
+            if(ld.isAfter(l))
+            {
+                fdd.updateFeeDet(fd);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Record Updated");
+                alert.setContentText("Fee Details Successfully Updated!");
+                alert.showAndWait();
+                FeeSN.clear();
+                FeeAmt.clear();
+                FeeDet.clear();
+                FeeDedDate.setValue(null);
+                FeeStdCourse.clear();
+                FeeStdLevel.clear();
+                FeeTbl.getItems().clear();
+                loadFeeDetails();
+            }
+            else if(ld.isBefore(l))
+            {
+                Alert alert = new Alert((Alert.AlertType.WARNING));
+                alert.setTitle("Incorrect Date");
+                alert.setContentText("The date cannot be set.");
+                alert.showAndWait();
+            }
         }
         catch(Exception e)
         {

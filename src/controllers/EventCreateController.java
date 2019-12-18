@@ -86,6 +86,7 @@ public class EventCreateController implements Initializable {
     void addEventClicked(ActionEvent event) {
         LocalDate ld = DateEvent.getValue();
         LocalTime lt = TimeEvent.getValue();
+        LocalDate l = LocalDate.now();
 //        System.out.println(lt.toString());
         try
         {
@@ -95,19 +96,29 @@ public class EventCreateController implements Initializable {
             ev.setEvent_date(ld.toString());
             ev.setEvent_time(lt.toString());
             ev.setEvent_desc(EventDesc.getText());
-//                    System.out.println(lt.toString());
-            ed.addEventDet(ev);
-            Alert alert = new Alert((Alert.AlertType.INFORMATION));
-            alert.setTitle("Event Added");
-            alert.setContentText("Event has been successfully added.");
-            alert.showAndWait();
-            EveSN.clear();
-            EventTitle.clear();
-            EventDesc.clear();
-            DateEvent.setValue(null);
-            TimeEvent.setValue(null);
-            EventsTbl.getItems().clear();
-            loadEventDetails();
+            if(ld.isAfter(l))
+            {
+                ed.addEventDet(ev);
+                Alert alert = new Alert((Alert.AlertType.INFORMATION));
+                alert.setTitle("Event Added");
+                alert.setContentText("Event has been successfully added.");
+                alert.showAndWait();
+                EveSN.clear();
+                EventTitle.clear();
+                EventDesc.clear();
+                DateEvent.setValue(null);
+                TimeEvent.setValue(null);
+                EventsTbl.getItems().clear();
+                loadEventDetails();
+            }
+            else if(ld.isBefore(l))
+            {
+                Alert alert = new Alert((Alert.AlertType.WARNING));
+                alert.setTitle("Incorrect Date");
+                alert.setContentText("The date cannot be set.");
+                alert.showAndWait();
+            }
+
 
         } catch (Exception o) {
             System.out.println(o);
@@ -195,6 +206,7 @@ public class EventCreateController implements Initializable {
     {
         LocalDate ld = DateEvent.getValue();
         LocalTime lt = TimeEvent.getValue();
+        LocalDate l = LocalDate.now();
 //        System.out.println(lt.toString());
         try
         {
@@ -205,20 +217,28 @@ public class EventCreateController implements Initializable {
             ev.setEvent_date(ld.toString());
             ev.setEvent_time(lt.toString());
             ev.setEvent_desc(EventDesc.getText());
-//                    System.out.println(lt.toString());
-            ed.updateEventDet(ev);
-            Alert alert = new Alert((Alert.AlertType.INFORMATION));
-            alert.setTitle("Event Updated");
-            alert.setContentText("Event has been successfully updated.");
-            alert.showAndWait();
-            EveSN.clear();
-            EventTitle.clear();
-            EventDesc.clear();
-            DateEvent.setValue(null);
-            TimeEvent.setValue(null);
-            EventsTbl.getItems().clear();
-            loadEventDetails();
-
+            if(ld.isAfter(l))
+            {
+                ed.updateEventDet(ev);
+                Alert alert = new Alert((Alert.AlertType.INFORMATION));
+                alert.setTitle("Event Updated");
+                alert.setContentText("Event has been successfully updated.");
+                alert.showAndWait();
+                EveSN.clear();
+                EventTitle.clear();
+                EventDesc.clear();
+                DateEvent.setValue(null);
+                TimeEvent.setValue(null);
+                EventsTbl.getItems().clear();
+                loadEventDetails();
+            }
+            else if(ld.isBefore(l))
+            {
+                Alert alert = new Alert((Alert.AlertType.WARNING));
+                alert.setTitle("Incorrect Date");
+                alert.setContentText("The date cannot be set.");
+                alert.showAndWait();
+            }
         } catch (Exception o) {
             System.out.println(o);
         }
