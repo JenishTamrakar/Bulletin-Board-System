@@ -5,13 +5,36 @@ import java.time.LocalDate;
 
 public class Assignment implements Serializable
 {
+    private String Ass_ID;
     private String Ass_title;
     private String Ass_level;
     private String Ass_course;
     private String Ass_unit;
-    private LocalDate Ass_date;
+    private String Ass_date;
 
     private static final  long serialVersionUID=1L;
+
+    public Assignment(String Ass_ID, String Ass_title, String Ass_level, String Ass_course, String Ass_unit, String Ass_date)
+    {
+        this.Ass_ID = Ass_ID;
+        this.Ass_title = Ass_title;
+        this.Ass_level = Ass_level;
+        this.Ass_course = Ass_course;
+        this.Ass_unit = Ass_unit;
+        this.Ass_date = Ass_date;
+    }
+
+    public Assignment() {
+
+    }
+
+    public String getAss_ID() {
+        return Ass_ID;
+    }
+
+    public void setAss_ID(String ass_ID) {
+        Ass_ID = ass_ID;
+    }
 
     public String getAss_title() {
         return Ass_title;
@@ -45,11 +68,11 @@ public class Assignment implements Serializable
         Ass_unit = ass_unit;
     }
 
-    public LocalDate getAss_date() {
+    public String getAss_date() {
         return Ass_date;
     }
 
-    public void setAss_date(LocalDate ass_date) {
+    public void setAss_date(String ass_date) {
         Ass_date = ass_date;
     }
 }

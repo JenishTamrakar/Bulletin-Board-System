@@ -170,11 +170,14 @@ public class FeeDetailsController implements Initializable {
                 alert.setTitle("Fee Detail Added");
                 alert.setContentText("Fee Details have been successfully added.");
                 alert.showAndWait();
+                FeeSN.clear();
                 FeeAmt.clear();
-                FeeDet.setText(null);
-                //FeeDedDate.setDa
-                FeeStdCourse.setText(null);
+                FeeDet.clear();
+                FeeDedDate.setValue(null);
+                FeeStdCourse.clear();
                 FeeStdLevel.clear();
+                FeeTbl.getItems().clear();
+                loadFeeDetails();
             }
             else if(ld.isBefore(l))
             {
@@ -324,15 +327,15 @@ public class FeeDetailsController implements Initializable {
     {
         // check the table's selected item and get selected item
         if (FeeTbl.getSelectionModel().getSelectedItem() != null) {
-            FeeDetails selectedFaculty = FeeTbl.getSelectionModel().getSelectedItem();
-            FeeSN.setText(selectedFaculty.getFee_ID());
+            FeeDetails selectedFee = FeeTbl.getSelectionModel().getSelectedItem();
+            FeeSN.setText(selectedFee.getFee_ID());
 //            LocalDate ld = LocalDate.parse(selectedFaculty.getDeadline_Date());
-            FeeDedDate.setValue(LocalDate.parse(selectedFaculty.getDeadline_Date()));
+            FeeDedDate.setValue(LocalDate.parse(selectedFee.getDeadline_Date()));
 //            FeeDedDate.setValue(LocalDate(selectedFaculty.getDeadline_Date()));
-            FeeAmt.setText(selectedFaculty.getFee_Amt());
-            FeeDet.setText(selectedFaculty.getFee_Details());
-            FeeStdCourse.setText(selectedFaculty.getStudent_course());
-            FeeStdLevel.setText(selectedFaculty.getStudent_level());
+            FeeAmt.setText(selectedFee.getFee_Amt());
+            FeeDet.setText(selectedFee.getFee_Details());
+            FeeStdCourse.setText(selectedFee.getStudent_course());
+            FeeStdLevel.setText(selectedFee.getStudent_level());
         }
     }
 
