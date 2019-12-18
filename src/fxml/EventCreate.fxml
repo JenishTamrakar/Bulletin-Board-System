@@ -7,8 +7,8 @@
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -94,8 +94,10 @@
                   <JFXTimePicker fx:id="TimeEvent" defaultColor="#49306b" layoutX="831.0" layoutY="299.0" prefHeight="31.0" prefWidth="168.0" promptText="TIme" />
       
                   <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="628.0" layoutY="369.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
-                  <JFXButton fx:id="AddEvent" layoutX="629.0" layoutY="563.0" onAction="#addEventClicked" text="Add" />
-                  <JFXButton fx:id="UpdateEvent" layoutX="846.0" layoutY="563.0" onAction="#updateEvent" text="Update" />
+                  <JFXButton fx:id="AddEvent" layoutX="528.0" layoutY="552.0" onAction="#addEventClicked" prefHeight="51.0" prefWidth="103.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></JFXButton>
                   <Text fill="#49306b" layoutX="525.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -110,14 +112,6 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <TreeTableView fx:id="EventTbl" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
-                    <columns>
-                      <TreeTableColumn prefWidth="109.33334350585938" text="Event Title" />
-                      <TreeTableColumn minWidth="0.0" prefWidth="94.0" text="Date" />
-                        <TreeTableColumn prefWidth="100.0" text="Time" />
-                        <TreeTableColumn prefWidth="167.0" text="Description" />
-                    </columns>
-                  </TreeTableView>
                   <Label layoutX="31.0" layoutY="170.0" text="List Of Events" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -128,6 +122,37 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
+                  <JFXButton fx:id="DelEvent" layoutX="773.0" layoutY="553.0" onAction="#delEventClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Delete" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="ResetBtn" layoutX="892.0" layoutY="552.0" onAction="#resetBtnClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Reset" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="UpdtEvent" layoutX="652.0" layoutY="552.0" onAction="#updtEventClicked" prefHeight="51.0" prefWidth="103.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="EventsTbl" layoutX="31.0" layoutY="214.0" onMouseClicked="#EventsTblMouseClicked" prefHeight="432.0" prefWidth="470.0">
+                    <columns>
+                      <TableColumn fx:id="event_SN" prefWidth="30.0" text="SN" />
+                      <TableColumn fx:id="event_title" prefWidth="126.0" text="Event Title" />
+                        <TableColumn fx:id="event_Date" prefWidth="78.0" text="Date" />
+                        <TableColumn fx:id="event_time" prefWidth="66.0" text="Time" />
+                        <TableColumn fx:id="event_des" prefWidth="169.0" text="Description" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="EveSN" editable="false" layoutX="445.0" layoutY="145.0" visible="false" />
                </children>
             </Pane>
          </center>
