@@ -75,16 +75,16 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
                <children>
-      
+
                   <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa" />
                   <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-      
+
                   <Label layoutX="500.0" layoutY="100.0" text="EVENTS" textFill="#49306b" underline="true">
-      
+
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -92,7 +92,7 @@
                   <JFXTextField fx:id="EventTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="220.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Event Title " />
                   <JFXDatePicker fx:id="DateEvent" defaultColor="#49306b" layoutX="630.0" layoutY="299.0" prefHeight="31.0" prefWidth="179.0" promptText="Date" />
                   <JFXTimePicker fx:id="TimeEvent" defaultColor="#49306b" layoutX="831.0" layoutY="299.0" prefHeight="31.0" prefWidth="168.0" promptText="TIme" />
-      
+
                   <JFXTextArea fx:id="EventDesc" focusColor="#89009e" layoutX="628.0" layoutY="369.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Event" />
                   <JFXButton fx:id="AddEvent" layoutX="528.0" layoutY="552.0" onAction="#addEventClicked" prefHeight="51.0" prefWidth="103.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                      <font>
@@ -102,7 +102,7 @@
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font></Text>
-      
+
                   <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -144,13 +144,13 @@
                      </font>
                   </JFXButton>
                   <TableView fx:id="EventsTbl" layoutX="31.0" layoutY="214.0" onMouseClicked="#EventsTblMouseClicked" prefHeight="432.0" prefWidth="470.0">
-                    <columns>
-                      <TableColumn fx:id="event_SN" prefWidth="30.0" text="SN" />
-                      <TableColumn fx:id="event_title" prefWidth="126.0" text="Event Title" />
+                     <columns>
+                        <TableColumn fx:id="event_SN" prefWidth="30.0" text="SN" />
+                        <TableColumn fx:id="event_title" prefWidth="126.0" text="Event Title" />
                         <TableColumn fx:id="event_Date" prefWidth="78.0" text="Date" />
                         <TableColumn fx:id="event_time" prefWidth="66.0" text="Time" />
                         <TableColumn fx:id="event_des" prefWidth="169.0" text="Description" />
-                    </columns>
+                     </columns>
                   </TableView>
                   <JFXTextField fx:id="EveSN" editable="false" layoutX="445.0" layoutY="145.0" visible="false" />
                </children>

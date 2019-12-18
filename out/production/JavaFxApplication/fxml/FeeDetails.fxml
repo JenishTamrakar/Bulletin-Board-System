@@ -155,14 +155,14 @@
                      </font>
                   </JFXButton>
                   <TableView fx:id="FeeTbl" layoutX="28.0" layoutY="216.0" onMouseClicked="#FeeTblMouseClicked" prefHeight="440.0" prefWidth="474.0">
-                    <columns>
-                      <TableColumn fx:id="fee_SN" prefWidth="75.0" text="SN" />
-                      <TableColumn fx:id="fee_Course" prefWidth="75.0" text="Course" />
+                     <columns>
+                        <TableColumn fx:id="fee_SN" prefWidth="75.0" text="SN" />
+                        <TableColumn fx:id="fee_Course" prefWidth="75.0" text="Course" />
                         <TableColumn fx:id="fee_Level" prefWidth="75.0" text="Level" />
                         <TableColumn fx:id="fee_Details" prefWidth="75.0" text="Fee Details" />
                         <TableColumn fx:id="fee_Amt" prefWidth="75.0" text="Fee Amount" />
                         <TableColumn fx:id="fee_Deadline" prefWidth="98.0" text="Deadline Date" />
-                    </columns>
+                     </columns>
                   </TableView>
                   <JFXTextField fx:id="FeeSN" editable="false" layoutX="521.0" layoutY="158.0" visible="false" />
                   <JFXButton fx:id="DelFeeDet" layoutX="743.0" layoutY="608.0" onAction="#delFeeDetClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Delete" textFill="#ace4aa">
