@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -86,9 +87,8 @@
                      </font>
                   </Label>
                   <JFXTextField fx:id="NoticeTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Title " />
-                  <JFXTextField fx:id="NoticeDate" focusColor="#9d40a8" layoutX="632.0" layoutY="319.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Date" />
                   <JFXTextArea fx:id="NoticeDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
-                  <JFXButton fx:id="AddNtc" layoutX="629.0" layoutY="547.0" onAction="#addNotice" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+                  <JFXButton fx:id="AddNtc" layoutX="525.0" layoutY="547.0" onAction="#addNotice" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -96,7 +96,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="UpdateNtc" layoutX="840.0" layoutY="547.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+                  <JFXButton fx:id="UpdtNtc" layoutX="637.0" layoutY="547.0" onAction="#updtNtcClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -114,13 +114,6 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <TreeTableView fx:id="NtcTable" layoutX="29.0" layoutY="215.0" prefHeight="379.0" prefWidth="472.0">
-                     <columns>
-                        <TreeTableColumn fx:id="NtcTitleTbl" prefWidth="176.0" text="Notice Title" />
-                        <TreeTableColumn fx:id="NtcIssueDateTbl" prefWidth="97.0" text="Issued Date" />
-                        <TreeTableColumn fx:id="NtcDescTbl" minWidth="0.0" prefWidth="198.0" text="Description" />
-                     </columns>
-                  </TreeTableView>
                   <Label layoutX="31.0" layoutY="170.0" text="List Of Notices" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -148,6 +141,32 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
+                  <JFXDatePicker fx:id="NoticeDate" defaultColor="#49306b" layoutX="630.0" layoutY="309.0" prefHeight="31.0" prefWidth="186.0" promptText="Date" />
+                  <JFXButton fx:id="DelNtc" layoutX="750.0" layoutY="547.0" onAction="#delNtcClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Delete" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="ResetBtn" layoutX="863.0" layoutY="547.0" onAction="#resetBtnClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Reset" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="NoticeTbl" layoutX="31.0" layoutY="215.0" onMouseClicked="#NoticeTblClicked" prefHeight="377.0" prefWidth="471.0">
+                    <columns>
+                      <TableColumn fx:id="notice_SN" prefWidth="37.0" text="SN" />
+                      <TableColumn fx:id="notice_Title" prefWidth="156.0" text="Notice Title" />
+                        <TableColumn fx:id="notice_Desc" prefWidth="159.0" text="Notice Description" />
+                        <TableColumn fx:id="notice_Date" minWidth="0.0" prefWidth="118.0" text="Notice Posted Date" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="NtcSN" editable="false" layoutX="533.0" layoutY="203.0" visible="false" />
                </children>
             </Pane>
          </center>

@@ -182,7 +182,7 @@
                      <Font name="System Bold" size="14.0" />
                   </font>
                </JFXButton>
-               <JFXTextField fx:id="AssSN" layoutX="601.0" layoutY="217.0" />
+               <JFXTextField fx:id="AssSN" editable="false" layoutX="601.0" layoutY="217.0" visible="false" />
             </Pane>
          </center>
       </BorderPane>

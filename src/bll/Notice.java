@@ -2,11 +2,34 @@ package bll;
 
 import java.io.Serializable;
 
-public class Notice implements Serializable {
-    private  String noticeTitle;
+public class Notice implements Serializable
+{
+    private String noticeID;
+    private String noticeTitle;
     private String noticeDate;
     private String noticeDescription;
     private static final long serialVersionUID = 1L;
+
+    public Notice(String noticeID, String noticeTitle, String noticeDate, String noticeDescription)
+    {
+        this.noticeID = noticeID;
+        this.noticeTitle = noticeTitle;
+        this.noticeDate = noticeDate;
+        this.noticeDescription = noticeDescription;
+    }
+
+    public Notice()
+    {
+
+    }
+
+    public String getNoticeID() {
+        return noticeID;
+    }
+
+    public void setNoticeID(String noticeID) {
+        this.noticeID = noticeID;
+    }
 
     public String getNoticeTitle() {
         return noticeTitle;
