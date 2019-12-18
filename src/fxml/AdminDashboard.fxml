@@ -2,10 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -115,18 +112,12 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </JFXButton>
-                  <MenuButton contentDisplay="BOTTOM" layoutX="888.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="122.0" style="-fx-background-color: #49306b;" text="Hello, Admin" textFill="#ace4aa">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Change Password" />
-                      <MenuItem mnemonicParsing="false" text="Sign Out" />
-                    </items>
+                  <Label layoutX="870.0" layoutY="25.0" text="Hello Admin" />
+                  <JFXButton fx:id="logout" layoutX="864.0" layoutY="67.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Logout" textFill="#ace4aa">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="14.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </MenuButton>
+                  </JFXButton>
 
                </children>
             </Pane>

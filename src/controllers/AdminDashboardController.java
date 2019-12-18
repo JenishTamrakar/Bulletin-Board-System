@@ -13,7 +13,8 @@ public class AdminDashboardController {
     private AnchorPane adminDashboard;
 
 
-
+    @FXML
+    private JFXButton logout;
 
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
@@ -46,6 +47,12 @@ public class AdminDashboardController {
     void goToFeeDetails(ActionEvent event)throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
         adminDashboard.getChildren().setAll(pane);
+    }
+    @FXML
+    void logOut(ActionEvent event) throws IOException{
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        adminDashboard.getChildren().setAll(pane);
+
     }
 
 
