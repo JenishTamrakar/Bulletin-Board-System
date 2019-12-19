@@ -35,8 +35,10 @@ public class studentDashboardController {
     }
 
     @FXML
-    void goToFeedback(ActionEvent event) {
+    void goToFeedback(ActionEvent event) throws IOException {
 
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 
     @FXML

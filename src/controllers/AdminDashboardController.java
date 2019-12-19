@@ -54,6 +54,12 @@ public class AdminDashboardController {
         adminDashboard.getChildren().setAll(pane);
 
     }
+    @FXML
+    void goToFeedback(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/viewFeedback.fxml")));
+        adminDashboard.getChildren().setAll(pane);
+    }
+
 
 
 }

@@ -91,7 +91,7 @@
                      </children>
                   </Pane>
 
-                  <JFXButton layoutX="891.0" layoutY="624.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Feedbacks" textFill="#ace4aa">
+                  <JFXButton layoutX="891.0" layoutY="624.0" onAction="#goToFeedback" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Feedbacks" textFill="#ace4aa">
 
                      <font>
                         <Font name="System Bold" size="14.0" />

@@ -2,14 +2,17 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.ViewFeedback">
+<AnchorPane fx:id="feedbackPane" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.viewFeedbackController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="778.0" prefWidth="1034.0">
          <top>
@@ -69,7 +72,17 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
                <children>
-                  <VBox layoutX="-1.0" layoutY="61.0" prefHeight="631.0" prefWidth="1024.0" />
+                  <TableView fx:id="feedbackTbl" layoutX="27.0" layoutY="132.0" onMouseClicked="#feedbackTblClicked" prefHeight="493.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="feedbackTitle" prefWidth="199.0" text="Feedback Title" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="332.0" layoutY="151.0" text="Feedback Title" />
+                  <Label layoutX="863.0" layoutY="151.0" text="Feedback Date" />
+                  <Label layoutX="332.0" layoutY="258.0" text="Feedback Description" />
+                  <TextArea fx:id="feedbackDescriptionTxt" editable="false" layoutX="332.0" layoutY="286.0" prefHeight="200.0" prefWidth="628.0" />
+                  <TextField fx:id="feedbackTitleTxt" editable="false" layoutX="334.0" layoutY="193.0" />
+                  <TextField fx:id="feedbackDateTxt" editable="false" layoutX="811.0" layoutY="193.0" />
                </children>
             </Pane>
          </center>

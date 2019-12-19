@@ -173,19 +173,10 @@ public class StudentRecordsController implements Initializable
             s.setEmail(EntrStdEmail.getText());
             s.setCourse(EntrStdCourse.getText());
             s.setLevel(EntrStdLvl.getText());
-            //System.out.println(r.getUID());
-            //System.out.println(r.getPassword());
             sd.updateStudent(s);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Updated");
             alert.setContentText("Student Record Successfully Updated!");
-
-//            if (alert.getResult() == ButtonType.YES)
-//            {
-//            	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/StudentRecords.fxml"));
-//            	studentRecordPane.getChildren().setAll(pane);
-//            }
-
             alert.showAndWait();
             StdSN.setText(null);
             EntrStdID.setText(null);
@@ -212,13 +203,6 @@ public class StudentRecordsController implements Initializable
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Removed");
             alert.setContentText("Student Record Successfully Removed!");
-
-//            if (alert.getResult() == ButtonType.YES)
-//            {
-//            	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/StudentRecords.fxml"));
-//            	studentRecordPane.getChildren().setAll(pane);
-//            }
-
             alert.showAndWait();
             StdSN.setText(null);
             EntrStdID.setText(null);
@@ -232,7 +216,6 @@ public class StudentRecordsController implements Initializable
             System.out.print(e);
         }
     }
-
 
     @FXML
     void resetBtnClicked(ActionEvent event)
@@ -250,6 +233,7 @@ public class StudentRecordsController implements Initializable
         try {
             StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
             ResultSet rs = sd.getStudentRecords();
+            System.out.println(rs);
 
             while(rs.next())
             {
