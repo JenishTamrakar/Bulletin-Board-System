@@ -22,8 +22,9 @@ public class studentDashboardController {
     }
 
     @FXML
-    void goToEvents(ActionEvent event) {
-
+    void goToEvents(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 
     @FXML
@@ -51,6 +52,12 @@ public class studentDashboardController {
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentDashboard.getChildren().setAll(pane);
+    }
+
+    public void logOutClicked(ActionEvent actionEvent) {
+    }
+
+    public void profileClicked(ActionEvent actionEvent) {
     }
 }
 

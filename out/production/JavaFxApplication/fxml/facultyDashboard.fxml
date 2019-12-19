@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,84 +8,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.studentDashboard">
+<AnchorPane fx:id="facultyDashboardPane" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.facultyDashboardController">
    <children>
       <Label ellipsisString="" layoutX="49.0" layoutY="207.0" prefHeight="35.0" prefWidth="211.0" text="Welcome Faculty" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="433.0" layoutY="20.0" prefHeight="729.0" prefWidth="572.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;">
-         <children>
-            <Text fill="#49306b" layoutX="168.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <JFXTextField fx:id="AssignTitle" focusColor="#9d40a8" layoutX="218.0" layoutY="256.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Title ">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXTextField>
-            <Text fill="#49306b" layoutX="88.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment Unit">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <JFXTextField fx:id="AssignTitle1" focusColor="#9d40a8" layoutX="218.0" layoutY="316.0" prefHeight="30.0" prefWidth="251.0" promptText="Enter Assignment Unit">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXTextField>
-            <Text fill="#49306b" layoutX="104.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <JFXDatePicker fx:id="DeadDate" defaultColor="#49306b" layoutX="220.0" layoutY="381.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter Deadline Date">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXDatePicker>
-            <JFXButton fx:id="AddAssign" layoutX="85.0" layoutY="517.0" onAction="#addAssClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="UpdtAssDet" layoutX="192.0" layoutY="517.0" onAction="#updtAssDetClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="DelAssDet" layoutX="298.0" layoutY="517.0" onAction="#delAssDetClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Delete" textFill="#ace4aa">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="ResetBtn" layoutX="405.0" layoutY="517.0" onAction="#resetBtnClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Reset" textFill="#ace4aa">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </JFXButton>
-            <Label ellipsisString="" layoutX="177.0" layoutY="169.0" prefHeight="35.0" prefWidth="211.0" text=" Assignment Add" textFill="#49306b">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <JFXButton layoutX="45.0" layoutY="319.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
+      <Pane layoutX="433.0" layoutY="20.0" prefHeight="729.0" prefWidth="572.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" />
+      <JFXButton layoutX="45.0" layoutY="319.0" onAction="#goToEvents" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -95,7 +24,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="160.0" layoutY="319.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="N" textFill="#49306b">
+      <JFXButton layoutX="160.0" layoutY="319.0" onAction="#goToNotices" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="N" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -103,23 +32,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="160.0" layoutY="460.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="D" textFill="#49306b">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton layoutX="45.0" layoutY="460.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="F" textFill="#49306b">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton layoutX="275.0" layoutY="319.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="A" textFill="#49306b">
+      <JFXButton layoutX="275.0" layoutY="319.0" onAction="#goToAssignments" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="A" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -130,14 +43,12 @@
       <Text fill="#ace4aa" layoutX="78.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events" />
       <Text fill="#ace4aa" layoutX="192.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" />
       <Text fill="#ace4aa" layoutX="287.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignments" />
-      <Text fill="#ace4aa" layoutX="69.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details" />
-      <Text fill="#ace4aa" layoutX="187.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" />
-      <JFXButton layoutX="26.0" layoutY="722.0" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: ace4aa;" text="Log Out" textFill="#49306b">
+      <JFXButton layoutX="26.0" layoutY="722.0" onAction="#logOutClicked" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: ace4aa;" text="Log Out" textFill="#49306b">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="364.0" layoutY="30.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
+      <JFXButton layoutX="364.0" layoutY="30.0" onAction="#profileClicked" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
