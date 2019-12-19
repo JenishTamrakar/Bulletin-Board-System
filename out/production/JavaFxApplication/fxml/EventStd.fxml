@@ -90,7 +90,7 @@
       </Text>
       <Pane layoutX="193.0" layoutY="146.0" prefHeight="514.0" prefWidth="209.0">
          <children>
-            <TableView fx:id="EventTbl" layoutX="-3.0" onMouseClicked="#EventTbl" prefHeight="514.0" prefWidth="212.0">
+            <TableView fx:id="EventTbl" layoutX="-3.0" onMouseClicked="#EventTblClicked" prefHeight="514.0" prefWidth="212.0">
               <columns>
                 <TableColumn fx:id="event_title" prefWidth="209.66668701171875" text="Event List" />
               </columns>

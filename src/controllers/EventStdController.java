@@ -49,7 +49,7 @@ public class EventStdController implements Initializable
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
     @FXML
-    void EventTbl(MouseEvent event) {
+    void  EventTblClicked(MouseEvent event) {
         if (event.getClickCount() > 1)
         {
             onEdit();

@@ -17,8 +17,9 @@ public class studentDashboardController {
     private JFXButton LogOut;
 
     @FXML
-    void goToAssignments(ActionEvent event) {
-
+    void goToAssignments(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 
     @FXML
@@ -28,8 +29,9 @@ public class studentDashboardController {
     }
 
     @FXML
-    void goToFeeDet(ActionEvent event) {
-
+    void goToFeeDet(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 
     @FXML
@@ -38,8 +40,9 @@ public class studentDashboardController {
     }
 
     @FXML
-    void goToNotices(ActionEvent event) {
-
+    void goToNotices(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 
     @FXML

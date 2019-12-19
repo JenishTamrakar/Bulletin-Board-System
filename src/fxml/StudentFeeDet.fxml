@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -14,20 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventStdController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FeeDisplayController">
    <children>
       <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="211.0" text="Welcome Student" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="433.0" layoutY="20.0" prefHeight="729.0" prefWidth="572.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;">
-         <children>
-            <JFXTextField fx:id="txtEventTitle" editable="false" layoutX="44.0" layoutY="166.0" prefHeight="25.0" prefWidth="293.0" />
-            <JFXTextArea fx:id="txtEventDesc" editable="false" layoutX="81.0" layoutY="282.0" prefHeight="305.0" prefWidth="463.0" />
-            <JFXDatePicker fx:id="txtEventDate" editable="false" layoutX="381.0" layoutY="166.0" />
-            <JFXTimePicker fx:id="txtEventTime" layoutX="381.0" layoutY="211.0" />
-         </children></Pane>
+      <Pane layoutX="433.0" layoutY="20.0" prefHeight="729.0" prefWidth="572.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" />
       <JFXButton layoutX="49.0" layoutY="149.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -83,17 +73,17 @@
          </font>
       </JFXButton>
       <Text fill="#ace4aa" layoutX="366.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" />
-      <Text fill="#ace4aa" layoutX="144.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events" underline="true">
+      <Text fill="#ace4aa" layoutX="104.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details" underline="true">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Text>
       <Pane layoutX="193.0" layoutY="146.0" prefHeight="514.0" prefWidth="209.0">
          <children>
-            <TableView fx:id="EventTbl" layoutX="-3.0" onMouseClicked="#EventTblClicked" prefHeight="514.0" prefWidth="212.0">
-              <columns>
-                <TableColumn fx:id="event_title" prefWidth="209.66668701171875" text="Event List" />
-              </columns>
+            <TableView layoutX="-3.0" prefHeight="514.0" prefWidth="212.0">
+               <columns>
+                  <TableColumn editable="false" prefWidth="209.66668701171875" text="Fee List" />
+               </columns>
             </TableView>
          </children>
       </Pane>
