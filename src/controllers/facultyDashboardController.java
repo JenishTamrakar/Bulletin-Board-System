@@ -13,7 +13,7 @@ public class facultyDashboardController
     private AnchorPane facultyDashboardPane;
 
     @FXML
-    void goToAssignments(ActionEvent event) {
+    void goToAssignments(ActionEvent event) throws IOException {
 
     }
 
@@ -24,13 +24,15 @@ public class facultyDashboardController
     }
 
     @FXML
-    void goToNotices(ActionEvent event) {
-
+    void goToNotices(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
+        facultyDashboardPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void logOutClicked(ActionEvent event) {
-
+    void logOutClicked(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        facultyDashboardPane.getChildren().setAll(pane);
     }
 
     @FXML

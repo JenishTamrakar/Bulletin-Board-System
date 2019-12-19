@@ -80,7 +80,7 @@
       </Text>
       <Pane layoutX="193.0" layoutY="146.0" prefHeight="514.0" prefWidth="209.0">
          <children>
-            <TableView layoutX="-3.0" prefHeight="514.0" prefWidth="212.0">
+            <TableView fx:id="AssignmentTbl" layoutX="-3.0" onMouseClicked="#AssignmentTblClicked" prefHeight="514.0" prefWidth="212.0">
                <columns>
                   <TableColumn editable="false" prefWidth="209.66668701171875" text="Assignment List" />
                </columns>
