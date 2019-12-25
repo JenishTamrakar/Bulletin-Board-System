@@ -19,6 +19,9 @@ import javafx.scene.layout.AnchorPane;
 
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.Naming;
@@ -111,6 +114,9 @@ public class FeeDetailsController implements Initializable {
     private JFXDatePicker FeeDedDate;
 
     ObservableList<FeeDetails> fdlist = FXCollections.observableArrayList();
+
+    public FeeDetailsController() throws IOException {
+    }
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
@@ -344,4 +350,19 @@ public class FeeDetailsController implements Initializable {
     {
         loadFeeDetails();
     }
+//    String url_str = "https://api.exchangerate-api.com/v4/latest/USD";
+//
+//    // Making Request
+//    URL url = new URL(url_str);
+//    HttpURLConnection request = (HttpURLConnection) url.openConnection();
+//request.connect();
+//
+//    // Convert to JSON
+//    JsonParser jp = new JsonParser();
+//    JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+//    JsonObject jsonobj = root.getAsJsonObject();
+//
+//    // Accessing object
+//    String req_result = jsonobj.get("result").getAsString();
+
 }
