@@ -181,6 +181,8 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
+                  <Label layoutX="618.0" layoutY="141.0" text="todays rate" />
+                  <Text fx:id="forex" layoutX="666.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </Pane>
          </center>

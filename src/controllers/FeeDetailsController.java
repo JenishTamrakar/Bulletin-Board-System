@@ -1,6 +1,8 @@
 package controllers;
 
 import bll.FeeDetails;
+import bll.ForexResponse;
+import com.google.gson.Gson;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
@@ -16,8 +18,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+import org.json.JSONObject;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -107,16 +112,23 @@ public class FeeDetailsController implements Initializable {
     @FXML
     private JFXTextField FeeSN;
 
+    @FXML
+    private Text forex;
+    public String foreexchange;
+
 //    @FXML
 //    private JFXTextField FeeDedDate;
 
     @FXML
     private JFXDatePicker FeeDedDate;
+    @FXML
+    private Button getForeignExchangerate;
 
     ObservableList<FeeDetails> fdlist = FXCollections.observableArrayList();
 
     public FeeDetailsController() throws IOException {
     }
+
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
@@ -331,13 +343,13 @@ public class FeeDetailsController implements Initializable {
 
     void onEdit()
     {
-        // check the table's selected item and get selected item
+
         if (FeeTbl.getSelectionModel().getSelectedItem() != null) {
             FeeDetails selectedFee = FeeTbl.getSelectionModel().getSelectedItem();
             FeeSN.setText(selectedFee.getFee_ID());
-//            LocalDate ld = LocalDate.parse(selectedFaculty.getDeadline_Date());
+
             FeeDedDate.setValue(LocalDate.parse(selectedFee.getDeadline_Date()));
-//            FeeDedDate.setValue(LocalDate(selectedFaculty.getDeadline_Date()));
+
             FeeAmt.setText(selectedFee.getFee_Amt());
             FeeDet.setText(selectedFee.getFee_Details());
             FeeStdCourse.setText(selectedFee.getStudent_course());
@@ -349,20 +361,42 @@ public class FeeDetailsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources)
     {
         loadFeeDetails();
+        getForeignExchangerate();
     }
-//    String url_str = "https://api.exchangerate-api.com/v4/latest/USD";
-//
-//    // Making Request
-//    URL url = new URL(url_str);
-//    HttpURLConnection request = (HttpURLConnection) url.openConnection();
-//request.connect();
-//
-//    // Convert to JSON
-//    JsonParser jp = new JsonParser();
-//    JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-//    JsonObject jsonobj = root.getAsJsonObject();
-//
-//    // Accessing object
-//    String req_result = jsonobj.get("result").getAsString();
+    public  void getForeignExchangerate(){
+    try {
+        Gson gson = new Gson();
+        String url_str = "https://nrb.org.np/exportForexJSON.php";
+
+        // Making Request
+        URL url = new URL(url_str);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+        int responseCode = con.getResponseCode();
+        System.out.println(("\nSending 'GET' request to URL : "+url));
+        System.out.println("Resopnse code :"+responseCode);
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+        while ((inputLine = in.readLine())!= null){
+            response.append(inputLine);
+        }
+        in.close();
+        ForexResponse forexResponse = gson.fromJson(response.toString(), ForexResponse.class);
+
+     foreexchange = forexResponse.getConversion().getCurrency()[3].getTargetSell();
+        System.out.println(foreexchange);
+        forex.setText(foreexchange);
+
+    }catch(Exception e){
+        System.out.println(e);
+    }
+}
+
+
+
+
+
+
 
 }

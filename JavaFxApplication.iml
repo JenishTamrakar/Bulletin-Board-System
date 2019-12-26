@@ -9,5 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="mysql-connector-java-5.1.48" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
+    <orderEntry type="library" name="java-json" level="project" />
+    <orderEntry type="library" name="gson-2.8.2" level="project" />
   </component>
 </module>
