@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 
@@ -24,7 +25,7 @@ public class studentDashboardController {
 
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 

@@ -117,7 +117,12 @@ public class viewFeedbackController implements Initializable {
 
     }
 
-    public void initialize(URL location, ResourceBundle resources){feedbackRecords();}
+    public void initialize(URL location, ResourceBundle resources){
+
+        feedbackRecords();
+        System.out.println(feedbackList.size());
+
+    }
 
 
     public void feedbackTblClicked(MouseEvent event) {

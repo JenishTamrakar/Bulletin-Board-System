@@ -24,6 +24,8 @@ public class ChangePasswordController {
     @FXML
     private TextField confirmPassword;
 
+    public  String uid = SignUpController.id;
+
     @FXML
     void changePassword(ActionEvent event) {
         try {

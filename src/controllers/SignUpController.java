@@ -25,6 +25,7 @@ public class SignUpController {
     private Button validateUID;
     @FXML
     private AnchorPane signUpPane;
+    public  static String id;
 
     @FXML
     public  String validateUID(){
@@ -41,12 +42,14 @@ public class SignUpController {
             try {
                 signUpDao sud = (signUpDao) Naming.lookup("rmi://localhost/SignUp");
                 ResultSet rs = sud.checkID(user_id);
-                while (rs.next()){
+
+                if (rs.next()){
                     if (user_id.equals(rs.getString(1))){
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("UID existin system !");
                         alert.setContentText("You can change your password and login");
                         alert.showAndWait();
+                        id = user_id;
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/changePassword.fxml"));
                         signUpPane.getChildren().setAll(pane);
                     }else {

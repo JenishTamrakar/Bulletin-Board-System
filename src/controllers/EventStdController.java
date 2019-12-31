@@ -1,19 +1,35 @@
 package controllers;
 
 import bll.Event;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTimePicker;
+import com.jfoenix.controls.*;
+import com.jfoenix.effects.JFXDepthManager;
+import com.jfoenix.svg.SVGGlyph;
 import dao.EventDao;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,58 +40,28 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class EventStdController implements Initializable
-{
-    @FXML
-    private JFXTextField txtEventTitle;
+import static javafx.animation.Interpolator.EASE_BOTH;
+
+public class EventStdController implements Initializable {
 
     @FXML
-    private JFXDatePicker txtEventDate;
+    private JFXMasonryPane masonLayout;
 
     @FXML
-    private JFXTimePicker txtEventTime;
-
-    @FXML
-    private JFXTextArea txtEventDesc;
-
-    @FXML
-    private TableView<Event> EventTbl;
-
-    @FXML
-    private TableColumn<Event, String> event_title;
+    private StackPane eventRootPane;
 
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
-    @FXML
-    void  EventTblClicked(MouseEvent event) {
-        if (event.getClickCount() > 1)
-        {
-            onEdit();
-        }
-    }
 
-    void onEdit()
-    {
-        // check the table's selected item and get selected item
-        if (EventTbl.getSelectionModel().getSelectedItem() != null) {
-            Event selectedEvent = EventTbl.getSelectionModel().getSelectedItem();
-            txtEventDate.setValue(LocalDate.parse(selectedEvent.getEvent_date()));
-            txtEventTime.setValue(LocalTime.parse(selectedEvent.getEvent_time()));
-            txtEventDesc.setText(selectedEvent.getEvent_desc());
-            txtEventTitle.setText(selectedEvent.getEvent_title());
-        }
-    }
-
-    void loadEventDetails()
-    {
+    void loadEventDetails() {
         try {
             EventDao ed = (EventDao) Naming.lookup("rmi://localhost/Event");
             ResultSet rs = ed.getEventDetails();
 
-            while(rs.next())
-            {
+            while (rs.next()) {
                 evlist.add(new Event(
                         rs.getString("event_id"),
                         rs.getString("event_title"),
@@ -83,10 +69,80 @@ public class EventStdController implements Initializable
                         rs.getString("event_time"),
                         rs.getString("event_description")
                 ));
-
-                event_title.setCellValueFactory(new PropertyValueFactory<>("Event_title"));
-                EventTbl.setItems(evlist);
             }
+
+
+            ArrayList<Node> children = new ArrayList<>();
+            for (int i = 0; i < evlist.size(); i++) {
+                StackPane stackPane = new StackPane();
+                double width = 200;
+                stackPane.setPrefWidth(width);
+                JFXDepthManager.setDepth(stackPane, 1);
+                children.add(stackPane);
+
+
+                StackPane header = new StackPane();
+                VBox headerContent = new VBox();
+                headerContent.setSpacing(10);
+                headerContent.setPadding(new Insets(20, 10, 10, 10));
+                Label eventTitle = new Label();
+                Label eventDataTime = new Label();
+
+                eventTitle.setStyle("-fx-font: 24 arial;");
+
+                eventTitle.setText(evlist.get(i).getEvent_title());
+                eventDataTime.setStyle("-fx-font: 16 arial;");
+
+                eventDataTime.setText(evlist.get(i).getEvent_date() + evlist.get(i).getEvent_time());
+
+                header.getChildren().add(headerContent);
+                headerContent.getChildren().addAll(eventTitle, eventDataTime);
+                header.setStyle("-fx-background-radius: 5 5 0 0; -fx-background-color: rgb(255,255,255,0.87);");
+
+                VBox.setVgrow(header, Priority.ALWAYS);
+
+
+                StackPane descriptionBody = new StackPane();
+
+                VBox bodyContent = new VBox();
+                bodyContent.setAlignment(Pos.CENTER);
+                Label eventDescription = new Label();
+                bodyContent.setPadding(new Insets(0, 10, 10, 10));
+//                eventDescription.setPadding(new Insets(10, 0, 0, 0));
+                eventDescription.setTextFill(Color.web("#000000"));
+                eventDescription.setStyle("-fx-font: 18 arial;");
+                eventDescription.setText(evlist.get(i).getEvent_desc());
+                bodyContent.getChildren().addAll(eventDescription);
+                descriptionBody.getChildren().add(bodyContent);
+                VBox content = new VBox();
+                content.getChildren().addAll(header, descriptionBody);
+                descriptionBody.setStyle("-fx-background-radius: 0 0 5 5; -fx-background-color: rgb(255,255,255,0.87);");
+
+
+                int finalI = i;
+                stackPane.setOnMouseClicked(event -> {
+                    JFXDialogLayout fullDetailDialogContent = new JFXDialogLayout();
+                    fullDetailDialogContent.setHeading(new Text(evlist.get(finalI).getEvent_title()));
+                    JFXTextArea descriptionArea = new JFXTextArea(evlist.get(finalI).getEvent_desc());
+                    descriptionArea.setWrapText(true);
+                    descriptionArea.setEditable(false);
+                    descriptionArea.setFocusColor(Color.web("#FFF"));
+                    descriptionArea.setUnFocusColor(Color.web("#FFF"));
+                    descriptionArea.setPrefHeight(100);
+
+                    fullDetailDialogContent.setBody(descriptionArea);
+                    JFXDialog fullDetailDialog = new JFXDialog(eventRootPane, fullDetailDialogContent, JFXDialog.DialogTransition.CENTER);
+                    JFXButton okayButton = new JFXButton("Okay");
+                    fullDetailDialogContent.setActions(okayButton);
+
+                    okayButton.setOnAction(closeEvent -> fullDetailDialog.close());
+                    fullDetailDialog.show();
+                });
+                stackPane.getChildren().addAll(content);
+
+            }
+            masonLayout.getChildren().addAll(children);
+
 
         } catch (NotBoundException e) {
             e.printStackTrace();

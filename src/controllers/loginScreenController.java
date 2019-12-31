@@ -33,99 +33,28 @@ public class loginScreenController {
     @FXML
     private Hyperlink createAccount;
 
+
     @FXML
     void registerClick(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/signUp.fxml"));
         loginPane.getChildren().setAll(pane);
     }
 
-//    @FXML
-//    public String checkDetail(){
+    @FXML
+    public String checkDetail(){
 //        if (UID.getText().trim().isEmpty() && Password.getText().trim().isEmpty()){
 //            Alert alert = new Alert(Alert.AlertType.WARNING);
 //            alert.setTitle("Warning");
 //            alert.setHeaderText("Enter the login details !");
 //            alert.setContentText("Either user ID or password field is empty !");
+//
 //            alert.showAndWait();
 //        }else {
-//            System.out.println("login in process");
+            System.out.println("login btn clicked");
 //            String user_id = UID.getText();
 //            String user_password = Password.getText();
-//            try {
-//                LoginDao ld = (LoginDao) Naming.lookup("rmi://localhost/Login");
-//                ResultSet rs= ld.checkUser(user_id, user_password);
-//                            if (rs.next()) {
-//                                if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) ) {
-//                                    if (rs.getString(3).equals("admin")){
-//                                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                                        alert.setTitle("Login successful !");
-//                                        alert.setContentText("Logged in as ADMIN !");
-//                                        alert.showAndWait();
-//                                        System.out.println("user type = admin\n username="+user_id+"password="+user_password);
-//                                        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/AdminDashboard.fxml"));
-//                                        loginPane.getChildren().setAll(pane);
-//                                    }else if (rs.getString(3).equals("faculty")){
-//                                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                                        alert.setTitle("Login successful !");
-//                                        alert.setContentText("Logged in as FACULTY !");
-//                                        alert.showAndWait();
-//                                        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/facultyDashboard.fxml"));
-//                                        loginPane.getChildren().setAll(pane);
-//                                    }else if (rs.getString(3).equals("student")){
-//                                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                                        alert.setTitle("Login successful !");
-//                                        alert.setContentText("Logged in as STUDENT");
-//                                        alert.showAndWait();
-//                                        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
-//                                        loginPane.getChildren().setAll(pane);
-//                                    }
-//                                }else {
-//                                    Alert alert = new Alert(Alert.AlertType.ERROR);
-//                                    alert.setTitle("Invalid Details!");
-//
-//                                    alert.setContentText("Check Your user Id or password !");
-//
-//                                    alert.showAndWait();
-//
-//                                }
-//
-//                            }
-//
-//            }catch (RemoteException re){
-//                System.out.println();
-//                System.out.println("RemoteException");
-//                System.out.println(re);
-//            }catch (ArithmeticException ae){
-//                System.out.println("java.lang.ArithematicException");
-//                System.out.println(ae);
-//            }catch (NotBoundException e){
-//                e.printStackTrace();
-//
-//            }catch (MalformedURLException e){
-//                e.printStackTrace();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//return null;
-//    }
-
-    @FXML
-    public String checkDetail(){
-        if (UID.getText().trim().isEmpty() && Password.getText().trim().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning");
-            alert.setHeaderText("Enter the login details !");
-            alert.setContentText("Either user ID or password field is empty !");
-
-            alert.showAndWait();
-        }else {
-            System.out.println("login btn clicked");
-            String user_id = UID.getText();
-            String user_password = Password.getText();
+            String user_id = "3333";
+            String user_password = "student";
 
 
             System.out.println("UID = "+user_id+" Password = "+user_password);
@@ -135,10 +64,12 @@ public class loginScreenController {
                 while(rs.next()) {
                     if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("admin")) {
 //                                    return "admin";
+
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/AdminDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
                     } else if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("faculty")) {
 //                                    return "faculty";
+
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/facultyDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
 
@@ -146,6 +77,7 @@ public class loginScreenController {
                     (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("student"))
                     {
 //                                    return "student";
+
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
                     }
@@ -169,7 +101,7 @@ public class loginScreenController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+//        }
 
         return null;
     }
