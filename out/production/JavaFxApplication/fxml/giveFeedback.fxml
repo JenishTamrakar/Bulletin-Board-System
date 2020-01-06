@@ -22,7 +22,7 @@
                      </font>
                   </Label>
                   <JFXTextField fx:id="feedbackTitleTxt" focusColor="#9d40a8" layoutX="362.0" layoutY="230.0" prefHeight="30.0" prefWidth="300.0" promptText="Feedback Title" />
-                  <JFXTextArea fx:id="feedbackDescriptionTxt" focusColor="#89009e" layoutX="360.0" layoutY="319.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of feedback" />
+                  <JFXTextArea fx:id="feedbackDescriptionTxt" focusColor="#89009e" layoutX="360.0" layoutY="309.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of feedback" />
                   <JFXButton fx:id="submitFeedback" layoutX="452.0" layoutY="524.0" onAction="#submitFeedback" prefHeight="51.0" prefWidth="103.0" style="-fx-background-color: #49306b;" text="Submit" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="14.0" />
