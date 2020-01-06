@@ -18,6 +18,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -52,6 +53,8 @@ public class EventStdController implements Initializable {
 
     @FXML
     private StackPane eventRootPane;
+    @FXML
+    private ScrollPane scrollEvent;
 
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
@@ -93,7 +96,7 @@ public class EventStdController implements Initializable {
                 eventTitle.setText(evlist.get(i).getEvent_title());
                 eventDataTime.setStyle("-fx-font: 16 arial;");
 
-                eventDataTime.setText(evlist.get(i).getEvent_date() + evlist.get(i).getEvent_time());
+                eventDataTime.setText("Date :"+evlist.get(i).getEvent_date()+"\nTime :" + evlist.get(i).getEvent_time());
 
                 header.getChildren().add(headerContent);
                 headerContent.getChildren().addAll(eventTitle, eventDataTime);
@@ -128,7 +131,7 @@ public class EventStdController implements Initializable {
                     descriptionArea.setEditable(false);
                     descriptionArea.setFocusColor(Color.web("#FFF"));
                     descriptionArea.setUnFocusColor(Color.web("#FFF"));
-                    descriptionArea.setPrefHeight(100);
+                    descriptionArea.setPrefHeight(130);
 
                     fullDetailDialogContent.setBody(descriptionArea);
                     JFXDialog fullDetailDialog = new JFXDialog(eventRootPane, fullDetailDialogContent, JFXDialog.DialogTransition.CENTER);
