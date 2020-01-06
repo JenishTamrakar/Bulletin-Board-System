@@ -52,10 +52,10 @@ public class loginScreenController {
 //            alert.showAndWait();
 //        }else {
             System.out.println("login btn clicked");
-//            String user_id = UID.getText();
-//            String user_password = Password.getText();
-        String user_id = "3333";
-         String user_password = "student";
+            String user_id = UID.getText();
+            String user_password = Password.getText();
+//        String user_id = "3333";
+//         String user_password = "student";
 
 
             System.out.println("UID = "+user_id+" Password = "+user_password);

@@ -44,7 +44,7 @@ public class studentDashboardController {
 
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
