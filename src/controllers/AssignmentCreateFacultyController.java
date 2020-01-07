@@ -11,7 +11,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -27,7 +29,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class AssignmentCreateController implements Initializable {
+public class AssignmentCreateFacultyController implements Initializable {
 
 
     @FXML
@@ -313,4 +315,11 @@ public class AssignmentCreateController implements Initializable {
     {
         loadAssignDetails();
     }
+
+    public void logOut(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+    }
 }
+
+

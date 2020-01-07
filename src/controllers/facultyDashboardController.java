@@ -10,24 +10,25 @@ import java.io.IOException;
 
 public class facultyDashboardController
 {
+
     @FXML
     private AnchorPane facultyDashboardPane;
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreateFaculty.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
-        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventFaculty.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
-        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyNotice.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 

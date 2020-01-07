@@ -4,17 +4,11 @@ import bll.Event;
 import bll.Student;
 import com.jfoenix.controls.*;
 import com.jfoenix.effects.JFXDepthManager;
-import com.jfoenix.svg.SVGGlyph;
 import dao.EventDao;
 import dao.StudentDao;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
-import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,18 +18,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -45,14 +33,10 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static javafx.animation.Interpolator.EASE_BOTH;
-
-public class EventStdController implements Initializable {
+public class    EventFacultyController implements Initializable {
 
     String userID=loginScreenController.le;
 
@@ -72,35 +56,10 @@ public class EventStdController implements Initializable {
         eventRootPane.getChildren().setAll(pane);
     }
 
-    @FXML
-    void goToEvents(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
-        eventRootPane.getChildren().setAll(pane);
-    }
-
-    @FXML
-    void goToFeedDetails(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
-        eventRootPane.getChildren().setAll(pane);
-    }
-
-    @FXML
-    void goToFeedback(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
-        eventRootPane.getChildren().setAll(pane);
-
-    }
 
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
-        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
-        eventRootPane.getChildren().setAll(pane);
-
-    }
-
-    @FXML
-    void goToProfile(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyNotice.fxml")));
         eventRootPane.getChildren().setAll(pane);
 
     }
@@ -261,4 +220,8 @@ public class EventStdController implements Initializable {
         loadStudentProfile();
     }
 
+    public void goToProfile(ActionEvent actionEvent) {
+
+    }
 }
+

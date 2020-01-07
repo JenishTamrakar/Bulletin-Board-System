@@ -1,20 +1,14 @@
 package controllers;
 
-import bll.Event;
+import bll.Notice;
 import bll.Student;
 import com.jfoenix.controls.*;
 import com.jfoenix.effects.JFXDepthManager;
-import com.jfoenix.svg.SVGGlyph;
-import dao.EventDao;
+import dao.NoticeDao;
 import dao.StudentDao;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
-import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,18 +18,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -45,95 +33,75 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static javafx.animation.Interpolator.EASE_BOTH;
-
-public class EventStdController implements Initializable {
+public class NoticeViewFaculty implements Initializable {
 
     String userID=loginScreenController.le;
+
+    @FXML
+    private StackPane noticeRootPane;
+
+    @FXML
+    private ScrollPane scrollNotice;
 
     @FXML
     private JFXMasonryPane masonLayout;
 
     @FXML
-    private StackPane eventRootPane;
-    @FXML
-    private ScrollPane scrollEvent;
-
-
+    private Label txtStudentName;
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
-        eventRootPane.getChildren().setAll(pane);
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreateFaculty.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
     }
 
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
-        eventRootPane.getChildren().setAll(pane);
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventFaculty.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void goToFeedDetails(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
-        eventRootPane.getChildren().setAll(pane);
-    }
-
-    @FXML
-    void goToFeedback(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
-        eventRootPane.getChildren().setAll(pane);
+    void profile(ActionEvent event) {
 
     }
 
-    @FXML
-    void goToNotice(ActionEvent event) throws IOException {
-        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
-        eventRootPane.getChildren().setAll(pane);
 
-    }
 
-    @FXML
-    void goToProfile(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
-        eventRootPane.getChildren().setAll(pane);
 
-    }
-
-    @FXML
+        @FXML
     void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
-        eventRootPane.getChildren().setAll(pane);
 
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
     }
 
+    ObservableList<Notice> nlist = FXCollections.observableArrayList();
 
-    ObservableList<Event> evlist = FXCollections.observableArrayList();
-
-
-    void loadEventDetails() {
+    void loadNotices()
+    {
         try {
-            EventDao ed = (EventDao) Naming.lookup("rmi://localhost/Event");
-            ResultSet rs = ed.getEventDetails();
+            NoticeDao nd = (NoticeDao) Naming.lookup("rmi://localhost/Notice");
+            ResultSet rs = nd.getNoticeDetails();
 
-            while (rs.next()) {
-                evlist.add(new Event(
-                        rs.getString("event_id"),
-                        rs.getString("event_title"),
-                        rs.getString("event_date"),
-                        rs.getString("event_time"),
-                        rs.getString("event_description")
+            while(rs.next())
+            {
+                nlist.add(new Notice(
+                        rs.getString("notice_id"),
+                        rs.getString("notice_title"),
+                        rs.getString("notice_date"),
+                        rs.getString("notice_description")
                 ));
+
+//                notice_title.setCellValueFactory(new PropertyValueFactory<>("noticeTitle"));
+//                NoticeTbl.setItems(nlist);
             }
 
-
             ArrayList<Node> children = new ArrayList<>();
-            for (int i = 0; i < evlist.size(); i++) {
+            for (int i = 0; i < nlist.size(); i++) {
                 StackPane stackPane = new StackPane();
                 double width = 200;
                 stackPane.setPrefWidth(width);
@@ -150,10 +118,10 @@ public class EventStdController implements Initializable {
 
                 eventTitle.setStyle("-fx-font: 24 arial;");
 
-                eventTitle.setText(evlist.get(i).getEvent_title());
+                eventTitle.setText(nlist.get(i).getNoticeTitle());
                 eventDataTime.setStyle("-fx-font: 16 arial;");
 
-                eventDataTime.setText("Date :"+evlist.get(i).getEvent_date()+"\nTime :" + evlist.get(i).getEvent_time());
+                eventDataTime.setText("Date :"+nlist.get(i).getNoticeDate());
 
                 header.getChildren().add(headerContent);
                 headerContent.getChildren().addAll(eventTitle, eventDataTime);
@@ -171,7 +139,7 @@ public class EventStdController implements Initializable {
 //                eventDescription.setPadding(new Insets(10, 0, 0, 0));
                 eventDescription.setTextFill(Color.web("#000000"));
                 eventDescription.setStyle("-fx-font: 18 arial;");
-                eventDescription.setText(evlist.get(i).getEvent_desc());
+                eventDescription.setText(nlist.get(i).getNoticeDescription());
                 bodyContent.getChildren().addAll(eventDescription);
                 descriptionBody.getChildren().add(bodyContent);
                 VBox content = new VBox();
@@ -182,8 +150,8 @@ public class EventStdController implements Initializable {
                 int finalI = i;
                 stackPane.setOnMouseClicked(event -> {
                     JFXDialogLayout fullDetailDialogContent = new JFXDialogLayout();
-                    fullDetailDialogContent.setHeading(new Text(evlist.get(finalI).getEvent_title()));
-                    JFXTextArea descriptionArea = new JFXTextArea(evlist.get(finalI).getEvent_desc());
+                    fullDetailDialogContent.setHeading(new Text(nlist.get(finalI).getNoticeTitle()));
+                    JFXTextArea descriptionArea = new JFXTextArea(nlist.get(finalI).getNoticeDescription());
                     descriptionArea.setWrapText(true);
                     descriptionArea.setEditable(false);
                     descriptionArea.setFocusColor(Color.web("#FFF"));
@@ -191,7 +159,7 @@ public class EventStdController implements Initializable {
                     descriptionArea.setPrefHeight(130);
 
                     fullDetailDialogContent.setBody(descriptionArea);
-                    JFXDialog fullDetailDialog = new JFXDialog(eventRootPane, fullDetailDialogContent, JFXDialog.DialogTransition.CENTER);
+                    JFXDialog fullDetailDialog = new JFXDialog(noticeRootPane, fullDetailDialogContent, JFXDialog.DialogTransition.CENTER);
                     JFXButton okayButton = new JFXButton("Okay");
                     fullDetailDialogContent.setActions(okayButton);
 
@@ -202,7 +170,6 @@ public class EventStdController implements Initializable {
 
             }
             masonLayout.getChildren().addAll(children);
-
 
         } catch (NotBoundException e) {
             e.printStackTrace();
@@ -225,6 +192,7 @@ public class EventStdController implements Initializable {
             StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
             ResultSet rs = sd.getProfile(userID);
 
+
             while(rs.next())
             {
                 slist.add(new Student(
@@ -236,7 +204,7 @@ public class EventStdController implements Initializable {
                         rs.getString("student_level")
                 ));
 
-//                txtStudentName.setText(slist.get(0).getName());
+                txtStudentName.setText(slist.get(0).getName());
 //                txtName.setText(slist.get(0).getName());
 //                txtCourse.setText(slist.get(0).getCourse());
 //                txtEmail.setText(slist.get(0).getEmail());
@@ -254,11 +222,14 @@ public class EventStdController implements Initializable {
         }
     }
 
-
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        loadEventDetails();
+    public void initialize(URL location, ResourceBundle resources)
+    {
         loadStudentProfile();
+        loadNotices();
     }
 
+    public void goToNotice(ActionEvent actionEvent) {
+    }
 }
+
