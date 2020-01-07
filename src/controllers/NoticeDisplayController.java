@@ -8,7 +8,9 @@ import dao.NoticeDao;
 import dao.StudentDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,12 +21,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.Naming;
@@ -193,6 +197,52 @@ public class NoticeDisplayController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void goToAssignments(ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToEvents(ActionEvent event) throws IOException {
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToFeeDetails(ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToFeedback(ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToNotice(ActionEvent event)
+    {
+
+    }
+
+    @FXML
+    void goToProfile(ActionEvent event) throws IOException
+    {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
     }
 
     @Override

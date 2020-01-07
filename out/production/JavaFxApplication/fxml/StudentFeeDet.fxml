@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentFeeDetailsController">
+<AnchorPane fx:id="studentFeeDetPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentFeeDetailsController">
    <children>
       <Label ellipsisString="" layoutX="13.0" layoutY="51.0" prefHeight="35.0" prefWidth="109.0" text="Welcome " textFill="WHITE">
          <font>
@@ -59,7 +59,7 @@
             </Label>
             <Label layoutX="436.0" layoutY="677.0" text="https://www.nrb.org.np/fxmexchangerate.php" textFill="#49306b" />
          </children></Pane>
-      <JFXButton layoutX="49.0" layoutY="149.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
+      <JFXButton layoutX="49.0" layoutY="149.0" onAction="#goToEvents" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -67,7 +67,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="52.0" layoutY="289.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="N" textFill="#49306b">
+      <JFXButton layoutX="52.0" layoutY="289.0" onAction="#goToNotice" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="N" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -75,7 +75,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="182.0" layoutY="718.0" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: ace4aa;" text="Feedback" textFill="#49306b">
+      <JFXButton layoutX="182.0" layoutY="718.0" onAction="#goToFeedback" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: ace4aa;" text="Feedback" textFill="#49306b">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -83,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="47.0" layoutY="558.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="F" textFill="#49306b">
+      <JFXButton layoutX="47.0" layoutY="558.0" onAction="#goToFeeDetails" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="F" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -91,7 +91,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="49.0" layoutY="419.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="A" textFill="#49306b">
+      <JFXButton layoutX="49.0" layoutY="419.0" onAction="#goToAssignments" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="A" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -103,12 +103,12 @@
       <Text fill="#ace4aa" layoutX="82.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" />
       <Text fill="#ace4aa" layoutX="67.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignments" />
       <Text fill="#ace4aa" layoutX="69.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details" />
-      <JFXButton layoutX="26.0" layoutY="722.0" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: ace4aa;" text="Log Out" textFill="#49306b">
+      <JFXButton layoutX="26.0" layoutY="722.0" onAction="#logOut" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: ace4aa;" text="Log Out" textFill="#49306b">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="275.0" layoutY="20.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
+      <JFXButton layoutX="275.0" layoutY="20.0" onAction="#goToProfile" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

@@ -77,8 +77,8 @@ public class EventStdController implements Initializable {
 
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
-        eventRootPane.getChildren().setAll(pane);
+//        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
+//        eventRootPane.getChildren().setAll(pane);
     }
 
     @FXML
