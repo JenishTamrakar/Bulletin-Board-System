@@ -20,11 +20,9 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.rmi.Naming;
-import java.security.SecureRandom;
 import java.sql.ResultSet;
+import java.util.Random;
 import java.util.ResourceBundle;
-
-import static controllers.PasswordGenerator.shuffleString;
 
 public class FacultyRecordsController implements Initializable
 {
@@ -118,25 +116,23 @@ public class FacultyRecordsController implements Initializable
         facultyRecordPane.getChildren().setAll(pane);
     }
     public static String uid;
-    public static String pass;
+    public static String passwrd;
     @FXML
     void addFacRecClicked(ActionEvent event) throws Exception {
         uid = EntrFacID.getText();
-        pass = generateRandomPassword(15);
+
         try
         {
             FacultyDao sd = (FacultyDao) Naming.lookup("rmi://localhost/Faculty");
             Faculty f = new Faculty();
-            Register r = new Register();
             RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
+            Register r = new Register();
             f.setFaculty_ID(EntrFacID.getText());
             f.setName(EntrFacName.getText());
             f.setEmail(EntrFacEmail.getText());
             f.setCourse(EntrFacCourse.getText());
             r.setUID(EntrFacID.getText());
-            uid = EntrFacID.getText();
-            pass = generateRandomPassword(15);
-            r.setPassword(generateRandomPassword(15));
+            r.setPassword(passwrd);
             r.setUserType("faculty");
             sd.addFaculty(f);
             rd.addUser(r);
@@ -281,41 +277,37 @@ public class FacultyRecordsController implements Initializable
             EntrFacName.setText(selectedFaculty.getName());
             EntrFacCourse.setText(selectedFaculty.getCourse());
             EntrFacEmail.setText(selectedFaculty.getEmail());
-            EntrFacPass.setText(generateRandomPassword(15));
+
         }
     }
 
-    private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
-    private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
-    private static final String NUMBER = "0123456789";
-    private static final String OTHER_CHAR = "!@#$%&*()_+-=[]?";
-    private static final String PASSWORD_ALLOW_BASE = CHAR_LOWER + CHAR_UPPER + NUMBER + OTHER_CHAR;
-    private static final String PASSWORD_ALLOW_BASE_SHUFFLE = shuffleString(PASSWORD_ALLOW_BASE);
-    private static final String PASSWORD_ALLOW = PASSWORD_ALLOW_BASE_SHUFFLE;
+    private static String generatePassword(int length) {
+        String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        String specialCharacters = "!@#$";
+        String numbers = "1234567890";
+        String combinedChars = capitalCaseLetters + lowerCaseLetters + specialCharacters + numbers;
+        Random random = new Random();
+        char[] password = new char[length];
 
-    private static SecureRandom random = new SecureRandom();
+        password[0] = lowerCaseLetters.charAt(random.nextInt(lowerCaseLetters.length()));
+        password[1] = capitalCaseLetters.charAt(random.nextInt(capitalCaseLetters.length()));
+        password[2] = specialCharacters.charAt(random.nextInt(specialCharacters.length()));
+        password[3] = numbers.charAt(random.nextInt(numbers.length()));
 
-    public static String generateRandomPassword(int length) {
-        if (length < 1) throw new IllegalArgumentException();
-
-        StringBuilder sb = new StringBuilder(length);
-        for (int i = 0; i < length; i++) {
-
-            int rndCharAt = random.nextInt(PASSWORD_ALLOW.length());
-            char rndChar = PASSWORD_ALLOW.charAt(rndCharAt);
-
-            sb.append(rndChar);
-
+        for(int i = 4; i< length ; i++) {
+            password[i] = combinedChars.charAt(random.nextInt(combinedChars.length()));
         }
-
-        return sb.toString();
-
+        return passwrd = password.toString();
     }
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadFacultyData();
-        System.out.println("password : " + generateRandomPassword(15));
+        System.out.println("password : " + generatePassword(8));
     }
 }

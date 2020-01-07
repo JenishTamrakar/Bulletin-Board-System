@@ -27,9 +27,10 @@ import java.rmi.RemoteException;
 import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.ResourceBundle;
 
-import static controllers.PasswordGenerator.shuffleString;
+
 
 public class StudentRecordsController implements Initializable
 {
@@ -124,38 +125,35 @@ public class StudentRecordsController implements Initializable
         studentRecordPane.getChildren().setAll(pane);
     }
     public static String uid;
-    public static String pass;
+
     public  static  String mail;
+   public static String passwrd;
 
     @FXML
     void addStdRecClicked(ActionEvent event) throws Exception {
+        uid = EntrStdID.getText();
+        mail =EntrStdEmail.getText();
         try
         {
             StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
-            Register r = new Register();
-            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             Student s = new Student();
-//            s.setStudent_SN(StdSN.getText());
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
+            Register r = new Register();
             s.setStudent_ID(EntrStdID.getText());
             s.setName(EntrStdName.getText());
             s.setEmail(EntrStdEmail.getText());
             s.setCourse(EntrStdCourse.getText());
             s.setLevel(EntrStdLvl.getText());
             sd.addStudent(s);
-
             r.setUID(EntrStdID.getText());
-            r.setPassword(generateRandomPassword(15));
+            r.setPassword(passwrd);
             r.setUserType("student");
-            uid = EntrStdID.getText();
-            pass = generateRandomPassword(15);
-            mail = EntrStdEmail.getText();
-            //System.out.println(r.getUID());
-            //System.out.println(r.getPassword());
+
             rd.addUser(r);
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Added");
             alert.setContentText("Student Record Successfully Added!");
-
             alert.showAndWait();
             StdSN.setText(null);
             EntrStdID.setText(null);
@@ -170,8 +168,8 @@ public class StudentRecordsController implements Initializable
         {
             System.out.print(e);
         }
-        sendMailStudent.sendMail(EntrStdEmail.getText());
 
+    sendMailStudent.sendMail(mail);
     }
 
     @FXML
@@ -305,38 +303,31 @@ public class StudentRecordsController implements Initializable
 
 
 
-    private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
-    private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
-    private static final String NUMBER = "0123456789";
-    private static final String OTHER_CHAR = "!@#$%&*()_+-=[]?";
+    private static String generatePassword(int length) {
+        String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        String specialCharacters = "!@#$";
+        String numbers = "1234567890";
+        String combinedChars = capitalCaseLetters + lowerCaseLetters + specialCharacters + numbers;
+        Random random = new Random();
+        char[] password = new char[length];
 
-    private static final String PASSWORD_ALLOW_BASE = CHAR_LOWER + CHAR_UPPER + NUMBER + OTHER_CHAR;
-    // optional, make it more random
-    private static final String PASSWORD_ALLOW_BASE_SHUFFLE = shuffleString(PASSWORD_ALLOW_BASE);
-    private static final String PASSWORD_ALLOW = PASSWORD_ALLOW_BASE_SHUFFLE;
+        password[0] = lowerCaseLetters.charAt(random.nextInt(lowerCaseLetters.length()));
+        password[1] = capitalCaseLetters.charAt(random.nextInt(capitalCaseLetters.length()));
+        password[2] = specialCharacters.charAt(random.nextInt(specialCharacters.length()));
+        password[3] = numbers.charAt(random.nextInt(numbers.length()));
 
-    private static SecureRandom random = new SecureRandom();
-
-    public static String generateRandomPassword(int length) {
-        if (length < 1) throw new IllegalArgumentException();
-
-        StringBuilder sb = new StringBuilder(length);
-        for (int i = 0; i < length; i++) {
-
-            int rndCharAt = random.nextInt(PASSWORD_ALLOW.length());
-            char rndChar = PASSWORD_ALLOW.charAt(rndCharAt);
-
-            sb.append(rndChar);
-
+        for(int i = 4; i< length ; i++) {
+            password[i] = combinedChars.charAt(random.nextInt(combinedChars.length()));
         }
-
-        return sb.toString();
-
+        return passwrd = password.toString();
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadStudentData();
+        System.out.println(generatePassword(8));
     }
 }

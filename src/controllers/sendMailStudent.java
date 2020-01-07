@@ -33,7 +33,7 @@ public class sendMailStudent {
             message.setFrom(new InternetAddress("pcpsbulletinboard@gmail.com"));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(StudentRecordsController.mail));
             message.setSubject("Hello, there use the provided User id and password to login. Thank You");
-            message.setText("Your user ID: "+StudentRecordsController.uid+" \n Your password is: "+StudentRecordsController.pass);
+            message.setText("Your user ID: "+StudentRecordsController.uid+" \n Your password is: "+StudentRecordsController.passwrd);
 
             Transport.send(message);
 

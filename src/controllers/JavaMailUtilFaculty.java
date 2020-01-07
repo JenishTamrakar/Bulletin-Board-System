@@ -22,7 +22,7 @@ public class JavaMailUtilFaculty {
         //Set smtp port
         properties.put("mail.smtp.port", "587");
         String UID = FacultyRecordsController.uid;
-        String pass = FacultyRecordsController.pass;
+        String pass = FacultyRecordsController.passwrd;
         //Your gmail address
         String myAccountEmail = "pcpsbulletinboard@gmail.com";
         //Your gmail password
@@ -45,7 +45,7 @@ public class JavaMailUtilFaculty {
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
             message.setSubject("Hello, there use the provided User id and password to login. Thank You");
-            String pass = FacultyRecordsController.pass;
+            String pass = FacultyRecordsController.passwrd;
             String UID = FacultyRecordsController.uid;
             message.setText("Your user ID: "+UID+" \n Your password is: "+pass);
             return message;
