@@ -60,10 +60,14 @@ public class studentDashboardController {
         studentDashboard.getChildren().setAll(pane);
     }
 
-    public void logOutClicked(ActionEvent actionEvent) {
+    public void logOutClicked(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 
-    public void profileClicked(ActionEvent actionEvent) {
+    public void profileClicked(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
+        studentDashboard.getChildren().setAll(pane);
     }
 }
 

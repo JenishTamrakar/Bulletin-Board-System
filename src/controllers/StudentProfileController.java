@@ -4,10 +4,14 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
-public class StudentProfileController {
+import java.io.IOException;
 
+public class StudentProfileController {
+    @FXML
+    private AnchorPane studentDashboard;
     @FXML
     private AnchorPane studentProfile;
 
@@ -54,7 +58,9 @@ public class StudentProfileController {
     }
 
     @FXML
-    void logOut(ActionEvent event) {
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+        studentProfile.getChildren().setAll(pane);
 
     }
 

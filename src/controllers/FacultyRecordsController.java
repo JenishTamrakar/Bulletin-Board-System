@@ -1,9 +1,11 @@
 package controllers;
 
 import bll.Faculty;
+import bll.Register;
 import dao.FacultyDao;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import dao.RegisterDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,9 +23,12 @@ import java.net.URL;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.sql.SQLOutput;
 import java.util.ResourceBundle;
+
+import static controllers.PasswordGenerator.shuffleString;
 
 public class FacultyRecordsController implements Initializable
 {
@@ -41,6 +46,8 @@ public class FacultyRecordsController implements Initializable
 
     @FXML
     private JFXTextField EntrFacID;
+    @FXML
+    private JFXTextField EntrFacPass;
 
     @FXML
     private JFXTextField EntrFacName;
@@ -77,6 +84,8 @@ public class FacultyRecordsController implements Initializable
 
     @FXML
     private TableColumn<Faculty, String> faculty_email;
+    @FXML
+    private TableColumn<Faculty, String> faculty_pass;
 
     ObservableList<Faculty> flist = FXCollections.observableArrayList();
 
@@ -112,19 +121,32 @@ public class FacultyRecordsController implements Initializable
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
     }
+
+
+
     @FXML
     void addFacRecClicked(ActionEvent event) {
         try
         {
             FacultyDao sd = (FacultyDao) Naming.lookup("rmi://localhost/Faculty");
             Faculty f = new Faculty();
+            Register r = new Register();
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             f.setFaculty_ID(EntrFacID.getText());
             f.setName(EntrFacName.getText());
+
             f.setEmail(EntrFacEmail.getText());
             f.setCourse(EntrFacCourse.getText());
+//            String pw = generateRandomPassword();
+            r.setUID(EntrFacID.getText());
+            r.setPassword(generateRandomPassword(15));
+            r.setUserType("faculty");
             //System.out.println(r.getUID());
             //System.out.println(r.getPassword());
             sd.addFaculty(f);
+            rd.addUser(r);
+
+//          sendMail.Send();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Added");
             alert.setContentText("Faculty Record Successfully Added!");
@@ -132,6 +154,7 @@ public class FacultyRecordsController implements Initializable
             FacSN.setText(null);
             EntrFacID.setText(null);
             EntrFacName.setText(null);
+            EntrFacPass.setText(null);
             EntrFacEmail.setText(null);
             EntrFacCourse.setText(null);
             FacultyTbl.getItems().clear();
@@ -156,24 +179,19 @@ public class FacultyRecordsController implements Initializable
                         rs.getString("faculty_sn"),
                         rs.getString("faculty_id"),
                         rs.getString("faculty_name"),
+
                         rs.getString("faculty_course"),
                         rs.getString("faculty_email"))
                 );
-//                System.out.println(flist.get(0));
-//                System.out.println(rs.getString("faculty_id"));
-//                System.out.println(rs.getString("faculty_name"));
-//                System.out.println(rs.getString("faculty_course"));
-//                System.out.println(rs.getString("faculty_email"));
             }
 
             faculty_SN.setCellValueFactory(new PropertyValueFactory<>("faculty_SN"));
             faculty_id.setCellValueFactory(new PropertyValueFactory<>("faculty_ID"));
             faculty_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+
             faculty_course.setCellValueFactory(new PropertyValueFactory<>("course"));
             faculty_email.setCellValueFactory(new PropertyValueFactory<>("email"));
             FacultyTbl.setItems(flist);
-//            faculty_id.getCellFactory();
-//            System.out.println(flist);
         }
         catch(Exception e)
         {
@@ -275,12 +293,48 @@ public class FacultyRecordsController implements Initializable
             EntrFacName.setText(selectedFaculty.getName());
             EntrFacCourse.setText(selectedFaculty.getCourse());
             EntrFacEmail.setText(selectedFaculty.getEmail());
+            EntrFacPass.setText(generateRandomPassword(15));
         }
     }
+
+    private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
+    private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
+    private static final String NUMBER = "0123456789";
+    private static final String OTHER_CHAR = "!@#$%&*()_+-=[]?";
+
+    private static final String PASSWORD_ALLOW_BASE = CHAR_LOWER + CHAR_UPPER + NUMBER + OTHER_CHAR;
+    // optional, make it more random
+    private static final String PASSWORD_ALLOW_BASE_SHUFFLE = shuffleString(PASSWORD_ALLOW_BASE);
+    private static final String PASSWORD_ALLOW = PASSWORD_ALLOW_BASE_SHUFFLE;
+
+    private static SecureRandom random = new SecureRandom();
+
+    public static String generateRandomPassword(int length) {
+        if (length < 1) throw new IllegalArgumentException();
+
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+
+            int rndCharAt = random.nextInt(PASSWORD_ALLOW.length());
+            char rndChar = PASSWORD_ALLOW.charAt(rndCharAt);
+
+            sb.append(rndChar);
+
+        }
+
+        return sb.toString();
+
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadFacultyData();
+
+        System.out.println("password : " + generateRandomPassword(15));
+
     }
+
+
 }

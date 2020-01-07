@@ -11,5 +11,6 @@
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" name="java-json" level="project" />
     <orderEntry type="library" name="gson-2.8.2" level="project" />
+    <orderEntry type="library" name="java-mail-1.4.4" level="project" />
   </component>
 </module>

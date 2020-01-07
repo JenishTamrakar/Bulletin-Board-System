@@ -1,14 +1,19 @@
 package controllers;
 
 import bll.viewFeedback;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import dao.viewFeedbackDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
+
+
+import java.io.IOException;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -16,10 +21,12 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.time.LocalDate;
 
+
 public class giveFeedbackController {
 
     @FXML
     private AnchorPane feedbackpane;
+
 
     @FXML
     private JFXTextField feedbackTitleTxt;
@@ -35,6 +42,8 @@ public class giveFeedbackController {
 
     @FXML
     void submitFeedback(ActionEvent event) {
+
+
         try {
             viewFeedbackDao vfd = (viewFeedbackDao) Naming.lookup("rmi://localhost/ViewFeedback");
             viewFeedback vf = new viewFeedback();
@@ -56,6 +65,17 @@ public class giveFeedbackController {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+
+    }
+
+
+
+
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+        feedbackpane.getChildren().setAll(pane);
+
     }
 
 }

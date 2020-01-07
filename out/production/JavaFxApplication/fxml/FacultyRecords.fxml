@@ -94,20 +94,20 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="567.0" layoutY="346.0" prefHeight="45.0" prefWidth="145.0" text="Course" textAlignment="CENTER" textFill="#49306b">
+                  <Label alignment="CENTER_RIGHT" layoutX="567.0" layoutY="331.0" prefHeight="45.0" prefWidth="145.0" text="Course" textAlignment="CENTER" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="567.0" layoutY="406.0" prefHeight="45.0" prefWidth="145.0" text="Email ID" textAlignment="CENTER" textFill="#49306b">
+                  <Label alignment="CENTER_RIGHT" layoutX="567.0" layoutY="401.0" prefHeight="45.0" prefWidth="145.0" text="Email ID" textAlignment="CENTER" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <JFXTextField fx:id="EntrFacID" focusColor="#49306b" layoutX="735.0" layoutY="228.0" prefHeight="30.0" prefWidth="175.0" promptText="Enter Faculty's ID" />
                   <JFXTextField fx:id="EntrFacName" focusColor="#49306b" layoutX="735.0" layoutY="293.0" prefHeight="25.0" prefWidth="175.0" promptText="Enter Faculty's Name" />
-                  <JFXTextField fx:id="EntrFacCourse" focusColor="#49306b" layoutX="735.0" layoutY="353.0" prefWidth="175.0" promptText="Enter Course" />
-                  <JFXTextField fx:id="EntrFacEmail" focusColor="#49306b" layoutX="735.0" layoutY="413.0" prefWidth="175.0" promptText="Enter Email ID" />
+                  <JFXTextField fx:id="EntrFacCourse" focusColor="#49306b" layoutX="735.0" layoutY="341.0" prefWidth="175.0" promptText="Enter Course" />
+                  <JFXTextField fx:id="EntrFacEmail" focusColor="#49306b" layoutX="735.0" layoutY="411.0" prefWidth="175.0" promptText="Enter Email ID" />
                   <JFXButton fx:id="AddFacRec" layoutX="567.0" layoutY="577.0" onAction="#addFacRecClicked" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="18.0" />
