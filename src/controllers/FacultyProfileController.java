@@ -1,13 +1,16 @@
 package controllers;
 
+import bll.Faculty;
 import bll.Student;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import dao.FacultyDao;
 import dao.StudentDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
@@ -27,14 +30,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StudentProfileController implements Initializable {
+public class FacultyProfileController implements Initializable {
 
     String userID=loginScreenController.le;
 
     @FXML
-    private AnchorPane studentDashboard;
-    @FXML
-    private AnchorPane studentProfile;
+    private AnchorPane facultyProfile;
 
     @FXML
     private JFXTextField txtName;
@@ -46,13 +47,10 @@ public class StudentProfileController implements Initializable {
     private JFXTextField txtCourse;
 
     @FXML
-    private JFXTextField txtLevel;
-
-    @FXML
     private JFXButton changePasswordBtn;
 
     @FXML
-    private JFXTextField txtStudentID;
+    private JFXTextField txtFacultyID;
 
     @FXML
     private JFXButton logOutBtn;
@@ -80,38 +78,36 @@ public class StudentProfileController implements Initializable {
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
-        studentProfile.getChildren().setAll(pane);
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        facultyProfile.getChildren().setAll(pane);
 
     }
     @FXML
-    private TableColumn<Student, String> student_Email;
-    ObservableList<Student> slist = FXCollections.observableArrayList();
+    private TableColumn<Faculty, String> student_Email;
+    ObservableList<Faculty> slist = FXCollections.observableArrayList();
 
 
-    void loadStudentProfile()
+    void loadFacultyProfile()
     {
         try {
-            StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
-            ResultSet rs = sd.getProfile(userID);
-
-
+            FacultyDao fd = (FacultyDao) Naming.lookup("rmi://localhost/Faculty");
+            ResultSet rs = fd.getProfile(userID);
             while(rs.next())
             {
-                slist.add(new Student(
-                        rs.getString("student_sn"),
-                        rs.getString("student_id"),
-                        rs.getString("student_name"),
-                        rs.getString("student_course"),
-                        rs.getString("student_email"),
-                        rs.getString("student_level")
+                System.out.println(rs.getString("faculty_sn"));
+                slist.add(new Faculty(
+                        rs.getString("faculty_sn"),
+                        rs.getString("faculty_id"),
+                        rs.getString("faculty_name"),
+                        rs.getString("faculty_course"),
+                        rs.getString("faculty_email")
                 ));
 
-            txtStudentID.setText(slist.get(0).getStudent_ID());
-            txtName.setText(slist.get(0).getName());
-            txtCourse.setText(slist.get(0).getCourse());
-            txtEmail.setText(slist.get(0).getEmail());
-            txtLevel.setText(slist.get(0).getLevel());
+                txtFacultyID.setText(slist.get(0).getFaculty_ID());
+                txtName.setText(slist.get(0).getName());
+                txtCourse.setText(slist.get(0).getCourse());
+                txtEmail.setText(slist.get(0).getEmail());
+
             }
 
         } catch (NotBoundException e) {
@@ -128,6 +124,6 @@ public class StudentProfileController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        loadStudentProfile();
+        loadFacultyProfile();
     }
 }

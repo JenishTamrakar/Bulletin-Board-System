@@ -40,7 +40,7 @@ public class facultyDashboardController
 
     @FXML
     void profileClicked(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyProfile.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 }
