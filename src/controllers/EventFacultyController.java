@@ -220,8 +220,9 @@ public class    EventFacultyController implements Initializable {
         loadStudentProfile();
     }
 
-    public void goToProfile(ActionEvent actionEvent) {
-
+    public void goToProfile(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyProfile.fxml")));
+        eventRootPane.getChildren().setAll(pane);
     }
 }
 
