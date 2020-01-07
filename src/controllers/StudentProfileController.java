@@ -15,8 +15,6 @@ import java.io.IOException;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.MalformedURLException;
 import java.net.URL;

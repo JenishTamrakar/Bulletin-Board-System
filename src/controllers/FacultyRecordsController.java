@@ -16,16 +16,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.net.URL;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
 import java.security.SecureRandom;
 import java.sql.ResultSet;
-import java.sql.SQLOutput;
 import java.util.ResourceBundle;
 
 import static controllers.PasswordGenerator.shuffleString;
@@ -121,11 +117,12 @@ public class FacultyRecordsController implements Initializable
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
     }
-
-
-
+    public static String uid;
+    public static String pass;
     @FXML
-    void addFacRecClicked(ActionEvent event) {
+    void addFacRecClicked(ActionEvent event) throws Exception {
+        uid = EntrFacID.getText();
+        pass = generateRandomPassword(15);
         try
         {
             FacultyDao sd = (FacultyDao) Naming.lookup("rmi://localhost/Faculty");
@@ -134,19 +131,17 @@ public class FacultyRecordsController implements Initializable
             RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             f.setFaculty_ID(EntrFacID.getText());
             f.setName(EntrFacName.getText());
-
             f.setEmail(EntrFacEmail.getText());
             f.setCourse(EntrFacCourse.getText());
-//            String pw = generateRandomPassword();
             r.setUID(EntrFacID.getText());
+            uid = EntrFacID.getText();
+            pass = generateRandomPassword(15);
             r.setPassword(generateRandomPassword(15));
             r.setUserType("faculty");
-            //System.out.println(r.getUID());
-            //System.out.println(r.getPassword());
             sd.addFaculty(f);
             rd.addUser(r);
 
-//          sendMail.Send();
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Added");
             alert.setContentText("Faculty Record Successfully Added!");
@@ -164,6 +159,8 @@ public class FacultyRecordsController implements Initializable
         {
             System.out.print(e);
         }
+
+        JavaMailUtilFaculty.sendMail(EntrFacEmail.getText());
     }
 
     void loadFacultyData()
@@ -213,18 +210,10 @@ public class FacultyRecordsController implements Initializable
             f.setName(EntrFacName.getText());
             f.setEmail(EntrFacEmail.getText());
             f.setCourse(EntrFacCourse.getText());
-            //System.out.println(r.getUID());
-            //System.out.println(r.getPassword());
             fd.updateFaculty(f);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Updated");
             alert.setContentText("Faculty Record Successfully Updated!");
-
-            //if (alert.getResult() == ButtonType.YES)
-            //{
-            //	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
-            //	registerPane.getChildren().setAll(pane);
-            //}
             alert.showAndWait();
             FacSN.setText(null);
             EntrFacID.setText(null);
@@ -285,7 +274,6 @@ public class FacultyRecordsController implements Initializable
     }
 
     void onEdit() {
-        // check the table's selected item and get selected item
         if (FacultyTbl.getSelectionModel().getSelectedItem() != null) {
             Faculty selectedFaculty = FacultyTbl.getSelectionModel().getSelectedItem();
             FacSN.setText(selectedFaculty.getFaculty_SN());
@@ -301,9 +289,7 @@ public class FacultyRecordsController implements Initializable
     private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
     private static final String NUMBER = "0123456789";
     private static final String OTHER_CHAR = "!@#$%&*()_+-=[]?";
-
     private static final String PASSWORD_ALLOW_BASE = CHAR_LOWER + CHAR_UPPER + NUMBER + OTHER_CHAR;
-    // optional, make it more random
     private static final String PASSWORD_ALLOW_BASE_SHUFFLE = shuffleString(PASSWORD_ALLOW_BASE);
     private static final String PASSWORD_ALLOW = PASSWORD_ALLOW_BASE_SHUFFLE;
 
@@ -326,15 +312,10 @@ public class FacultyRecordsController implements Initializable
 
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadFacultyData();
-
         System.out.println("password : " + generateRandomPassword(15));
-
     }
-
-
 }

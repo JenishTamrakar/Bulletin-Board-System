@@ -123,10 +123,12 @@ public class StudentRecordsController implements Initializable
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         studentRecordPane.getChildren().setAll(pane);
     }
-
+    public static String uid;
+    public static String pass;
+    public  static  String mail;
 
     @FXML
-    void addStdRecClicked(ActionEvent event) throws RemoteException, NotBoundException {
+    void addStdRecClicked(ActionEvent event) throws Exception {
         try
         {
             StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
@@ -144,6 +146,9 @@ public class StudentRecordsController implements Initializable
             r.setUID(EntrStdID.getText());
             r.setPassword(generateRandomPassword(15));
             r.setUserType("student");
+            uid = EntrStdID.getText();
+            pass = generateRandomPassword(15);
+            mail = EntrStdEmail.getText();
             //System.out.println(r.getUID());
             //System.out.println(r.getPassword());
             rd.addUser(r);
@@ -165,6 +170,8 @@ public class StudentRecordsController implements Initializable
         {
             System.out.print(e);
         }
+        sendMailStudent.sendMail(EntrStdEmail.getText());
+
     }
 
     @FXML

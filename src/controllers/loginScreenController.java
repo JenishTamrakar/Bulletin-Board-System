@@ -44,19 +44,17 @@ public class loginScreenController {
 
     @FXML
     public String checkDetail(){
-//        if (UID.getText().trim().isEmpty() && Password.getText().trim().isEmpty()){
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//            alert.setTitle("Warning");
-//            alert.setHeaderText("Enter the login details !");
-//            alert.setContentText("Either user ID or password field is empty !");
-//
-//            alert.showAndWait();
-//        }else {
+        if (UID.getText().trim().isEmpty() && Password.getText().trim().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Enter the login details !");
+            alert.setContentText("Either user ID or password field is empty !");
+
+            alert.showAndWait();
+        }else {
             System.out.println("login btn clicked");
             String user_id = UID.getText();
             String user_password = Password.getText();
-//        String user_id = "3333";
-//         String user_password = "student";
 
             le=UID.getText();
             System.out.println("UID = "+user_id+" Password = "+user_password);
@@ -65,28 +63,17 @@ public class loginScreenController {
                 ResultSet rs= ld.checkUser(user_id, user_password);
                 while(rs.next()) {
                     if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("admin")) {
-//                        id = rs.getString("UID");
-//                        System.out.println("user id :"+id);
-
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/AdminDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
                     } else if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("faculty")) {
-//                        id = rs.getString("UID");
-//                        System.out.println("user id :"+id);
-
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/facultyDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
-
                     } else if
                     (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("student"))
                     {
-//                        id = rs.getString("UID");
-//                        System.out.println("user id :"+id);
-
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
                     }
-
                 }
 
             }catch (RemoteException re){
@@ -106,7 +93,7 @@ public class loginScreenController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//        }
+        }
 
         return null;
     }
