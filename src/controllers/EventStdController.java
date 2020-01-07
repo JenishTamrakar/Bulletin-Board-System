@@ -64,10 +64,6 @@ public class EventStdController implements Initializable {
     @FXML
     private ScrollPane scrollEvent;
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
@@ -117,10 +113,6 @@ public class EventStdController implements Initializable {
 
     @FXML
     private Label txtStudentName;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
 

@@ -64,8 +64,9 @@ public class StudentProfileController implements Initializable {
     private JFXButton backBtn;
 
     @FXML
-    void backClicked(ActionEvent event) {
-
+    void backClicked(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+        studentProfile.getChildren().setAll(pane);
     }
 
     @FXML
@@ -80,9 +81,8 @@ public class StudentProfileController implements Initializable {
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentProfile.getChildren().setAll(pane);
-
     }
     @FXML
     private TableColumn<Student, String> student_Email;

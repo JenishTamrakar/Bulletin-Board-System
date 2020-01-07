@@ -62,8 +62,9 @@ public class FacultyProfileController implements Initializable {
     private JFXButton backBtn;
 
     @FXML
-    void backClicked(ActionEvent event) {
-
+    void backClicked(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyDashboard.fxml")));
+        facultyProfile.getChildren().setAll(pane);
     }
 
     @FXML

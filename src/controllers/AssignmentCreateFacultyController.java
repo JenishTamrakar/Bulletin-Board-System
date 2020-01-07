@@ -17,6 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -91,36 +92,19 @@ public class AssignmentCreateFacultyController implements Initializable {
 
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
-        assignmentPane.getChildren().setAll(pane);
-    }
-    @FXML
-    void goToStudentRecords(ActionEvent event) throws IOException{
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
+        StackPane pane = FXMLLoader.load(getClass().getResource("../fxml/FacultyNotice.fxml"));
         assignmentPane.getChildren().setAll(pane);
     }
 
-    @FXML
-    void goToFacultyRecords(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
-        assignmentPane.getChildren().setAll(pane);
-    }
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
-        assignmentPane.getChildren().setAll(pane);
-    }
-
-
-    @FXML
-    void goToFeeDetails(ActionEvent event)throws IOException{
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
+        StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventFaculty.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
     @FXML
     void goToDashboard(ActionEvent event) throws IOException{
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyDashboard.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 

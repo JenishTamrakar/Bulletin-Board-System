@@ -65,14 +65,12 @@ public class NoticeViewFaculty implements Initializable {
     }
 
     @FXML
-    void profile(ActionEvent event) {
-
+    void goToProfile(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyProfile.fxml")));
+        noticeRootPane.getChildren().setAll(pane);
     }
 
-
-
-
-        @FXML
+    @FXML
     void logOut(ActionEvent event) throws IOException {
 
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));

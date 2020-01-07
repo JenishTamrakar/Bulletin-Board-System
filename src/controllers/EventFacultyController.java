@@ -52,7 +52,7 @@ public class    EventFacultyController implements Initializable {
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreateFaculty.fxml")));
         eventRootPane.getChildren().setAll(pane);
     }
 

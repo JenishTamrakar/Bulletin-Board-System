@@ -88,20 +88,8 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Text>
-<<<<<<< Updated upstream
-      <Label fx:id="txtStudentName" layoutX="170.0" layoutY="50.0" prefHeight="21.0" prefWidth="179.0" text="Label" textFill="WHITE">
-=======
-      <Pane layoutX="193.0" layoutY="146.0" prefHeight="514.0" prefWidth="209.0">
-         <children>
-            <TableView fx:id="AssignmentTbl" layoutX="-3.0" onMouseClicked="#AssignmentTblClicked" prefHeight="514.0" prefWidth="212.0">
-               <columns>
-                  <TableColumn editable="false" prefWidth="209.66668701171875" text="Assignment List" />
-               </columns>
-            </TableView>
-         </children>
-      </Pane>
       <Label fx:id="txtStudentName" layoutX="170.0" layoutY="50.0" prefHeight="21.0" prefWidth="168.0" text="Label" textFill="WHITE">
->>>>>>> Stashed changes
+
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
