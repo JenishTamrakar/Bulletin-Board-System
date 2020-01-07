@@ -1,6 +1,8 @@
 package controllers;
 
+import bll.Register;
 import bll.Student;
+import dao.RegisterDao;
 import dao.StudentDao;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -22,9 +24,12 @@ import java.net.URL;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.security.SecureRandom;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import static controllers.PasswordGenerator.shuffleString;
 
 public class StudentRecordsController implements Initializable
 {
@@ -125,25 +130,27 @@ public class StudentRecordsController implements Initializable
         try
         {
             StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
+            Register r = new Register();
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
             Student s = new Student();
-            s.setStudent_SN(StdSN.getText());
+//            s.setStudent_SN(StdSN.getText());
             s.setStudent_ID(EntrStdID.getText());
             s.setName(EntrStdName.getText());
             s.setEmail(EntrStdEmail.getText());
             s.setCourse(EntrStdCourse.getText());
             s.setLevel(EntrStdLvl.getText());
+            sd.addStudent(s);
+
+            r.setUID(EntrStdID.getText());
+            r.setPassword(generateRandomPassword(15));
+            r.setUserType("student");
             //System.out.println(r.getUID());
             //System.out.println(r.getPassword());
-            sd.addStudent(s);
+            rd.addUser(r);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Record Added");
             alert.setContentText("Student Record Successfully Added!");
 
-            //if (alert.getResult() == ButtonType.YES)
-            //{
-            //	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
-            //	registerPane.getChildren().setAll(pane);
-            //}
             alert.showAndWait();
             StdSN.setText(null);
             EntrStdID.setText(null);
@@ -285,7 +292,39 @@ public class StudentRecordsController implements Initializable
             EntrStdLvl.setText(selectedStudent.getLevel());
             EntrStdCourse.setText(selectedStudent.getCourse());
             EntrStdEmail.setText(selectedStudent.getEmail());
+//            EntrStdPass.setText(generateRandomPassword(15));
         }
+    }
+
+
+
+    private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
+    private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
+    private static final String NUMBER = "0123456789";
+    private static final String OTHER_CHAR = "!@#$%&*()_+-=[]?";
+
+    private static final String PASSWORD_ALLOW_BASE = CHAR_LOWER + CHAR_UPPER + NUMBER + OTHER_CHAR;
+    // optional, make it more random
+    private static final String PASSWORD_ALLOW_BASE_SHUFFLE = shuffleString(PASSWORD_ALLOW_BASE);
+    private static final String PASSWORD_ALLOW = PASSWORD_ALLOW_BASE_SHUFFLE;
+
+    private static SecureRandom random = new SecureRandom();
+
+    public static String generateRandomPassword(int length) {
+        if (length < 1) throw new IllegalArgumentException();
+
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+
+            int rndCharAt = random.nextInt(PASSWORD_ALLOW.length());
+            char rndChar = PASSWORD_ALLOW.charAt(rndCharAt);
+
+            sb.append(rndChar);
+
+        }
+
+        return sb.toString();
+
     }
 
     @Override
