@@ -4,6 +4,7 @@ import bll.FeeDetails;
 import bll.ForexResponse;
 import bll.Student;
 import com.google.gson.Gson;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import dao.FeeDetailsDao;
@@ -30,6 +31,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
 import java.util.ResourceBundle;
 
 public class StudentFeeDetailsController implements Initializable {
@@ -70,11 +72,16 @@ public class StudentFeeDetailsController implements Initializable {
 
     ObservableList<FeeDetails> fdlist = FXCollections.observableArrayList();
 
+    public static String course_name;
+
+
+
     void loadFeeDetails()
     {
         try {
             FeeDetailsDao fdd = (FeeDetailsDao) Naming.lookup("rmi://localhost/FeeDetails");
-            ResultSet rs = fdd.getFeeDetails();
+            ResultSet rs = fdd.getFeeDetailsByCourse(course_name);
+            System.out.println("Course = "+course_name);
             int i = 1;
             while(rs.next())
             {
@@ -174,7 +181,8 @@ public class StudentFeeDetailsController implements Initializable {
 
                 txtStudentName.setText(slist.get(0).getName());
 //                txtName.setText(slist.get(0).getName());
-//                txtCourse.setText(slist.get(0).getCourse());
+//                System.out.println("Course name: "+slist.get(0).getCourse());
+                course_name = slist.get(0).getCourse();
 //                txtEmail.setText(slist.get(0).getEmail());
 //                txtLevel.setText(slist.get(0).getLevel());
             }
@@ -193,8 +201,8 @@ public class StudentFeeDetailsController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        loadFeeDetails();
         getForeignExchangerate();
         loadStudentProfile();
+        loadFeeDetails();
     }
 }

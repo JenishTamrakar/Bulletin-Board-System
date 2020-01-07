@@ -17,7 +17,17 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="433.0" layoutY="20.0" prefHeight="729.0" prefWidth="572.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" />
+      <Pane layoutX="312.0" layoutY="20.0" prefHeight="729.0" prefWidth="693.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;">
+         <children>
+            <TableView fx:id="AssignmentTbl" layoutX="8.0" layoutY="21.0" prefHeight="688.0" prefWidth="676.0">
+               <columns>
+                  <TableColumn fx:id="assign_SN" prefWidth="33.0" text="SN" />
+                  <TableColumn fx:id="assign_Title" editable="false" prefWidth="286.0" text="Assignment Title" />
+                  <TableColumn fx:id="assign_Unit" minWidth="0.0" prefWidth="199.0" text="Unit" />
+                  <TableColumn fx:id="assign_Deadline" prefWidth="157.0" text="Last Date of Submission" />
+               </columns>
+            </TableView>
+         </children></Pane>
       <JFXButton layoutX="49.0" layoutY="149.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -34,7 +44,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="293.0" layoutY="718.0" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: ace4aa;" text="Feedback" textFill="#49306b">
+      <JFXButton layoutX="178.0" layoutY="720.0" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: ace4aa;" text="Feedback" textFill="#49306b">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -67,26 +77,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="364.0" layoutY="30.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
+      <JFXButton layoutX="260.0" layoutY="20.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <Text fill="#ace4aa" layoutX="366.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" />
+      <Text fill="#ace4aa" layoutX="264.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" />
       <Text fill="#ace4aa" layoutX="104.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignment" underline="true">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Text>
-      <Pane layoutX="193.0" layoutY="146.0" prefHeight="514.0" prefWidth="209.0">
-         <children>
-            <TableView fx:id="AssignmentTbl" layoutX="-3.0" onMouseClicked="#AssignmentTblClicked" prefHeight="514.0" prefWidth="212.0">
-               <columns>
-                  <TableColumn editable="false" prefWidth="209.66668701171875" text="Assignment List" />
-               </columns>
-            </TableView>
-         </children>
-      </Pane>
       <Label fx:id="txtStudentName" layoutX="170.0" layoutY="50.0" prefHeight="21.0" prefWidth="179.0" text="Label" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />

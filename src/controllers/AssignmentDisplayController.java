@@ -1,6 +1,8 @@
 package controllers;
 
+import bll.Assignment;
 import bll.Student;
+import dao.AssignmentDao;
 import dao.StudentDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.MalformedURLException;
@@ -25,20 +28,66 @@ public class AssignmentDisplayController implements Initializable {
     String userID=loginScreenController.le;
 
     @FXML
-    private TableView<?> AssignmentTbl;
+    private TableView<Assignment> AssignmentTbl;
+
+    @FXML
+    private TableColumn<Assignment, String> assign_SN;
+
+    @FXML
+    private TableColumn<Assignment, String> assign_Title;
+
+    @FXML
+    private TableColumn<Assignment, String> assign_Unit;
+
+    @FXML
+    private TableColumn<Assignment, String> assign_Deadline;
 
     @FXML
     private Label txtStudentName;
 
+    public static String course;
+    public static String level;
 
-    @FXML
-    void AssignmentTblClicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    private TableColumn<Student, String> student_Email;
     ObservableList<Student> slist = FXCollections.observableArrayList();
+    ObservableList<Assignment> aslist = FXCollections.observableArrayList();
+
+    void loadAssignDetails()
+    {
+        try {
+            AssignmentDao ad = (AssignmentDao) Naming.lookup("rmi://localhost/Assignment");
+//            System.out.println("Course = "+ course);
+//            System.out.println("Course = "+ level);
+            ResultSet rs = ad.getAssignDetailsByCourseAndLevel(course, level);
+
+            while(rs.next())
+            {
+                aslist.add(new Assignment(
+                        rs.getString("assignment_id"),
+                        rs.getString("assignment_title"),
+                        rs.getString("assignment_level"),
+                        rs.getString("assignment_course"),
+                        rs.getString("assignment_unit"),
+                        rs.getString("assignment_deadline_date")
+                ));
+                assign_SN.setCellValueFactory(new PropertyValueFactory<>("Ass_ID"));
+                assign_Title.setCellValueFactory(new PropertyValueFactory<>("Ass_title"));
+//                ass_Course.setCellValueFactory(new PropertyValueFactory<>("Ass_course"));
+//                ass_Level.setCellValueFactory(new PropertyValueFactory<>("Ass_level"));
+                assign_Unit.setCellValueFactory(new PropertyValueFactory<>("Ass_unit"));
+                assign_Deadline.setCellValueFactory(new PropertyValueFactory<>("Ass_date"));
+                AssignmentTbl.setItems(aslist);
+            }
+
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     void loadStudentProfile()
     {
@@ -60,9 +109,9 @@ public class AssignmentDisplayController implements Initializable {
 
                 txtStudentName.setText(slist.get(0).getName());
 //                txtName.setText(slist.get(0).getName());
-//                txtCourse.setText(slist.get(0).getCourse());
+                course = slist.get(0).getCourse();
 //                txtEmail.setText(slist.get(0).getEmail());
-//                txtLevel.setText(slist.get(0).getLevel());
+                level = slist.get(0).getLevel();
             }
 
         } catch (NotBoundException e) {
@@ -79,7 +128,9 @@ public class AssignmentDisplayController implements Initializable {
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         loadStudentProfile();
+        loadAssignDetails();
     }
 }
