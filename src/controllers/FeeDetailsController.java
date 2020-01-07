@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -74,6 +75,15 @@ public class FeeDetailsController implements Initializable {
 
     @FXML
     private JFXButton ResetBtn;
+
+    @FXML
+    private JFXTextField feeNepali;
+
+    @FXML
+    private JFXTextField feePound;
+
+    @FXML
+    private JFXButton btnConvert;
 
     @FXML
     private TableView<FeeDetails> FeeTbl;
@@ -218,6 +228,7 @@ public class FeeDetailsController implements Initializable {
             while(rs.next())
             {
                 fdlist.add(new FeeDetails(
+                        1,
                         rs.getString("fee_id"),
                         rs.getString("fee_amount"),
                         rs.getString("fee_deadline_date"),
@@ -353,6 +364,20 @@ public class FeeDetailsController implements Initializable {
             FeeStdCourse.setText(selectedFee.getStudent_course());
             FeeStdLevel.setText(selectedFee.getStudent_level());
         }
+    }
+
+    @FXML
+    void btnConvertClicked(ActionEvent event)
+    {
+        double a = Double.parseDouble(feeNepali.getText()) * Double.parseDouble(forex.getText());
+        feePound.setText(String.valueOf(a));
+    }
+
+    @FXML
+    void feeNepaliKeyReleased(KeyEvent event)
+    {
+        double a = Double.parseDouble(feeNepali.getText()) * Double.parseDouble(forex.getText());
+        feePound.setText(String.valueOf(a));
     }
 
     @Override

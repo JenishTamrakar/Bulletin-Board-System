@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 public class FeeDetails implements Serializable
 {
+    private int sn;
     private String Fee_ID;
     private String Fee_Amt;
     private String Deadline_Date;
@@ -16,14 +17,23 @@ public class FeeDetails implements Serializable
 
     private static final  long serialVersionUID=1L;
 
-    public FeeDetails(String Fee_ID, String Fee_Amt, String Deadline_Date, String Fee_Details, String Student_course, String Student_level)
+    public FeeDetails(int sn, String Fee_ID, String Fee_Amt, String Deadline_Date, String Fee_Details, String Student_course, String Student_level)
     {
+        this.sn = sn;
         this.Fee_ID = Fee_ID;
         this.Fee_Amt = Fee_Amt;
         this.Deadline_Date = Deadline_Date;
         this.Fee_Details = Fee_Details;
         this.Student_course = Student_course;
         this.Student_level = Student_level;
+    }
+
+    public int getSn() {
+        return sn;
+    }
+
+    public void setSn(int sn) {
+        this.sn = sn;
     }
 
     public FeeDetails() {
