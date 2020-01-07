@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -19,7 +20,7 @@
       </Label>
       <Pane layoutX="322.0" layoutY="20.0" prefHeight="729.0" prefWidth="683.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;">
          <children>
-            <TableView fx:id="FeeTbl" layoutX="6.0" layoutY="12.0" prefHeight="708.0" prefWidth="669.0">
+            <TableView fx:id="FeeTbl" layoutX="6.0" layoutY="12.0" prefHeight="440.0" prefWidth="669.0">
                <columns>
                   <TableColumn fx:id="fee_SN" prefWidth="41.0" resizable="false" text="SN" />
                   <TableColumn fx:id="fee_Description" editable="false" prefWidth="352.0" text="Fee Description" />
@@ -27,6 +28,36 @@
                   <TableColumn fx:id="fee_Deadline" minWidth="0.0" prefWidth="104.0" text="Deadline" />
                </columns>
             </TableView>
+            <Label layoutX="285.0" layoutY="508.0" text="Today's Rate" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Text fx:id="forex" layoutX="351.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label layoutX="138.0" layoutY="580.0" text="Nepali Rupees (NRs)" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="382.0" layoutY="580.0" text="Pound Sterling (GBP)" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="280.0" layoutY="542.0" prefHeight="17.0" prefWidth="71.0" text="GBP 1 = NRs" />
+            <JFXTextField fx:id="feeNepali" layoutX="138.0" layoutY="606.0" onKeyReleased="#feeNepaliKeyReleased" />
+            <JFXTextField fx:id="feePound" editable="false" layoutX="385.0" layoutY="606.0" />
+            <JFXButton fx:id="btnConvert" layoutX="297.0" layoutY="606.0" onAction="#btnConvertClicked" style="-fx-background-color: #49306b;" text="Convert" textFill="#ace4aa">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="436.0" layoutY="657.0" text="Source: Nepal Rastra Bank (NRB)" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="436.0" layoutY="677.0" text="https://www.nrb.org.np/fxmexchangerate.php" textFill="#49306b" />
          </children></Pane>
       <JFXButton layoutX="49.0" layoutY="149.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
          <font>

@@ -1,18 +1,25 @@
 package controllers;
 
 import bll.FeeDetails;
+import bll.ForexResponse;
+import com.google.gson.Gson;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import dao.FeeDetailsDao;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.Naming;
@@ -37,6 +44,20 @@ public class StudentFeeDetailsController implements Initializable {
 
     @FXML
     private TableColumn<FeeDetails, String> fee_Deadline;
+
+    @FXML
+    private Text forex;
+
+    @FXML
+    private JFXTextField feeNepali;
+
+    @FXML
+    private JFXTextField feePound;
+
+    @FXML
+    private JFXButton btnConvert;
+
+    public String foreexchange;
 
     ObservableList<FeeDetails> fdlist = FXCollections.observableArrayList();
 
@@ -76,9 +97,54 @@ public class StudentFeeDetailsController implements Initializable {
         }
     }
 
+    @FXML
+    void btnConvertClicked(ActionEvent event)
+    {
+        double a = Double.parseDouble(feeNepali.getText()) * Double.parseDouble(forex.getText());
+        feePound.setText(String.valueOf(a));
+    }
+
+    @FXML
+    void feeNepaliKeyReleased(KeyEvent event)
+    {
+        double a = Double.parseDouble(feeNepali.getText()) * Double.parseDouble(forex.getText());
+        feePound.setText(String.valueOf(a));
+    }
+
+    public  void getForeignExchangerate(){
+        try {
+            Gson gson = new Gson();
+            String url_str = "https://nrb.org.np/exportForexJSON.php";
+
+            // Making Request
+            URL url = new URL(url_str);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            int responseCode = con.getResponseCode();
+            System.out.println(("\nSending 'GET' request to URL : "+url));
+            System.out.println("Resopnse code :"+responseCode);
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = in.readLine())!= null){
+                response.append(inputLine);
+            }
+            in.close();
+            ForexResponse forexResponse = gson.fromJson(response.toString(), ForexResponse.class);
+
+            foreexchange = forexResponse.getConversion().getCurrency()[3].getTargetSell();
+            System.out.println(foreexchange);
+            forex.setText(foreexchange);
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadFeeDetails();
+        getForeignExchangerate();
     }
 }
