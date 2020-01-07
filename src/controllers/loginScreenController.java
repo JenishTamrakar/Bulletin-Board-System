@@ -33,6 +33,7 @@ public class loginScreenController {
     @FXML
     private Hyperlink createAccount;
     public  static  String id;
+    public static String le;
 
 
     @FXML
@@ -57,7 +58,7 @@ public class loginScreenController {
 //        String user_id = "3333";
 //         String user_password = "student";
 
-
+            le=UID.getText();
             System.out.println("UID = "+user_id+" Password = "+user_password);
             try {
                 LoginDao ld = (LoginDao) Naming.lookup("rmi://localhost/Login");

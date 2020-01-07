@@ -15,7 +15,7 @@
    <children>
       <AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;">
          <children>
-            <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="211.0" text="Welcome Student" textFill="WHITE">
+            <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="107.0" text="Welcome" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -89,6 +89,11 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Text>
+            <Label fx:id="txtStudentName" layoutX="175.0" layoutY="50.0" prefHeight="21.0" prefWidth="176.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

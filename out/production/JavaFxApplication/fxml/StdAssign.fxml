@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AssignmentDisplayController">
    <children>
-      <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="211.0" text="Welcome Student" textFill="WHITE">
+      <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="110.0" text="Welcome" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -87,5 +87,10 @@
             </TableView>
          </children>
       </Pane>
+      <Label fx:id="txtStudentName" layoutX="170.0" layoutY="50.0" prefHeight="21.0" prefWidth="179.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

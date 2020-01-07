@@ -12,4 +12,5 @@ public interface StudentDao extends Remote
     void updateStudent(Student s) throws RemoteException;
     void deleteStudent(Student s) throws RemoteException;
     ResultSet getStudentRecords() throws RemoteException;
+    ResultSet getProfile(String user_id) throws RemoteException;
 }

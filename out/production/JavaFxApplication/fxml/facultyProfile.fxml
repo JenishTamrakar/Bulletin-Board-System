@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="facultyProfile" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.facultyProfileController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+         <top>
+            <Pane prefHeight="75.0" prefWidth="1080.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="#49306b" layoutX="464.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILE" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER" />
+            <Pane layoutX="29.0" layoutY="145.0" prefHeight="430.0" prefWidth="300.0" style="-fx-background-color: #49306b;" />
+            <JFXButton layoutX="-3.0" layoutY="-1.0" prefHeight="430.0" prefWidth="300.0" text="STUDENT RECORDS" textFill="#ace4aa" />
+         </center>
+         <left>
+            <Pane prefHeight="200.0" prefWidth="1080.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="#49306b" layoutX="13.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="16.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="17.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" ID" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField fx:id="txtName" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="72.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtEmail" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="130.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtCourse" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="185.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXButton fx:id="changePasswordBtn" layoutX="17.0" layoutY="418.0" onAction="#changePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Change Password" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtID" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="25.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXButton fx:id="logOutBtn" layoutX="17.0" layoutY="488.0" onAction="#logOut" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Line endX="919.0" layoutX="105.0" layoutY="314.0" startX="-105.0" />
+                  <JFXButton fx:id="editProfileBtn" layoutX="17.0" layoutY="347.0" onAction="#editProfile" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Edit Profile" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="backBtn" layoutX="858.0" layoutY="613.0" onAction="#backClicked" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Back" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

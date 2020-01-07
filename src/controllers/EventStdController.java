@@ -1,10 +1,12 @@
 package controllers;
 
 import bll.Event;
+import bll.Student;
 import com.jfoenix.controls.*;
 import com.jfoenix.effects.JFXDepthManager;
 import com.jfoenix.svg.SVGGlyph;
 import dao.EventDao;
+import dao.StudentDao;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -52,6 +54,8 @@ import static javafx.animation.Interpolator.EASE_BOTH;
 
 public class EventStdController implements Initializable {
 
+    String userID=loginScreenController.le;
+
     @FXML
     private JFXMasonryPane masonLayout;
 
@@ -60,6 +64,7 @@ public class EventStdController implements Initializable {
     @FXML
     private ScrollPane scrollEvent;
 
+<<<<<<< Updated upstream
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
@@ -106,6 +111,10 @@ public class EventStdController implements Initializable {
         eventRootPane.getChildren().setAll(pane);
 
     }
+=======
+    @FXML
+    private Label txtStudentName;
+>>>>>>> Stashed changes
 
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
@@ -209,8 +218,50 @@ public class EventStdController implements Initializable {
         }
     }
 
+    @FXML
+    private TableColumn<Student, String> student_Email;
+    ObservableList<Student> slist = FXCollections.observableArrayList();
+
+    void loadStudentProfile()
+    {
+        try {
+            StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
+            ResultSet rs = sd.getProfile(userID);
+
+            while(rs.next())
+            {
+                slist.add(new Student(
+                        rs.getString("student_sn"),
+                        rs.getString("student_id"),
+                        rs.getString("student_name"),
+                        rs.getString("student_course"),
+                        rs.getString("student_email"),
+                        rs.getString("student_level")
+                ));
+
+                txtStudentName.setText(slist.get(0).getName());
+//                txtName.setText(slist.get(0).getName());
+//                txtCourse.setText(slist.get(0).getCourse());
+//                txtEmail.setText(slist.get(0).getEmail());
+//                txtLevel.setText(slist.get(0).getLevel());
+            }
+
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadEventDetails();
+        loadStudentProfile();
     }
+
 }

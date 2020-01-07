@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentFeeDetailsController">
    <children>
-      <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="211.0" text="Welcome Student" textFill="WHITE">
+      <Label ellipsisString="" layoutX="13.0" layoutY="51.0" prefHeight="35.0" prefWidth="109.0" text="Welcome " textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -119,5 +119,10 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Text>
+      <Label fx:id="txtStudentName" layoutX="128.0" layoutY="51.0" prefHeight="35.0" prefWidth="140.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

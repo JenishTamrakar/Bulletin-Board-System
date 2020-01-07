@@ -1,9 +1,11 @@
 package controllers;
 
 import bll.Notice;
+import bll.Student;
 import com.jfoenix.controls.*;
 import com.jfoenix.effects.JFXDepthManager;
 import dao.NoticeDao;
+import dao.StudentDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -35,6 +37,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class NoticeDisplayController implements Initializable {
+
+    String userID=loginScreenController.le;
+
     @FXML
     private StackPane noticeRootPane;
 
@@ -43,6 +48,9 @@ public class NoticeDisplayController implements Initializable {
 
     @FXML
     private JFXMasonryPane masonLayout;
+
+    @FXML
+    private Label txtStudentName;
 
     ObservableList<Notice> nlist = FXCollections.observableArrayList();
 
@@ -147,8 +155,50 @@ public class NoticeDisplayController implements Initializable {
         }
     }
 
+    @FXML
+    private TableColumn<Student, String> student_Email;
+    ObservableList<Student> slist = FXCollections.observableArrayList();
+
+    void loadStudentProfile()
+    {
+        try {
+            StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
+            ResultSet rs = sd.getProfile(userID);
+
+
+            while(rs.next())
+            {
+                slist.add(new Student(
+                        rs.getString("student_sn"),
+                        rs.getString("student_id"),
+                        rs.getString("student_name"),
+                        rs.getString("student_course"),
+                        rs.getString("student_email"),
+                        rs.getString("student_level")
+                ));
+
+                txtStudentName.setText(slist.get(0).getName());
+//                txtName.setText(slist.get(0).getName());
+//                txtCourse.setText(slist.get(0).getCourse());
+//                txtEmail.setText(slist.get(0).getEmail());
+//                txtLevel.setText(slist.get(0).getLevel());
+            }
+
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        loadStudentProfile();
         loadNotices();
     }
 }

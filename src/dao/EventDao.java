@@ -12,4 +12,6 @@ public interface EventDao extends Remote
     void updateEventDet(Event ev) throws RemoteException;
     void deleteEventDet(Event ev) throws RemoteException;
     ResultSet getEventDetails() throws RemoteException;
+    ResultSet getProfile(String user_id) throws RemoteException;
+
 }
