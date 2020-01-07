@@ -12,4 +12,5 @@ public interface AssignmentDao extends Remote
     void updateAssDet(Assignment as) throws RemoteException;
     void deleteAssDet(Assignment as) throws RemoteException;
     ResultSet getAssignDetails() throws RemoteException;
+    ResultSet getAssignDetailsByCourseAndLevel(String course, String level) throws RemoteException;
 }

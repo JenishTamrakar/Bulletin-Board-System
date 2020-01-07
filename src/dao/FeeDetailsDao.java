@@ -12,5 +12,5 @@ public interface FeeDetailsDao extends Remote
         void deleteFeeDet(FeeDetails fd) throws RemoteException;
         ResultSet getFeeDetails() throws RemoteException;
         ResultSet getProfile(String user_id) throws RemoteException;
-
+        ResultSet getFeeDetailsByCourse(String course_name) throws RemoteException;
 }

@@ -112,7 +112,8 @@ public class EventStdController implements Initializable {
 
     }
 
-
+    @FXML
+    private Label txtStudentName;
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
 
@@ -236,7 +237,7 @@ public class EventStdController implements Initializable {
                         rs.getString("student_level")
                 ));
 
-//                txtStudentName.setText(slist.get(0).getName());
+                txtStudentName.setText(slist.get(0).getName());
 //                txtName.setText(slist.get(0).getName());
 //                txtCourse.setText(slist.get(0).getCourse());
 //                txtEmail.setText(slist.get(0).getEmail());
