@@ -10,6 +10,10 @@
   <component name="ProjectKey">
     <option name="state" value="project://e79810c8-c5c8-43b1-b19c-90c1f4095425" />
   </component>
+  <component name="ProjectResources">
+    <default-html-doctype>jar:file:\C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\lib\intellij-xml.jar!\standardSchemas\xhtml1-transitional.xsd</default-html-doctype>
+    <xml-schema-version>XMLSchema_1_1</xml-schema-version>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

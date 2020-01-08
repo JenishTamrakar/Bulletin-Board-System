@@ -9,17 +9,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="eventPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventCreateController">
+<AnchorPane fx:id="eventPane" prefHeight="784.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EventCreateController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1045.0">
          <top>
-            <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="75.0" prefWidth="1060.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
                   <JFXButton alignment="CENTER" layoutX="496.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="160.0" text="Faculty Records" textFill="#49306b">
                      <font>
@@ -75,6 +77,11 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
                <children>
+                  <ImageView fitHeight="710.0" fitWidth="1044.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/bg.jpg" />
+                     </image>
+                  </ImageView>
 
                   <JFXButton layoutX="928.0" layoutY="4.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa" />
                   <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">

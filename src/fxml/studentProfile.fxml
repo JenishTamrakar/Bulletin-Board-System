@@ -4,18 +4,21 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="studentProfile" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentProfileController">
+<AnchorPane fx:id="studentProfile" prefHeight="768.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentProfileController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1037.0">
          <top>
-            <Pane prefHeight="75.0" prefWidth="1080.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="75.0" prefWidth="1043.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
                   <Text fill="#49306b" layoutX="464.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILE" textAlignment="CENTER">
                      <font>
@@ -30,69 +33,94 @@
             <JFXButton layoutX="-3.0" layoutY="-1.0" prefHeight="430.0" prefWidth="300.0" text="STUDENT RECORDS" textFill="#ace4aa" />
          </center>
          <left>
-            <Pane prefHeight="200.0" prefWidth="1080.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="200.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
                <children>
-                  <Text fill="#49306b" layoutX="13.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER">
+                  <ImageView fitHeight="705.0" fitWidth="1033.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/bg.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#49306b" layoutX="612.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#49306b" layoutX="16.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER">
+                  <Text fill="#49306b" layoutX="615.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#49306b" layoutX="17.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" textAlignment="CENTER">
+                  <Text fill="#49306b" layoutX="616.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#49306b" layoutX="17.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level" textAlignment="CENTER">
+                  <Text fill="#49306b" layoutX="616.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#49306b" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" textAlignment="CENTER">
+                  <Text fill="#49306b" layoutX="613.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <JFXTextField fx:id="txtName" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="72.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXTextField fx:id="txtEmail" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="130.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXTextField fx:id="txtCourse" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="185.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXTextField fx:id="txtLevel" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="244.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXButton fx:id="changePasswordBtn" layoutX="17.0" layoutY="347.0" onAction="#changePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Change Password" textFill="#ace4aa">
+                  <JFXTextField fx:id="txtName" editable="false" focusColor="#49306b" layoutX="758.0" layoutY="129.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtEmail" editable="false" focusColor="#49306b" layoutX="758.0" layoutY="187.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtCourse" editable="false" focusColor="#49306b" layoutX="758.0" layoutY="242.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtLevel" editable="false" focusColor="#49306b" layoutX="758.0" layoutY="301.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXButton fx:id="changePasswordBtn" layoutX="824.0" layoutY="369.0" onAction="#changePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Change Password" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField fx:id="txtStudentID" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="25.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXButton fx:id="logOutBtn" layoutX="17.0" layoutY="451.0" onAction="#logOut" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                  <JFXTextField fx:id="txtStudentID" editable="false" focusColor="#49306b" layoutX="758.0" layoutY="72.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXButton fx:id="logOutBtn" layoutX="872.0" layoutY="633.0" onAction="#logOut" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <Line endX="919.0" layoutX="105.0" layoutY="314.0" startX="-105.0" />
-                  <JFXButton fx:id="backBtn" layoutX="858.0" layoutY="613.0" onAction="#backClicked" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Back" textFill="#ace4aa">
+                  <JFXButton fx:id="backBtn" layoutX="17.0" layoutY="12.0" onAction="#backClicked" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Back" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <Pane fx:id="changePwPane" layoutX="348.0" layoutY="330.0" prefHeight="292.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA;" visible="false">
+                  <Pane fx:id="changePwPane" layoutX="319.0" layoutY="364.0" prefHeight="303.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA; -fx-background-radius: 20; -fx-border-radius: 20;" visible="false">
                      <children>
-                        <Label layoutX="37.0" layoutY="100.0" prefHeight="21.0" prefWidth="127.0" text="New Password" />
-                        <Label layoutX="37.0" layoutY="171.0" prefHeight="21.0" prefWidth="127.0" text="Confirm Password" />
+                        <Label layoutX="37.0" layoutY="120.0" prefHeight="21.0" prefWidth="127.0" text="New Password" textFill="#49036b">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                        <Label layoutX="37.0" layoutY="181.0" prefHeight="21.0" prefWidth="127.0" text="Confirm Password" textFill="#49036b">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
                         <JFXButton fx:id="updatePasswordBtn" layoutX="157.0" layoutY="228.0" onAction="#updatePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Update Password" textFill="#ace4aa">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </JFXButton>
-                        <Label layoutX="36.0" layoutY="40.0" prefHeight="21.0" prefWidth="127.0" text="Old Password" />
-                        <JFXPasswordField fx:id="oldPassword" layoutX="174.0" layoutY="35.0" prefHeight="31.0" prefWidth="267.0" />
-                        <JFXPasswordField fx:id="newPassword" layoutX="175.0" layoutY="95.0" prefHeight="31.0" prefWidth="267.0" />
-                        <JFXPasswordField fx:id="confirmPassword" layoutX="175.0" layoutY="166.0" prefHeight="31.0" prefWidth="267.0" />
+                        <Label layoutX="36.0" layoutY="40.0" prefHeight="21.0" prefWidth="127.0" text="Old Password" textFill="#49036b">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Label>
+                        <JFXPasswordField fx:id="oldPassword" focusColor="#49036b" layoutX="174.0" layoutY="35.0" prefHeight="31.0" prefWidth="267.0" />
+                        <JFXPasswordField fx:id="newPassword" focusColor="#49036b" layoutX="175.0" layoutY="105.0" prefHeight="31.0" prefWidth="267.0" />
+                        <JFXPasswordField fx:id="confirmPassword" focusColor="#49036b" layoutX="175.0" layoutY="166.0" prefHeight="31.0" prefWidth="267.0" />
                      </children>
                   </Pane>
+                  <Circle fill="DODGERBLUE" layoutX="358.0" layoutY="194.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Line endX="100.0" layoutX="521.0" layoutY="205.0" startX="-100.0" style="-fx-rotate: 90;" />
+                  <Text fill="#49306b" layoutX="403.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILE DETAILS " textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="149.0" fitWidth="151.0" layoutX="284.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/man.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </left>

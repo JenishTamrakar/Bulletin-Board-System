@@ -36,8 +36,7 @@ public class StudentProfileController implements Initializable
 
     String userID=loginScreenController.le;
 
-    @FXML
-    private AnchorPane studentDashboard;
+
     @FXML
     private AnchorPane studentProfile;
 
@@ -89,7 +88,7 @@ public class StudentProfileController implements Initializable
     @FXML
     void backClicked(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
-        studentDashboard.getChildren().setAll(pane);
+        studentProfile.getChildren().setAll(pane);
     }
 
 
@@ -125,7 +124,7 @@ public class StudentProfileController implements Initializable
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentProfile.getChildren().setAll(pane);
 
     }

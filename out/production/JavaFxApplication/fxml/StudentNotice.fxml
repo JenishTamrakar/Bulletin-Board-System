@@ -5,6 +5,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -15,7 +17,12 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;">
          <children>
-            <Label ellipsisString="" layoutX="57.0" layoutY="50.0" prefHeight="35.0" prefWidth="109.0" text="Welcome" textFill="WHITE">
+            <ImageView fitHeight="793.0" fitWidth="1047.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/sbg.jpg" />
+               </image>
+            </ImageView>
+            <Label ellipsisString="" layoutX="35.0" layoutY="24.0" prefHeight="35.0" prefWidth="109.0" text="Welcome" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -69,10 +76,10 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <Text fill="#ace4aa" layoutX="84.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events" />
-            <Text fill="#ace4aa" layoutX="82.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" />
-            <Text fill="#ace4aa" layoutX="67.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignments" />
-            <Text fill="#ace4aa" layoutX="69.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details" />
+            <Text fill="#49306b" layoutX="84.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events" />
+            <Text fill="#49306b" layoutX="82.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" />
+            <Text fill="#49306b" layoutX="67.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignments" />
+            <Text fill="#49306b" layoutX="69.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details" />
             <JFXButton layoutX="26.0" layoutY="722.0" onAction="#logOut" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: ace4aa;" text="Log Out" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -84,12 +91,12 @@
                </font>
             </JFXButton>
             <Text fill="#ace4aa" layoutX="371.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" />
-            <Text fill="#ace4aa" layoutX="144.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" underline="true">
+            <Text fill="#49306b" layoutX="48.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices" underline="true">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Text>
-            <Label fx:id="txtStudentName" layoutX="172.0" layoutY="50.0" prefHeight="21.0" prefWidth="163.0" text="Label" textFill="WHITE">
+            <Label fx:id="txtStudentName" layoutX="83.0" layoutY="67.0" prefHeight="35.0" prefWidth="234.0" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

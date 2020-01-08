@@ -7,6 +7,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -15,9 +17,9 @@
 
 <AnchorPane fx:id="assignmentPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AssignmentCreateFacultyController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1040.0">
          <top>
-            <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="75.0" prefWidth="1062.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
                   <JFXButton alignment="CENTER" layoutX="771.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
                      <font>
@@ -43,12 +45,22 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
+                  <Label layoutX="24.0" layoutY="21.0" text="BULLETINBOARD" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </top>
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
                <children>
+                  <ImageView fitHeight="714.0" fitWidth="1082.0" layoutX="-41.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/bg.jpg" />
+                     </image>
+                  </ImageView>
                   <Label layoutX="28.0" layoutY="51.0" text="FACULTY" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="36.0" />

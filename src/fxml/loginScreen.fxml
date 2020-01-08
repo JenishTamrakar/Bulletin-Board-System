@@ -18,44 +18,44 @@
             <Image url="@../pictures/LoginBG.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="781.0" layoutX="1.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="513.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="781.0" layoutX="1.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="479.0" />
       <Label layoutX="54.0" layoutY="83.0" prefHeight="55.0" prefWidth="414.0" text="BULLETIN BOARD" textAlignment="CENTER" textFill="#49306b">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="322.0" prefHeight="40.0" prefWidth="92.0" text="User ID" textFill="#49306b">
+      <Label layoutX="70.0" layoutY="322.0" prefHeight="40.0" prefWidth="92.0" text="User ID" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="81.0" layoutY="421.0" prefHeight="40.0" prefWidth="92.0" text="Password" textFill="#49306b">
+      <Label layoutX="71.0" layoutY="421.0" prefHeight="40.0" prefWidth="92.0" text="Password" textFill="#49306b">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="UID" layoutX="183.0" layoutY="321.0" prefHeight="40.0" prefWidth="232.0" />
-      <PasswordField fx:id="Password" layoutX="180.0" layoutY="421.0" prefHeight="40.0" prefWidth="232.0" />
-      <Button fx:id="login" layoutX="249.0" layoutY="499.0" mnemonicParsing="false" onAction="#checkDetail" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #49306b;" text="Login" textFill="#ace4aa">
+      <TextField fx:id="UID" layoutX="173.0" layoutY="321.0" prefHeight="40.0" prefWidth="232.0" />
+      <PasswordField fx:id="Password" layoutX="174.0" layoutY="421.0" prefHeight="40.0" prefWidth="232.0" />
+      <Button fx:id="login" layoutX="219.0" layoutY="499.0" mnemonicParsing="false" onAction="#checkDetail" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #49306b;" text="Login" textFill="#ace4aa">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fill="#49306b" layoutX="183.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Note : Use College ID Card Number" wrappingWidth="232.0">
+      <Text fill="#49306b" layoutX="173.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Note : Use College ID Card Number" wrappingWidth="232.0">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Label layoutX="107.0" layoutY="207.0" prefHeight="53.0" prefWidth="298.0" text="Login To The System" textFill="#49306b">
+      <Label layoutX="97.0" layoutY="207.0" prefHeight="53.0" prefWidth="298.0" text="Login To The System" textFill="#49306b">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Text layoutX="127.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account ?">
+      <Text layoutX="117.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account ?">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Label layoutX="288.0" layoutY="575.0" onMouseClicked="#registerClick" text="Get an account" textAlignment="JUSTIFY" textFill="#1eab7a">
+      <Label layoutX="271.0" layoutY="574.0" onMouseClicked="#registerClick" text="Get an account" textAlignment="JUSTIFY" textFill="#1eab7a">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>

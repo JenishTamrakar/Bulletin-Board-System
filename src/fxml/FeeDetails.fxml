@@ -8,6 +8,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -16,11 +18,11 @@
 
 <AnchorPane fx:id="feeDetailsPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FeeDetailsController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1038.0">
          <top>
             <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton fx:id="eventsTop" alignment="CENTER" layoutX="468.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+                  <JFXButton fx:id="eventsTop" alignment="CENTER" layoutX="498.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -28,7 +30,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="facultyTop" alignment="CENTER" layoutX="567.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
+                  <JFXButton fx:id="facultyTop" alignment="CENTER" layoutX="587.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -36,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="assignmentsTop" alignment="CENTER" layoutX="754.0" onAction="#goToAssignments" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
+                  <JFXButton fx:id="assignmentsTop" alignment="CENTER" layoutX="774.0" onAction="#goToAssignments" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -44,7 +46,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton alignment="CENTER" layoutX="889.0" onAction="#goToNotices" prefHeight="75.0" prefWidth="139.0" text="Notices" textFill="#49306b">
+                  <JFXButton alignment="CENTER" layoutX="912.0" onAction="#goToNotices" prefHeight="75.0" prefWidth="116.0" text="Notices" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -52,7 +54,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="294.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+                  <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="338.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="169.0" text="Student Records" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -60,7 +62,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton fx:id="studentRecordTop1" alignment="CENTER" layoutX="136.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="175.0" text="Dashboard" textFill="#49306b">
+                  <JFXButton fx:id="studentRecordTop1" alignment="CENTER" layoutX="219.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="123.0" text="Dashboard" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -68,12 +70,22 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
+                  <Label layoutX="14.0" layoutY="20.0" text="BULLETINBOARD" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </top>
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
                <children>
+                  <ImageView fitHeight="705.0" fitWidth="1038.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/bg.jpg" />
+                     </image>
+                  </ImageView>
                   <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="36.0" />
@@ -123,7 +135,7 @@
                   <JFXTextField fx:id="FeeStdLevel" layoutX="631.0" layoutY="291.0" prefHeight="31.0" prefWidth="304.0" promptText="Enter Student Level" />
                   <JFXTextField fx:id="FeeAmt" focusColor="#9d40a8" layoutX="631.0" layoutY="342.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Amount " />
                   <JFXDatePicker fx:id="FeeDedDate" defaultColor="#49306b" layoutX="632.0" layoutY="401.0" />
-                  <JFXTextArea fx:id="FeeDet" focusColor="#89009e" layoutX="631.0" layoutY="462.0" prefHeight="121.0" prefWidth="304.0" promptText="Details of Fee" />
+                  <JFXTextArea fx:id="FeeDet" focusColor="#89009e" layoutX="629.0" layoutY="462.0" prefHeight="121.0" prefWidth="304.0" promptText="Details of Fee" />
                   <JFXButton fx:id="AddFeeDet" layoutX="515.0" layoutY="608.0" onAction="#addFeeDet" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
                      <cursor>
                         <Cursor fx:constant="HAND" />
