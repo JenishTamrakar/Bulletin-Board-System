@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -55,32 +57,42 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <JFXTextField fx:id="txtName" focusColor="#49306b" layoutX="159.0" layoutY="72.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXTextField fx:id="txtEmail" focusColor="#49306b" layoutX="159.0" layoutY="130.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXTextField fx:id="txtCourse" focusColor="#49306b" layoutX="159.0" layoutY="185.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXTextField fx:id="txtLevel" focusColor="#49306b" layoutX="159.0" layoutY="244.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXButton fx:id="changePasswordBtn" layoutX="17.0" layoutY="418.0" onAction="#changePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Change Password" textFill="#ace4aa">
+                  <JFXTextField fx:id="txtName" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="72.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtEmail" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="130.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtCourse" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="185.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="txtLevel" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="244.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXButton fx:id="changePasswordBtn" layoutX="17.0" layoutY="347.0" onAction="#changePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Change Password" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXTextField fx:id="txtStudentID" focusColor="#49306b" layoutX="159.0" layoutY="25.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
-                  <JFXButton fx:id="logOutBtn" layoutX="17.0" layoutY="488.0" onAction="#logOut" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                  <JFXTextField fx:id="txtStudentID" editable="false" focusColor="#49306b" layoutX="159.0" layoutY="25.0" prefHeight="37.0" prefWidth="199.0" unFocusColor="BLACK" />
+                  <JFXButton fx:id="logOutBtn" layoutX="17.0" layoutY="451.0" onAction="#logOut" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
                   <Line endX="919.0" layoutX="105.0" layoutY="314.0" startX="-105.0" />
-                  <JFXButton fx:id="editProfileBtn" layoutX="17.0" layoutY="347.0" onAction="#editProfile" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Edit Profile" textFill="#ace4aa">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </JFXButton>
                   <JFXButton fx:id="backBtn" layoutX="858.0" layoutY="613.0" onAction="#backClicked" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Back" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
+                  <Pane fx:id="changePwPane" layoutX="348.0" layoutY="330.0" prefHeight="292.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA;">
+                     <children>
+                        <Label layoutX="37.0" layoutY="100.0" prefHeight="21.0" prefWidth="127.0" text="New Password" />
+                        <Label layoutX="37.0" layoutY="171.0" prefHeight="21.0" prefWidth="127.0" text="Confirm Password" />
+                        <JFXButton fx:id="updatePasswordBtn" layoutX="157.0" layoutY="228.0" onAction="#updatePassword" prefHeight="50.0" prefWidth="132.0" ripplerFill="#0040ff" style="-fx-background-color: #49306b;" text="Update Password" textFill="#ace4aa">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="36.0" layoutY="40.0" prefHeight="21.0" prefWidth="127.0" text="Old Password" />
+                        <JFXPasswordField fx:id="oldPassword" layoutX="174.0" layoutY="35.0" prefHeight="31.0" prefWidth="267.0" />
+                        <JFXPasswordField fx:id="newPassword" layoutX="175.0" layoutY="95.0" prefHeight="31.0" prefWidth="267.0" />
+                        <JFXPasswordField fx:id="confirmPassword" layoutX="175.0" layoutY="166.0" prefHeight="31.0" prefWidth="267.0" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </left>

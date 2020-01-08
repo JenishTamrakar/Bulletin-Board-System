@@ -65,7 +65,6 @@ public class EventStdController implements Initializable {
     private ScrollPane scrollEvent;
 
 
-
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));

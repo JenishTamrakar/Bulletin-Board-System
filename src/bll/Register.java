@@ -7,6 +7,15 @@ public class Register implements Serializable {
     private String password;
     private String userType;
     private static final long serialVersionUID = 1L;
+
+    public Register(String user_id, String user_password, String user_role) {
+
+    }
+
+    public Register() {
+
+    }
+
     public String getUID() {
         return UID;
     }

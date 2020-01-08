@@ -9,12 +9,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -25,7 +29,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StudentProfileController implements Initializable {
+public class StudentProfileController implements Initializable
+{
 
     String userID=loginScreenController.le;
 
@@ -62,25 +67,87 @@ public class StudentProfileController implements Initializable {
     private JFXButton backBtn;
 
     @FXML
-    void backClicked(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
-        studentProfile.getChildren().setAll(pane);
+    private Pane changePwPane;
+
+    @FXML
+    private JFXButton updateProfileBtn;
+
+    @FXML
+    private JFXTextField newPassword;
+
+    @FXML
+    private JFXTextField confirmPassword;
+
+    @FXML
+    private JFXButton updatePasswordBtn;
+
+    @FXML
+    void backClicked(ActionEvent event) {
+
     }
+
 
     @FXML
     void changePassword(ActionEvent event) {
-
+        changePasswordBtn.setOnMouseClicked((event1 -> {
+            changePwPane.setVisible(true);
+        }));
     }
 
     @FXML
     void editProfile(ActionEvent event) {
+        editProfileBtn.setOnMouseClicked(event1 -> {
+            txtStudentID.setEditable(true);
+            txtName.setEditable(true);
+            txtEmail.setEditable(true);
+            txtCourse.setEditable(true);
+            txtLevel.setEditable(true);
+            updateProfileBtn.setVisible(true);
+        });
+    }
+
+    @FXML
+    void updateProfile(ActionEvent event) {
+        try
+        {
+            StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
+            Student s = new Student();
+            s.setStudent_ID(txtStudentID.getText());
+            s.setName(txtName.getText());
+            s.setEmail(txtEmail.getText());
+            s.setCourse(txtCourse.getText());
+            s.setLevel(txtLevel.getText());
+            sd.updateStudent(s);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Record Updated");
+            alert.setContentText("Student Record Successfully Updated!");
+            alert.showAndWait();
+            txtStudentID.setEditable(false);
+            txtName.setEditable(false);
+            txtEmail.setEditable(false);
+            txtCourse.setEditable(false);
+            txtLevel.setEditable(false);
+            updateProfileBtn.setVisible(false);
+            //loadStudentProfile();
+
+            //loadStudentData();
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
+        }
+    }
+
+    @FXML
+    void updatePassword(ActionEvent event) {
 
     }
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
         studentProfile.getChildren().setAll(pane);
+
     }
     @FXML
     private TableColumn<Student, String> student_Email;
@@ -92,8 +159,6 @@ public class StudentProfileController implements Initializable {
         try {
             StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
             ResultSet rs = sd.getProfile(userID);
-
-
             while(rs.next())
             {
                 slist.add(new Student(

@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -62,18 +64,83 @@ public class FacultyProfileController implements Initializable {
     private JFXButton backBtn;
 
     @FXML
-    void backClicked(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyDashboard.fxml")));
-        facultyProfile.getChildren().setAll(pane);
+    private JFXTextField newPassword;
+
+    @FXML
+    private JFXTextField confirmPassword;
+
+    @FXML
+    private JFXButton updatePasswordBtn;
+
+    @FXML
+    private JFXButton updateProfileBtn;
+
+    @FXML
+    private Pane changePasswordPane;
+
+    @FXML
+    void backClicked(ActionEvent event) {
+
     }
 
     @FXML
     void changePassword(ActionEvent event) {
-
+        changePasswordBtn.setOnMouseClicked((event1 -> {
+            changePasswordPane.setVisible(true);
+        }));
     }
 
     @FXML
     void editProfile(ActionEvent event) {
+        editProfileBtn.setOnMouseClicked(event1 -> {
+            txtFacultyID.setEditable(true);
+            txtName.setEditable(true);
+            txtEmail.setEditable(true);
+            txtCourse.setEditable(true);
+            updateProfileBtn.setVisible(true);
+        });
+
+    }
+
+    @FXML
+    void updatePassword(ActionEvent event) {
+
+    }
+
+    @FXML
+    void updateProfile(ActionEvent event) {
+        try
+        {
+            FacultyDao fd = (FacultyDao) Naming.lookup("rmi://localhost/Faculty");
+            Faculty f = new Faculty();
+            f.setFaculty_ID(txtFacultyID.getText());
+            f.setName(txtName.getText());
+            f.setEmail(txtEmail.getText());
+            f.setCourse(txtCourse.getText());
+            //System.out.println(r.getUID());
+            //System.out.println(r.getPassword());
+            fd.updateFaculty(f);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Record Updated");
+            alert.setContentText("Faculty Record Successfully Updated!");
+
+            //if (alert.getResult() == ButtonType.YES)
+            //{
+            //	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
+            //	registerPane.getChildren().setAll(pane);
+            //}
+            alert.showAndWait();
+            txtFacultyID.setEditable(false);
+            txtName.setEditable(false);
+            txtEmail.setEditable(false);
+            txtCourse.setEditable(false);
+            updateProfileBtn.setVisible(false);
+            //loadFacultyData();
+        }
+        catch(Exception e)
+        {
+            System.out.print(e);
+        }
 
     }
 

@@ -57,7 +57,6 @@ public class loginScreenController {
             alert.setTitle("Warning");
             alert.setHeaderText("Enter the login details !");
             alert.setContentText("Either user ID or password field is empty !");
-
             alert.showAndWait();
         }else {
             System.out.println("login btn clicked");
@@ -110,7 +109,6 @@ public class loginScreenController {
                 e.printStackTrace();
             }
         }
-
         return null;
     }
 
