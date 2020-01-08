@@ -5,6 +5,7 @@ import bll.Student;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import dao.FacultyDao;
+import dao.RegisterDao;
 import dao.StudentDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -79,8 +80,9 @@ public class FacultyProfileController implements Initializable {
     private Pane changePasswordPane;
 
     @FXML
-    void backClicked(ActionEvent event) {
-
+    void backClicked(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
+        facultyProfile.getChildren().setAll(pane);
     }
 
     @FXML
@@ -90,59 +92,30 @@ public class FacultyProfileController implements Initializable {
         }));
     }
 
-    @FXML
-    void editProfile(ActionEvent event) {
-        editProfileBtn.setOnMouseClicked(event1 -> {
-            txtFacultyID.setEditable(true);
-            txtName.setEditable(true);
-            txtEmail.setEditable(true);
-            txtCourse.setEditable(true);
-            updateProfileBtn.setVisible(true);
-        });
-
-    }
 
     @FXML
     void updatePassword(ActionEvent event) {
-
-    }
-
-    @FXML
-    void updateProfile(ActionEvent event) {
         try
         {
-            FacultyDao fd = (FacultyDao) Naming.lookup("rmi://localhost/Faculty");
-            Faculty f = new Faculty();
-            f.setFaculty_ID(txtFacultyID.getText());
-            f.setName(txtName.getText());
-            f.setEmail(txtEmail.getText());
-            f.setCourse(txtCourse.getText());
-            //System.out.println(r.getUID());
-            //System.out.println(r.getPassword());
-            fd.updateFaculty(f);
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
+
+            rd.updatePassword(loginScreenController.le,confirmPassword.getText());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Record Updated");
-            alert.setContentText("Faculty Record Successfully Updated!");
-
-            //if (alert.getResult() == ButtonType.YES)
-            //{
-            //	AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
-            //	registerPane.getChildren().setAll(pane);
-            //}
+            alert.setTitle("Password Updated");
+            alert.setContentText("Password Successfully Updated!");
             alert.showAndWait();
-            txtFacultyID.setEditable(false);
-            txtName.setEditable(false);
-            txtEmail.setEditable(false);
-            txtCourse.setEditable(false);
-            updateProfileBtn.setVisible(false);
-            //loadFacultyData();
+            confirmPassword.setText(null);
+            changePasswordPane.setVisible(false);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-        catch(Exception e)
-        {
-            System.out.print(e);
-        }
-
     }
+
+
 
     @FXML
     void logOut(ActionEvent event) throws IOException {

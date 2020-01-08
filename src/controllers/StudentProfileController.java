@@ -2,7 +2,9 @@ package controllers;
 
 import bll.Student;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import dao.RegisterDao;
 import dao.StudentDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -73,17 +75,21 @@ public class StudentProfileController implements Initializable
     private JFXButton updateProfileBtn;
 
     @FXML
-    private JFXTextField newPassword;
+    private JFXPasswordField oldPassword;
 
     @FXML
-    private JFXTextField confirmPassword;
+    private JFXPasswordField newPassword;
+
+    @FXML
+    private JFXPasswordField confirmPassword;
 
     @FXML
     private JFXButton updatePasswordBtn;
 
     @FXML
-    void backClicked(ActionEvent event) {
-
+    void backClicked(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
+        studentDashboard.getChildren().setAll(pane);
     }
 
 
@@ -95,52 +101,26 @@ public class StudentProfileController implements Initializable
     }
 
     @FXML
-    void editProfile(ActionEvent event) {
-        editProfileBtn.setOnMouseClicked(event1 -> {
-            txtStudentID.setEditable(true);
-            txtName.setEditable(true);
-            txtEmail.setEditable(true);
-            txtCourse.setEditable(true);
-            txtLevel.setEditable(true);
-            updateProfileBtn.setVisible(true);
-        });
-    }
-
-    @FXML
-    void updateProfile(ActionEvent event) {
+    void updatePassword(ActionEvent event)
+    {
         try
         {
-            StudentDao sd = (StudentDao) Naming.lookup("rmi://localhost/Student");
-            Student s = new Student();
-            s.setStudent_ID(txtStudentID.getText());
-            s.setName(txtName.getText());
-            s.setEmail(txtEmail.getText());
-            s.setCourse(txtCourse.getText());
-            s.setLevel(txtLevel.getText());
-            sd.updateStudent(s);
+            RegisterDao rd = (RegisterDao) Naming.lookup("rmi://localhost/Register");
+
+            rd.updatePassword(loginScreenController.le,confirmPassword.getText());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Record Updated");
-            alert.setContentText("Student Record Successfully Updated!");
+            alert.setTitle("Password Updated");
+            alert.setContentText("Password Successfully Updated!");
             alert.showAndWait();
-            txtStudentID.setEditable(false);
-            txtName.setEditable(false);
-            txtEmail.setEditable(false);
-            txtCourse.setEditable(false);
-            txtLevel.setEditable(false);
-            updateProfileBtn.setVisible(false);
-            //loadStudentProfile();
-
-            //loadStudentData();
+            confirmPassword.setText(null);
+            changePwPane.setVisible(false);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (NotBoundException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-        catch(Exception e)
-        {
-            System.out.print(e);
-        }
-    }
-
-    @FXML
-    void updatePassword(ActionEvent event) {
-
     }
 
     @FXML

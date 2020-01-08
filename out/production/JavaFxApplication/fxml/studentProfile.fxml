@@ -78,7 +78,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </JFXButton>
-                  <Pane fx:id="changePwPane" layoutX="348.0" layoutY="330.0" prefHeight="292.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA;">
+                  <Pane fx:id="changePwPane" layoutX="348.0" layoutY="330.0" prefHeight="292.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA;" visible="false">
                      <children>
                         <Label layoutX="37.0" layoutY="100.0" prefHeight="21.0" prefWidth="127.0" text="New Password" />
                         <Label layoutX="37.0" layoutY="171.0" prefHeight="21.0" prefWidth="127.0" text="Confirm Password" />
