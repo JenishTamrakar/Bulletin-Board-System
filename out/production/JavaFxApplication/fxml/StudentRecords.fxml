@@ -4,8 +4,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -83,7 +81,6 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="SearchStdRecTable" focusColor="#49306b" layoutX="47.0" layoutY="155.0" prefHeight="40.0" prefWidth="255.0" promptText="Search" />
                   <Label alignment="CENTER_RIGHT" layoutX="567.0" layoutY="226.0" prefHeight="45.0" prefWidth="145.0" text="Student ID" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -140,19 +137,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
-                  <MenuButton contentDisplay="BOTTOM" layoutX="888.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="122.0" style="-fx-background-color: #49306b;" text="Hello, Admin" textFill="#ace4aa">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Change Password" />
-                        <MenuItem mnemonicParsing="false" text="Sign Out" />
-                     </items>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </MenuButton>
-                  <Label layoutX="569.0" layoutY="170.0" text="Add New Student" textFill="#49306b" underline="true">
+                  <Label layoutX="682.0" layoutY="178.0" text="Add New Student" textFill="#49306b" underline="true">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -168,6 +153,16 @@
                     </columns>
                   </TableView>
                   <JFXTextField fx:id="StdSN" editable="false" layoutX="567.0" layoutY="203.0" visible="false" />
+                  <JFXButton fx:id="showChartBtn" layoutX="30.0" layoutY="178.0" onAction="#showChartBtnClicked" prefHeight="39.0" prefWidth="162.0" style="-fx-background-color: #49306b;" text="Show Pie Chart" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="887.0" layoutY="24.0" onAction="#logOut" prefHeight="39.0" prefWidth="111.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </Pane>
          </center>

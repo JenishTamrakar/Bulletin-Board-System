@@ -13,5 +13,5 @@ public interface FacultyDao extends Remote
     void deleteFaculty(Faculty f) throws RemoteException;
     ResultSet getFacultyRecords() throws RemoteException;
     ResultSet getProfile(String user_id) throws RemoteException;
-
+    ResultSet getFacultyRecordsByCourse() throws RemoteException;
 }

@@ -13,9 +13,11 @@ public class AdminDashboardController {
     @FXML
     private AnchorPane adminDashboard;
 
-
     @FXML
     private JFXButton logout;
+
+    @FXML
+    private JFXButton showChartBtn;
 
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
@@ -58,6 +60,12 @@ public class AdminDashboardController {
     @FXML
     void goToFeedback(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/viewFeedback.fxml")));
+        adminDashboard.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void showChartBtnClicked(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/charts.fxml")));
         adminDashboard.getChildren().setAll(pane);
     }
 
