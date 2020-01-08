@@ -76,7 +76,7 @@
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
                <children>
 
-                  <JFXButton fx:id="SgnOut" layoutX="928.0" layoutY="4.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Sign Out" textFill="#ace4aa" />
+                  <JFXButton layoutX="928.0" layoutY="4.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa" />
                   <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="36.0" />

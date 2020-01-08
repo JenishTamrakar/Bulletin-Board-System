@@ -84,6 +84,13 @@ public class FacultyRecordsController implements Initializable
     ObservableList<Faculty> flist = FXCollections.observableArrayList();
 
     @FXML
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        facultyRecordPane.getChildren().setAll(pane);
+
+    }
+
+    @FXML
     void goToNotices(javafx.event.ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         facultyRecordPane.getChildren().setAll(pane);

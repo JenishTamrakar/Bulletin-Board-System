@@ -4,8 +4,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -134,18 +132,6 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
-                  <MenuButton contentDisplay="BOTTOM" layoutX="888.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="122.0" style="-fx-background-color: #49306b;" text="Hello, Admin" textFill="#ace4aa">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Change Password" />
-                        <MenuItem mnemonicParsing="false" text="Sign Out" />
-                     </items>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </MenuButton>
                   <TableView fx:id="FacultyTbl" layoutX="38.0" layoutY="243.0" onMouseClicked="#FacultyTblMouseClicked" prefHeight="360.0" prefWidth="501.0">
                     <columns>
                         <TableColumn fx:id="faculty_SN" prefWidth="75.0" text="SN" />
@@ -156,6 +142,11 @@
                     </columns>
                   </TableView>
                   <JFXTextField fx:id="FacSN" editable="false" layoutX="577.0" layoutY="183.0" visible="false" />
+                  <JFXButton fx:id="logout" layoutX="910.0" layoutY="14.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </Pane>
          </center>

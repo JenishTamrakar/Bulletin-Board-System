@@ -6,8 +6,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -81,7 +79,7 @@
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="519.0" layoutY="87.0" text="FEE DETAILS" textFill="#49306b" underline="true">
+                  <Label layoutX="408.0" layoutY="52.0" text="FEE DETAILS" textFill="#49306b" underline="true">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -106,18 +104,6 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <MenuButton contentDisplay="BOTTOM" layoutX="890.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="122.0" style="-fx-background-color: #49306b;" text="Hello, Admin" textFill="#ace4aa">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Change Password" />
-                        <MenuItem mnemonicParsing="false" text="Sign Out" />
-                     </items>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </MenuButton>
                   <Text fill="#49306b" layoutX="526.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -181,29 +167,34 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="773.0" layoutY="114.0" text="Today's Rate" textFill="#49306b">
+                  <Label layoutX="724.0" layoutY="97.0" text="Today's Rate" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
-                  <Text fx:id="forex" layoutX="821.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                  <JFXTextField fx:id="feeNepali" layoutX="604.0" layoutY="185.0" onKeyReleased="#feeNepaliKeyReleased" />
-                  <JFXTextField fx:id="feePound" editable="false" layoutX="851.0" layoutY="185.0" />
-                  <JFXButton fx:id="btnConvert" layoutX="763.0" layoutY="185.0" onAction="#btnConvertClicked" style="-fx-background-color: #49306b;" text="Convert" textFill="#ace4aa">
+                  <Text fx:id="forex" layoutX="792.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <JFXTextField fx:id="feeNepali" layoutX="575.0" layoutY="168.0" onKeyReleased="#feeNepaliKeyReleased" />
+                  <JFXTextField fx:id="feePound" editable="false" layoutX="822.0" layoutY="168.0" />
+                  <JFXButton fx:id="btnConvert" layoutX="734.0" layoutY="168.0" onAction="#btnConvertClicked" style="-fx-background-color: #49306b;" text="Convert" textFill="#ace4aa">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="601.0" layoutY="162.0" text="Nepali Rupees (NRs)" textFill="#49306b">
+                  <Label layoutX="572.0" layoutY="145.0" text="Nepali Rupees (NRs)" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="850.0" layoutY="162.0" text="Pound Sterling (GBP)" textFill="#49306b">
+                  <Label layoutX="821.0" layoutY="145.0" text="Pound Sterling (GBP)" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="746.0" layoutY="141.0" prefHeight="17.0" prefWidth="71.0" text="GBP 1 = NRs" />
+                  <Label layoutX="717.0" layoutY="124.0" prefHeight="17.0" prefWidth="71.0" text="GBP 1 = NRs" />
+                  <JFXButton fx:id="logout" layoutX="916.0" layoutY="25.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </Pane>
          </center>

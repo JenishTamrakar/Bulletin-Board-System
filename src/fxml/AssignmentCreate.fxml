@@ -183,6 +183,11 @@
                   </font>
                </JFXButton>
                <JFXTextField fx:id="AssSN" editable="false" layoutX="601.0" layoutY="217.0" visible="false" />
+               <JFXButton fx:id="logout" layoutX="905.0" layoutY="14.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </JFXButton>
             </Pane>
          </center>
       </BorderPane>

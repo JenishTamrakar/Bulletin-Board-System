@@ -75,6 +75,14 @@ public class NoticeCreateController implements Initializable {
     ObservableList<Notice> nlist = FXCollections.observableArrayList();
 
     @FXML
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        noticePane.getChildren().setAll(pane);
+
+    }
+
+
+    @FXML
     void goToStudentRecords(javafx.event.ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         noticePane.getChildren().setAll(pane);

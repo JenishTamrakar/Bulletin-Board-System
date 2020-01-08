@@ -7,10 +7,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.Naming;
@@ -41,42 +44,55 @@ public class ChartsController implements Initializable {
     private ObservableList<PieChart.Data> dataFacultyCourse= FXCollections.observableArrayList();
 
     @FXML
-    void goToAssignments(ActionEvent event) {
+    void goToAssignments(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
+        chartPane.getChildren().setAll(pane);
 
     }
 
     @FXML
-    void goToDashboard(ActionEvent event) {
+    void goToDashboard(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
+        chartPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToEvents(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
+        chartPane.getChildren().setAll(pane);
 
     }
 
     @FXML
-    void goToEvents(ActionEvent event) {
+    void goToFacultyRecords(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
+        chartPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToFeeDetails(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
+        chartPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void goToNotices(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/NoticeCreate.fxml")));
+        chartPane.getChildren().setAll(pane);
 
     }
 
     @FXML
-    void goToFacultyRecords(ActionEvent event) {
+    void goToStudentRecords(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
+        chartPane.getChildren().setAll(pane);
 
     }
 
     @FXML
-    void goToFeeDetails(ActionEvent event) {
-
-    }
-
-    @FXML
-    void goToNotices(ActionEvent event) {
-
-    }
-
-    @FXML
-    void goToStudentRecords(ActionEvent event) {
-
-    }
-
-    @FXML
-    void logOut(ActionEvent event) {
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        chartPane.getChildren().setAll(pane);
 
     }
 

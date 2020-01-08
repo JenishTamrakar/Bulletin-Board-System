@@ -88,6 +88,13 @@ public class AssignmentCreateAdminController implements Initializable {
     ObservableList<Assignment> aslist = FXCollections.observableArrayList();
 
     @FXML
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        assignmentPane.getChildren().setAll(pane);
+
+    }
+
+    @FXML
     void goToNotices(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         assignmentPane.getChildren().setAll(pane);

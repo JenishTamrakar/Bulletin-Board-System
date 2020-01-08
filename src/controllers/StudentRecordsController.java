@@ -331,4 +331,14 @@ public class StudentRecordsController implements Initializable
         loadStudentData();
         System.out.println(generatePassword(8));
     }
+
+    public void logOut(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
+
+    public void showChartBtnClicked(ActionEvent actionEvent) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/charts.fxml")));
+        studentRecordPane.getChildren().setAll(pane);
+    }
 }

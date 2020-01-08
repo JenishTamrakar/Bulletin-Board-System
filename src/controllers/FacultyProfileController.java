@@ -3,6 +3,7 @@ package controllers;
 import bll.Faculty;
 import bll.Student;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import dao.FacultyDao;
 import dao.RegisterDao;
@@ -65,19 +66,22 @@ public class FacultyProfileController implements Initializable {
     private JFXButton backBtn;
 
     @FXML
-    private JFXTextField newPassword;
+    private JFXPasswordField oldPassword;
 
     @FXML
-    private JFXTextField confirmPassword;
+    private JFXPasswordField newPassword;
+
+    @FXML
+    private JFXPasswordField confirmPassword;
 
     @FXML
     private JFXButton updatePasswordBtn;
 
     @FXML
-    private JFXButton updateProfileBtn;
-
-    @FXML
     private Pane changePasswordPane;
+
+
+
 
     @FXML
     void backClicked(ActionEvent event) throws IOException {

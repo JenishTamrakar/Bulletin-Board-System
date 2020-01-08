@@ -137,6 +137,13 @@ public class FeeDetailsController implements Initializable {
     public FeeDetailsController() throws IOException {
     }
 
+    @FXML
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        feeDetailsPane.getChildren().setAll(pane);
+
+    }
+
 
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {

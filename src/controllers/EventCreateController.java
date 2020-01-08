@@ -83,6 +83,13 @@ public class EventCreateController implements Initializable {
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
     @FXML
+    void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+        eventPane.getChildren().setAll(pane);
+
+    }
+
+    @FXML
     void addEventClicked(ActionEvent event) {
         LocalDate ld = DateEvent.getValue();
         LocalTime lt = TimeEvent.getValue();
