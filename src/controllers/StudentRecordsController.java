@@ -163,13 +163,14 @@ public class StudentRecordsController implements Initializable
             EntrStdLvl.setText(null);
             StudentTbl.getItems().clear();
             loadStudentData();
+
         }
         catch(Exception e)
         {
             System.out.print(e);
         }
 
-    sendMailStudent.sendMail(mail);
+        sendMailStudent.sendMail(mail);
     }
 
     @FXML

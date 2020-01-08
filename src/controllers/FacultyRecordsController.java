@@ -150,6 +150,7 @@ public class FacultyRecordsController implements Initializable
             EntrFacCourse.setText(null);
             FacultyTbl.getItems().clear();
             loadFacultyData();
+
         }
         catch(Exception e)
         {

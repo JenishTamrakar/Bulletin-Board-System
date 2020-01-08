@@ -70,6 +70,7 @@ public class loginScreenController {
                 LoginDao ld = (LoginDao) Naming.lookup("rmi://localhost/Login");
                 ResultSet rs= ld.checkUser(user_id, user_password);
                 if (rs.next()) {
+                    System.out.println(rs.getString(1));
                     if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("admin")) {
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/AdminDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
