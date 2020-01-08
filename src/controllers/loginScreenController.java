@@ -6,7 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -36,10 +38,16 @@ public class loginScreenController {
     public static String le;
 
 
+
     @FXML
-    void registerClick(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/signUp.fxml"));
-        loginPane.getChildren().setAll(pane);
+    void registerClick(MouseEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Hello, New User");
+        alert.setHeaderText("Don't have a account ?");
+        alert.setContentText("Contact college admin to get your account created !");
+
+        alert.showAndWait();
+
     }
 
     @FXML
@@ -61,7 +69,7 @@ public class loginScreenController {
             try {
                 LoginDao ld = (LoginDao) Naming.lookup("rmi://localhost/Login");
                 ResultSet rs= ld.checkUser(user_id, user_password);
-                while(rs.next()) {
+                if (rs.next()) {
                     if (user_id.equals(rs.getString(1)) && user_password.equals(rs.getString(2)) && rs.getString(3).equals("admin")) {
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/AdminDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
@@ -73,6 +81,13 @@ public class loginScreenController {
                     {
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
+                    }else {
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Warning");
+                        alert.setHeaderText("Worng login details !");
+                        alert.setContentText("Either user ID or password field is invalid !");
+
+                        alert.showAndWait();
                     }
                 }
 
@@ -98,4 +113,12 @@ public class loginScreenController {
         return null;
     }
 
+    public void getAccount(WindowEvent windowEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Hello, New User");
+        alert.setHeaderText("Don't have a account ?");
+        alert.setContentText("Contact college admin to get your account created !");
+
+        alert.showAndWait();
+    }
 }
