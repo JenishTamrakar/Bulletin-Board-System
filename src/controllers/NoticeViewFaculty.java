@@ -52,24 +52,28 @@ public class NoticeViewFaculty implements Initializable {
     @FXML
     private Label txtStudentName;
 
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreateFaculty.fxml")));
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventFaculty.fxml")));
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to profile window
     @FXML
     void goToProfile(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyProfile.fxml")));
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
 
@@ -79,6 +83,7 @@ public class NoticeViewFaculty implements Initializable {
 
     ObservableList<Notice> nlist = FXCollections.observableArrayList();
 
+    //load notices from the notice table
     void loadNotices()
     {
         try {
@@ -184,6 +189,7 @@ public class NoticeViewFaculty implements Initializable {
     private TableColumn<Student, String> student_Email;
     ObservableList<Student> slist = FXCollections.observableArrayList();
 
+    //load student details from the student table
     void loadStudentProfile()
     {
         try {
@@ -220,6 +226,11 @@ public class NoticeViewFaculty implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

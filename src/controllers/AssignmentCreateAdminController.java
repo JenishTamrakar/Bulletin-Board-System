@@ -87,6 +87,7 @@ public class AssignmentCreateAdminController implements Initializable {
 
     ObservableList<Assignment> aslist = FXCollections.observableArrayList();
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
@@ -94,41 +95,52 @@ public class AssignmentCreateAdminController implements Initializable {
 
     }
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         assignmentPane.getChildren().setAll(pane);
     }
+
+    //navigation to student records window
     @FXML
     void goToStudentRecords(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to faculty records window
     @FXML
     void goToFacultyRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
+
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
-
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event)throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
+    /**
+     *add new assignments
+     * @param actionEvent
+     */
     @FXML
     void addAssClicked(ActionEvent actionEvent)
     {
@@ -172,6 +184,10 @@ public class AssignmentCreateAdminController implements Initializable {
         }
     }
 
+    /**
+     * reset the text fields
+     * @param event
+     */
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -183,6 +199,10 @@ public class AssignmentCreateAdminController implements Initializable {
         AssignUnit.clear();
     }
 
+    /**
+     * update assignment details
+     * @param event
+     */
     @FXML
     void updtAssDetClicked(ActionEvent event)
     {
@@ -229,6 +249,10 @@ public class AssignmentCreateAdminController implements Initializable {
         }
     }
 
+    /**
+     * delete assignment details
+     * @param event
+     */
     @FXML
     void delAssDetClicked(ActionEvent event)
     {
@@ -255,6 +279,10 @@ public class AssignmentCreateAdminController implements Initializable {
         }
     }
 
+    /**
+     * select data row from table to edit data
+     * @param event
+     */
     @FXML
     void AssignmentTblMouseClicked(MouseEvent event)
     {
@@ -264,6 +292,9 @@ public class AssignmentCreateAdminController implements Initializable {
         }
     }
 
+    /**
+     * edit the table data from textfield
+     */
     void onEdit()
     {
         // check the table's selected item and get selected item
@@ -278,6 +309,9 @@ public class AssignmentCreateAdminController implements Initializable {
         }
     }
 
+    /**
+     * load assignment details from assignment table into the table
+     */
     void loadAssignDetails()
     {
         try {
@@ -315,6 +349,11 @@ public class AssignmentCreateAdminController implements Initializable {
         }
     }
 
+    /**
+     * initialization of the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

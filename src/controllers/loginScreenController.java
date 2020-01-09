@@ -39,6 +39,7 @@ public class loginScreenController {
 
 
 
+    //display alert dialog
     @FXML
     void registerClick(MouseEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -50,6 +51,7 @@ public class loginScreenController {
 
     }
 
+    //check login details
     @FXML
     public String checkDetail(){
         if (UID.getText().trim().isEmpty() && Password.getText().trim().isEmpty()){

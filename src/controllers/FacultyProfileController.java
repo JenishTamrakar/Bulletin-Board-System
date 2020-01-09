@@ -73,9 +73,11 @@ public class FacultyProfileController implements Initializable {
 
     @FXML
     private JFXPasswordField confirmPassword;
-
     @FXML
     private JFXButton updatePasswordBtn;
+
+    @FXML
+    private JFXButton updateProfileBtn;
 
     @FXML
     private Pane changePasswordPane;

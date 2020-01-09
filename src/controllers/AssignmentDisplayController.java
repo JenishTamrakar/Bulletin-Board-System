@@ -59,6 +59,9 @@ public class AssignmentDisplayController implements Initializable {
     ObservableList<Student> slist = FXCollections.observableArrayList();
     ObservableList<Assignment> aslist = FXCollections.observableArrayList();
 
+    /**
+     * load assignment details from assignment table into te table
+     */
     void loadAssignDetails()
     {
         try {
@@ -97,6 +100,9 @@ public class AssignmentDisplayController implements Initializable {
         }
     }
 
+    /**
+     * load student data from the student table into the required textfields
+     */
     void loadStudentProfile()
     {
         try {
@@ -133,47 +139,53 @@ public class AssignmentDisplayController implements Initializable {
         }
     }
 
-    @FXML
-    void goToAssignments(ActionEvent event) {
-
-    }
-
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
         studentAssignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
         studentAssignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to feedback window
     @FXML
     void goToFeedback(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
         studentAssignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to notice window
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
         studentAssignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to profile window
     @FXML
     void goToProfile(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
         studentAssignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentAssignmentPane.getChildren().setAll(pane);
     }
 
+    /**
+     * initilaize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

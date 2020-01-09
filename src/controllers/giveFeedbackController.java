@@ -40,10 +40,12 @@ public class giveFeedbackController {
     @FXML
     private JFXTextField EveSN;
 
+    /**
+     * submit feedback details
+     * @param event
+     */
     @FXML
     void submitFeedback(ActionEvent event) {
-
-
         try {
             viewFeedbackDao vfd = (viewFeedbackDao) Naming.lookup("rmi://localhost/ViewFeedback");
             viewFeedback vf = new viewFeedback();
@@ -68,10 +70,7 @@ public class giveFeedbackController {
 
     }
 
-
-
-
-
+    //navigation to dashboard window
     public void goBack(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
         feedbackpane.getChildren().setAll(pane);

@@ -75,6 +75,7 @@
                   </JFXButton>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#49306b" height="73.0" layoutX="298.0" layoutY="103.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="380.0" />
                   <Pane fx:id="changePasswordPane" layoutX="348.0" layoutY="330.0" prefHeight="292.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA;" visible="false">
+                  <Pane fx:id="changePasswordPane" layoutX="348.0" layoutY="330.0" prefHeight="292.0" prefWidth="476.0" style="-fx-background-color: #ACE4AA;">
                      <children>
                         <Label layoutX="37.0" layoutY="107.0" prefHeight="21.0" prefWidth="127.0" text="New Password" />
                         <Label layoutX="37.0" layoutY="158.0" prefHeight="21.0" prefWidth="127.0" text="Confirm Password" />

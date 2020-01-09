@@ -83,40 +83,49 @@ public class FacultyRecordsController implements Initializable
 
     ObservableList<Faculty> flist = FXCollections.observableArrayList();
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to notices window
     @FXML
     void goToNotices(javafx.event.ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         facultyRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to student records window
     @FXML
     void goToStudentRecords(javafx.event.ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(javafx.event.ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to assignments window
     @FXML
     void goToAssignments(javafx.event.ActionEvent event) throws  IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(javafx.event.ActionEvent event)throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
         facultyRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to dashboard window
     @FXML
     void goToDashboard(javafx.event.ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
@@ -124,6 +133,12 @@ public class FacultyRecordsController implements Initializable
     }
     public static String uid;
     public static String passwrd;
+
+    /**
+     * add faculty details
+     * @param event
+     * @throws Exception
+     */
     @FXML
     void addFacRecClicked(ActionEvent event) throws Exception {
         uid = EntrFacID.getText();
@@ -167,6 +182,9 @@ public class FacultyRecordsController implements Initializable
         JavaMailUtilFaculty.sendMail(EntrFacEmail.getText());
     }
 
+    /**
+     * laod faculty details from the faculty table
+     */
     void loadFacultyData()
     {
         try
@@ -201,7 +219,10 @@ public class FacultyRecordsController implements Initializable
         }
     }
 
-
+    /**
+     * update faculty details
+     * @param event
+     */
     @FXML
     void updtFacRecClicked(ActionEvent event)
     {
@@ -233,6 +254,10 @@ public class FacultyRecordsController implements Initializable
         }
     }
 
+    /**
+     * select the row data from the table to edit data
+     * @param event
+     */
     @FXML
     void FacultyTblMouseClicked(MouseEvent event)
     {
@@ -242,6 +267,10 @@ public class FacultyRecordsController implements Initializable
         }
     }
 
+    /**
+     * delete faculty details
+     * @param event
+     */
     @FXML
     void delFacClicked(ActionEvent event)
     {
@@ -267,6 +296,10 @@ public class FacultyRecordsController implements Initializable
         }
     }
 
+    /**
+     * reset the faculty data from the textfield
+     * @param event
+     */
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -277,6 +310,8 @@ public class FacultyRecordsController implements Initializable
         EntrFacCourse.setText(null);
     }
 
+
+     //edit the details from the table
     void onEdit() {
         if (FacultyTbl.getSelectionModel().getSelectedItem() != null) {
             Faculty selectedFaculty = FacultyTbl.getSelectionModel().getSelectedItem();
@@ -289,6 +324,11 @@ public class FacultyRecordsController implements Initializable
         }
     }
 
+    /**
+     * generate random string to be used as password
+     * @param length
+     * @return
+     */
     private static String generatePassword(int length) {
         String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -309,9 +349,11 @@ public class FacultyRecordsController implements Initializable
         return passwrd = password.toString();
     }
 
-
-
-
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

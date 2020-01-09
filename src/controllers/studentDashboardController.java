@@ -38,24 +38,28 @@ public class studentDashboardController implements Initializable {
     @FXML
     private Label txtStudentName;
 
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDet(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
+    //navigation to feedback window
     @FXML
     void goToFeedback(ActionEvent event) throws IOException {
 
@@ -63,39 +67,43 @@ public class studentDashboardController implements Initializable {
         studentDashboard.getChildren().setAll(pane);
     }
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
+    //navigation to profile window
     @FXML
     void goToProfile(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentDashboard.getChildren().setAll(pane);
     }
 
-    public void logOutClicked(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
-        studentDashboard.getChildren().setAll(pane);
-    }
-
-    public void profileClicked(ActionEvent actionEvent) throws IOException {
-        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
-        studentDashboard.getChildren().setAll(pane);
-    }
+//    navigation to  window
+//    public void logOutClicked(ActionEvent actionEvent) throws IOException {
+//        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
+//        studentDashboard.getChildren().setAll(pane);
+//    }
+//
+//    public void profileClicked(ActionEvent actionEvent) throws IOException {
+//        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
+//        studentDashboard.getChildren().setAll(pane);
+//    }
 
     @FXML
     private TableColumn<Student, String> student_Email;
     ObservableList<Student> slist = FXCollections.observableArrayList();
 
-
+    //load student details from the student table
     void loadStudentProfile()
     {
         try {
@@ -132,6 +140,11 @@ public class studentDashboardController implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadStudentProfile();

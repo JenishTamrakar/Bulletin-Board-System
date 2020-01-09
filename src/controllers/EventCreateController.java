@@ -82,13 +82,17 @@ public class EventCreateController implements Initializable {
 
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         eventPane.getChildren().setAll(pane);
-
     }
 
+    /**
+     * add event details
+     * @param event
+     */
     @FXML
     void addEventClicked(ActionEvent event) {
         LocalDate ld = DateEvent.getValue();
@@ -133,44 +137,52 @@ public class EventCreateController implements Initializable {
 
     }
 
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         eventPane.getChildren().setAll(pane);
     }
 
+    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         eventPane.getChildren().setAll(pane);
     }
 
-
+    //navigation to faculty records window
     @FXML
     void goToFacultyRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         eventPane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
         eventPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         eventPane.getChildren().setAll(pane);
     }
 
+    //navigation to student records window
     @FXML
     void goToStudentRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         eventPane.getChildren().setAll(pane);
     }
 
+    /**
+     * delete event details
+     * @param event
+     */
     @FXML
     void delEventClicked(ActionEvent event)
     {
@@ -196,6 +208,10 @@ public class EventCreateController implements Initializable {
         }
     }
 
+    /**
+     * reset details from the textfields
+     * @param event
+     */
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -208,6 +224,10 @@ public class EventCreateController implements Initializable {
         loadEventDetails();
     }
 
+    /**
+     * update event details
+     * @param event
+     */
     @FXML
     void updtEventClicked(ActionEvent event)
     {
@@ -251,6 +271,9 @@ public class EventCreateController implements Initializable {
         }
     }
 
+    /**
+     * load event details from event detail table into the table
+     */
     void loadEventDetails()
     {
         try {
@@ -286,6 +309,10 @@ public class EventCreateController implements Initializable {
         }
     }
 
+    /**
+     * select row data from table to edit data
+     * @param event
+     */
     @FXML
     void EventsTblMouseClicked(MouseEvent event)
     {
@@ -295,6 +322,9 @@ public class EventCreateController implements Initializable {
         }
     }
 
+    /**
+     * edit the table data from the textfield
+     */
     void onEdit()
     {
         // check the table's selected item and get selected item
@@ -308,6 +338,11 @@ public class EventCreateController implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadEventDetails();

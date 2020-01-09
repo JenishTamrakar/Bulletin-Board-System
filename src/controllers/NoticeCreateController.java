@@ -74,48 +74,61 @@ public class NoticeCreateController implements Initializable {
 
     ObservableList<Notice> nlist = FXCollections.observableArrayList();
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         noticePane.getChildren().setAll(pane);
-
     }
 
-
+    //navigation to student window
     @FXML
     void goToStudentRecords(javafx.event.ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         noticePane.getChildren().setAll(pane);
     }
 
+    //navigation to faculty record window
     @FXML
     void goToFacultyRecords(javafx.event.ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         noticePane.getChildren().setAll(pane);
     }
+
+    //navigation to events window
     @FXML
     void goToEvents(javafx.event.ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         noticePane.getChildren().setAll(pane);
     }
+
+    //navigation to assignments window
     @FXML
     void goToAssignments(javafx.event.ActionEvent event) throws  IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         noticePane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(javafx.event.ActionEvent event)throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
         noticePane.getChildren().setAll(pane);
     }
+
+    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         noticePane.getChildren().setAll(pane);
     }
 
-
+    /**
+     * add notice details
+     * @param event
+     * @throws RemoteException
+     * @throws NotBoundException
+     */
     @FXML
     void addNotice(ActionEvent event) throws RemoteException, NotBoundException {
         LocalDate ld = NoticeDate.getValue();
@@ -156,6 +169,7 @@ public class NoticeCreateController implements Initializable {
         }
     }
 
+    //reset data from the textfields
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -165,6 +179,10 @@ public class NoticeCreateController implements Initializable {
         NoticeDate.setValue(null);
     }
 
+    /**
+     * update notice details
+     * @param event
+     */
     @FXML
     void updtNtcClicked(ActionEvent event)
     {
@@ -205,6 +223,10 @@ public class NoticeCreateController implements Initializable {
         }
     }
 
+    /**
+     * delete notice details
+     * @param event
+     */
     @FXML
     void delNtcClicked(ActionEvent event)
     {
@@ -229,6 +251,10 @@ public class NoticeCreateController implements Initializable {
         }
     }
 
+    /**
+     * select row data from the table
+     * @param event
+     */
     @FXML
     void NoticeTblClicked(MouseEvent event)
     {
@@ -238,6 +264,7 @@ public class NoticeCreateController implements Initializable {
         }
     }
 
+    //edit data from the table
     void onEdit()
     {
         // check the table's selected item and get selected item
@@ -250,6 +277,9 @@ public class NoticeCreateController implements Initializable {
         }
     }
 
+    /**
+     *load notice data from the notic table
+     */
     void loadNotices()
     {
         try {
@@ -283,6 +313,11 @@ public class NoticeCreateController implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

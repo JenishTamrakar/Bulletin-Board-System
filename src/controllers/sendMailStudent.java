@@ -9,7 +9,11 @@ import java.util.Properties;
 
 public class sendMailStudent {
 
-
+    /**
+     * method to append the message, set the email credentials and create connection with smtp gmail
+     * @param recepient
+     * @throws Exception
+     */
     public static void sendMail(String recepient) throws Exception {
         final String username = "pcpsbulletinboard@gmail.com";
         final String password = "Row$h@n5678";
@@ -26,7 +30,6 @@ public class sendMailStudent {
                         return new PasswordAuthentication(username, password);
                     }
                 });
-
         try {
 
             Message message = new MimeMessage(session);

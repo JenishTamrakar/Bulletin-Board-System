@@ -137,51 +137,59 @@ public class FeeDetailsController implements Initializable {
     public FeeDetailsController() throws IOException {
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         feeDetailsPane.getChildren().setAll(pane);
-
     }
 
-
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         feeDetailsPane.getChildren().setAll(pane);
     }
 
+    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         feeDetailsPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         feeDetailsPane.getChildren().setAll(pane);
     }
 
+    //navigation to faculty records window
     @FXML
     void goToFacultyRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         feeDetailsPane.getChildren().setAll(pane);
     }
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         feeDetailsPane.getChildren().setAll(pane);
     }
 
+    //navigation to student records window
     @FXML
     void goToStudentRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentRecords.fxml")));
         feeDetailsPane.getChildren().setAll(pane);
     }
 
+    /**
+     * add fee details
+     * @param event
+     */
     @FXML
     void addFeeDet(ActionEvent event){
         LocalDate ld= FeeDedDate.getValue();
@@ -226,6 +234,9 @@ public class FeeDetailsController implements Initializable {
         }
     }
 
+    /**
+     * load fee details from the fee details table into the table
+     */
     void loadFeeDetails()
     {
         try {
@@ -265,6 +276,10 @@ public class FeeDetailsController implements Initializable {
         }
     }
 
+    /**
+     * reset the data from the textfield
+     * @param event
+     */
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -276,6 +291,10 @@ public class FeeDetailsController implements Initializable {
         FeeStdLevel.clear();
     }
 
+    /**
+     * update the fee details
+     * @param event
+     */
     @FXML
     void updtFeeDetClicked(ActionEvent event)
     {
@@ -322,6 +341,10 @@ public class FeeDetailsController implements Initializable {
         }
     }
 
+    /**
+     * delete fee details
+     * @param event
+     */
     @FXML
     void delFeeDetClicked(ActionEvent event)
     {
@@ -348,6 +371,10 @@ public class FeeDetailsController implements Initializable {
         }
     }
 
+    /**
+     * select the row data from the table to edit
+     * @param event
+     */
     @FXML
     void FeeTblMouseClicked(MouseEvent event)
     {
@@ -357,6 +384,9 @@ public class FeeDetailsController implements Initializable {
         }
     }
 
+    /**
+     * edit the table row data
+     */
     void onEdit()
     {
 
@@ -373,6 +403,7 @@ public class FeeDetailsController implements Initializable {
         }
     }
 
+    // convert the currency into the nepali currency
     @FXML
     void btnConvertClicked(ActionEvent event)
     {
@@ -380,6 +411,7 @@ public class FeeDetailsController implements Initializable {
         feePound.setText(String.valueOf(a));
     }
 
+    //convert the typed currency when the key is released
     @FXML
     void feeNepaliKeyReleased(KeyEvent event)
     {
@@ -387,12 +419,21 @@ public class FeeDetailsController implements Initializable {
         feePound.setText(String.valueOf(a));
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadFeeDetails();
         getForeignExchangerate();
     }
+
+    /**
+     * connection with API and request data in JSON format
+     */
     public  void getForeignExchangerate(){
     try {
         Gson gson = new Gson();
@@ -422,11 +463,6 @@ public class FeeDetailsController implements Initializable {
         System.out.println(e);
     }
 }
-
-
-
-
-
 
 
 }

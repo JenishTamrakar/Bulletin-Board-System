@@ -82,7 +82,7 @@ public class StudentFeeDetailsController implements Initializable {
     public static String course_name;
 
 
-
+    //load fee details from the fee details table
     void loadFeeDetails()
     {
         try {
@@ -120,6 +120,7 @@ public class StudentFeeDetailsController implements Initializable {
         }
     }
 
+    //convert the GBP currency into NPR currency
     @FXML
     void btnConvertClicked(ActionEvent event)
     {
@@ -127,6 +128,7 @@ public class StudentFeeDetailsController implements Initializable {
         feePound.setText(String.valueOf(a));
     }
 
+    //convert the input currency into the nepali currency
     @FXML
     void feeNepaliKeyReleased(KeyEvent event)
     {
@@ -134,6 +136,7 @@ public class StudentFeeDetailsController implements Initializable {
         feePound.setText(String.valueOf(a));
     }
 
+    //connection with API and request data in JSON format
     public  void getForeignExchangerate(){
         try {
             Gson gson = new Gson();
@@ -168,6 +171,7 @@ public class StudentFeeDetailsController implements Initializable {
     private TableColumn<Student, String> student_Email;
     ObservableList<Student> slist = FXCollections.observableArrayList();
 
+    //laod student data from student table
     void loadStudentProfile()
     {
         try {
@@ -205,47 +209,59 @@ public class StudentFeeDetailsController implements Initializable {
         }
     }
 
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
         studentFeeDetPane.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
         studentFeeDetPane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event) {
 
     }
 
+    //navigation to feedback window
     @FXML
     void goToFeedback(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
         studentFeeDetPane.getChildren().setAll(pane);
     }
 
+    //navigation to notice window
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
         studentFeeDetPane.getChildren().setAll(pane);
     }
 
+    //navigation to profile window
     @FXML
     void goToProfile(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
         studentFeeDetPane.getChildren().setAll(pane);
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentFeeDetPane.getChildren().setAll(pane);
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

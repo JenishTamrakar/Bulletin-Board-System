@@ -199,6 +199,7 @@ public class NoticeDisplayController implements Initializable {
         }
     }
 
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException
     {
@@ -206,12 +207,14 @@ public class NoticeDisplayController implements Initializable {
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event) throws IOException
     {
@@ -219,6 +222,7 @@ public class NoticeDisplayController implements Initializable {
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to feedback window
     @FXML
     void goToFeedback(ActionEvent event) throws IOException
     {
@@ -226,12 +230,14 @@ public class NoticeDisplayController implements Initializable {
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to notice window
     @FXML
     void goToNotice(ActionEvent event)
     {
 
     }
 
+    //navigation to profile window
     @FXML
     void goToProfile(ActionEvent event) throws IOException
     {
@@ -239,12 +245,18 @@ public class NoticeDisplayController implements Initializable {
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         noticeRootPane.getChildren().setAll(pane);
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

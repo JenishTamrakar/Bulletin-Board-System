@@ -33,6 +33,7 @@ public class registerScreenController {
     @FXML
     private Button registerFacultyBtn;
 
+    //navigation to login screen window
     @FXML
     void loginClick(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/loginScreen.fxml"));
@@ -40,6 +41,11 @@ public class registerScreenController {
     }
 
 
+    /**
+     * register student details
+     * @throws RemoteException
+     * @throws NotBoundException
+     */
     @FXML
     void registerStudentClicked() throws RemoteException, NotBoundException {
         try

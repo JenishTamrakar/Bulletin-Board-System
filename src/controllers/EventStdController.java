@@ -65,45 +65,42 @@ public class EventStdController implements Initializable {
     private ScrollPane scrollEvent;
 
 
+    //navigation to assignment window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StdAssign.fxml")));
         eventRootPane.getChildren().setAll(pane);
     }
 
-    @FXML
-    void goToEvents(ActionEvent event) throws IOException {
-//        AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventStd.fxml")));
-//        eventRootPane.getChildren().setAll(pane);
-    }
-
+    //navigation to fee details window
     @FXML
     void goToFeedDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentFeeDet.fxml")));
         eventRootPane.getChildren().setAll(pane);
     }
 
+    //navigation to feedback window
     @FXML
     void goToFeedback(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/giveFeedback.fxml")));
         eventRootPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to notice window
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/StudentNotice.fxml")));
         eventRootPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to profile window
     @FXML
     void goToProfile(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentProfile.fxml")));
         eventRootPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
@@ -117,6 +114,9 @@ public class EventStdController implements Initializable {
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
 
+    /**
+     * load event details from event table
+     */
     void loadEventDetails() {
         try {
             EventDao ed = (EventDao) Naming.lookup("rmi://localhost/Event");
@@ -132,7 +132,7 @@ public class EventStdController implements Initializable {
                 ));
             }
 
-
+            //creating layout to display the event details in card layout
             ArrayList<Node> children = new ArrayList<>();
             for (int i = 0; i < evlist.size(); i++) {
                 StackPane stackPane = new StackPane();
@@ -256,6 +256,11 @@ public class EventStdController implements Initializable {
     }
 
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadEventDetails();

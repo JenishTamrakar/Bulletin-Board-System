@@ -93,32 +93,42 @@ public class StudentRecordsController implements Initializable
 
     ObservableList<Student> slist = FXCollections.observableArrayList();
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/NoticeCreate.fxml"));
         studentRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to faculty records window
     @FXML
     void goToFacultyRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         studentRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         studentRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws  IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         studentRecordPane.getChildren().setAll(pane);
     }
 
+    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event)throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
         studentRecordPane.getChildren().setAll(pane);
     }
+
+    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
@@ -127,8 +137,13 @@ public class StudentRecordsController implements Initializable
     public static String uid;
 
     public  static  String mail;
-   public static String passwrd;
+    public static String passwrd;
 
+    /**
+     * add student details
+     * @param event
+     * @throws Exception
+     */
     @FXML
     void addStdRecClicked(ActionEvent event) throws Exception {
         uid = EntrStdID.getText();
@@ -173,6 +188,10 @@ public class StudentRecordsController implements Initializable
         sendMailStudent.sendMail(mail);
     }
 
+    /**
+     * update student details
+     * @param event
+     */
     @FXML
     void updtStdRecClicked(ActionEvent event)
     {
@@ -206,6 +225,10 @@ public class StudentRecordsController implements Initializable
         }
     }
 
+    /**
+     * delete student details
+     * @param event
+     */
     @FXML
     void delStdRecClicked(ActionEvent event) {
         try {
@@ -230,6 +253,10 @@ public class StudentRecordsController implements Initializable
         }
     }
 
+    /**
+     * reset the data from the textfields
+     * @param event
+     */
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -241,6 +268,7 @@ public class StudentRecordsController implements Initializable
         EntrStdLvl.setText(null);
     }
 
+    //load student details from the student table
     void loadStudentData()
     {
         try {
@@ -279,6 +307,7 @@ public class StudentRecordsController implements Initializable
         }
     }
 
+    //select row data from the table to edit
     @FXML
     void StudentTblMouseClicked(MouseEvent event)
     {
@@ -302,8 +331,11 @@ public class StudentRecordsController implements Initializable
         }
     }
 
-
-
+    /**
+     * generate random string to use as password
+     * @param length
+     * @return
+     */
     private static String generatePassword(int length) {
         String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -325,6 +357,11 @@ public class StudentRecordsController implements Initializable
     }
 
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -332,11 +369,13 @@ public class StudentRecordsController implements Initializable
         System.out.println(generatePassword(8));
     }
 
+    //navigation to login screen window
     public void logOut(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         studentRecordPane.getChildren().setAll(pane);
     }
 
+    //navigation to show chart window
     public void showChartBtnClicked(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/charts.fxml")));
         studentRecordPane.getChildren().setAll(pane);

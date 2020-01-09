@@ -85,6 +85,7 @@ public class StudentProfileController implements Initializable
     @FXML
     private JFXButton updatePasswordBtn;
 
+    //navigation to dashboard window
     @FXML
     void backClicked(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
@@ -92,6 +93,10 @@ public class StudentProfileController implements Initializable
     }
 
 
+    /**
+     * display change password pane when the button is clicked
+     * @param event
+     */
     @FXML
     void changePassword(ActionEvent event) {
         changePasswordBtn.setOnMouseClicked((event1 -> {
@@ -99,6 +104,10 @@ public class StudentProfileController implements Initializable
         }));
     }
 
+    /**
+     * update password details
+     * @param event
+     */
     @FXML
     void updatePassword(ActionEvent event)
     {
@@ -122,6 +131,7 @@ public class StudentProfileController implements Initializable
         }
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
@@ -132,7 +142,7 @@ public class StudentProfileController implements Initializable
     private TableColumn<Student, String> student_Email;
     ObservableList<Student> slist = FXCollections.observableArrayList();
 
-
+    //load student details from student table
     void loadStudentProfile()
     {
         try {
@@ -167,6 +177,11 @@ public class StudentProfileController implements Initializable
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

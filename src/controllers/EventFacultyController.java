@@ -49,32 +49,34 @@ public class    EventFacultyController implements Initializable {
     private ScrollPane scrollEvent;
 
 
-
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreateFaculty.fxml")));
         eventRootPane.getChildren().setAll(pane);
     }
 
-
+    //navigation to notice window
     @FXML
     void goToNotice(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyNotice.fxml")));
         eventRootPane.getChildren().setAll(pane);
-
     }
 
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         eventRootPane.getChildren().setAll(pane);
-
     }
 
 
     ObservableList<Event> evlist = FXCollections.observableArrayList();
 
 
+    /**
+     * load event details from event table of database
+     */
     void loadEventDetails() {
         try {
             EventDao ed = (EventDao) Naming.lookup("rmi://localhost/Event");
@@ -90,7 +92,7 @@ public class    EventFacultyController implements Initializable {
                 ));
             }
 
-
+            //creating layout to display the event details in card layout
             ArrayList<Node> children = new ArrayList<>();
             for (int i = 0; i < evlist.size(); i++) {
                 StackPane stackPane = new StackPane();
@@ -178,6 +180,9 @@ public class    EventFacultyController implements Initializable {
     private TableColumn<Student, String> student_Email;
     ObservableList<Student> slist = FXCollections.observableArrayList();
 
+    /**
+     * load student data from student table
+     */
     void loadStudentProfile()
     {
         try {
@@ -214,12 +219,18 @@ public class    EventFacultyController implements Initializable {
     }
 
 
+    /**
+     * iitialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadEventDetails();
         loadStudentProfile();
     }
 
+    //navigation to profile window
     public void goToProfile(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyProfile.fxml")));
         eventRootPane.getChildren().setAll(pane);

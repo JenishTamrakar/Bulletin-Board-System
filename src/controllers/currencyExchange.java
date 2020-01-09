@@ -11,6 +11,10 @@ public class currencyExchange {
 
     private final String USER_AGENT = "API Client/1.0";
 
+    /**
+     * get request to API
+     * @throws Exception
+     */
     public static void main() throws Exception {
 
         currencyExchange http = new currencyExchange();
@@ -21,7 +25,10 @@ public class currencyExchange {
 
     }
 
-    // HTTP POST request
+    /**
+     * connection with API and request data in JSON format
+     * @throws Exception
+     */
     private void sendPost() throws Exception {
 
         String url = "https://api.iban.com/clients/api/currency/rates/";

@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class JavaMailUtilFaculty {
 
-
+    //method to append the message, set the email credentials and create connection with smtp gmail
     public static void sendMail(String recepient) throws Exception{
         System.out.println("preparing to send email");
         Properties properties = new Properties();
@@ -39,6 +39,8 @@ public class JavaMailUtilFaculty {
         System.out.println("Message sent successfully");
 
     }
+
+    //prepare mail content including the user id and password which is accessed from faculty controller class
     private static Message prepareMessage(Session session,String myAccountEmail, String recepient){
         try {
             Message message = new MimeMessage(session);

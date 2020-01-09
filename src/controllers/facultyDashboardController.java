@@ -29,34 +29,38 @@ public class facultyDashboardController implements Initializable {
     @FXML
     private AnchorPane facultyDashboardPane;
 
-
     @FXML
     private Label txtFacultyName;
 
+    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreateFaculty.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventFaculty.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyNotice.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 
+    //navigation to lodin screen window
     @FXML
     void logOutClicked(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         facultyDashboardPane.getChildren().setAll(pane);
     }
 
+    //navigation to profle window
     @FXML
     void profileClicked(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyProfile.fxml")));
@@ -68,6 +72,9 @@ public class facultyDashboardController implements Initializable {
     ObservableList<Faculty> slist = FXCollections.observableArrayList();
 
 
+    /**
+     * load faculty details from faculty table
+     */
     void loadFacultyProfile()
     {
         try {
@@ -102,6 +109,11 @@ public class facultyDashboardController implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadFacultyProfile();

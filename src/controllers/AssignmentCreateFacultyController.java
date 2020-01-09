@@ -90,24 +90,31 @@ public class AssignmentCreateFacultyController implements Initializable {
 
     ObservableList<Assignment> aslist = FXCollections.observableArrayList();
 
+    //navigation to notices window
     @FXML
     void goToNotices(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load(getClass().getResource("../fxml/FacultyNotice.fxml"));
         assignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventFaculty.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
+    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/facultyDashboard.fxml")));
         assignmentPane.getChildren().setAll(pane);
     }
 
+    /**
+     * add assignment details
+     * @param actionEvent
+     */
     @FXML
     void addAssClicked(ActionEvent actionEvent)
     {
@@ -151,6 +158,10 @@ public class AssignmentCreateFacultyController implements Initializable {
         }
     }
 
+    /**
+     * reset the textfield data
+     * @param event
+     */
     @FXML
     void resetBtnClicked(ActionEvent event)
     {
@@ -162,6 +173,10 @@ public class AssignmentCreateFacultyController implements Initializable {
         AssignUnit.clear();
     }
 
+    /**
+     * update assignment details
+     * @param event
+     */
     @FXML
     void updtAssDetClicked(ActionEvent event)
     {
@@ -208,6 +223,10 @@ public class AssignmentCreateFacultyController implements Initializable {
         }
     }
 
+    /**
+     * delete assignment details
+     * @param event
+     */
     @FXML
     void delAssDetClicked(ActionEvent event)
     {
@@ -234,6 +253,10 @@ public class AssignmentCreateFacultyController implements Initializable {
         }
     }
 
+    /**
+     * select data row from table to edit data
+     * @param event
+     */
     @FXML
     void AssignmentTblMouseClicked(MouseEvent event)
     {
@@ -243,6 +266,9 @@ public class AssignmentCreateFacultyController implements Initializable {
         }
     }
 
+    /**
+     * edit the table data from textfield
+     */
     void onEdit()
     {
         // check the table's selected item and get selected item
@@ -257,6 +283,9 @@ public class AssignmentCreateFacultyController implements Initializable {
         }
     }
 
+    /**
+     * load assignment details from assignment table into the table
+     */
     void loadAssignDetails()
     {
         try {
@@ -294,12 +323,18 @@ public class AssignmentCreateFacultyController implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         loadAssignDetails();
     }
 
+    //navigation to login screen window
     public void logOut(ActionEvent actionEvent) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
         assignmentPane.getChildren().setAll(pane);
