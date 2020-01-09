@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller class is used to display the notices data to the students from the database table and display them in card layout.
+ */
+
 package controllers;
 
 import bll.Notice;

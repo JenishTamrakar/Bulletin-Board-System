@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller is used to display the fee details to the students in card layout.
+ */
+
 package controllers;
 
 import bll.FeeDetails;

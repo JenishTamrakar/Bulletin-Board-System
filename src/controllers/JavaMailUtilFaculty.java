@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller is used to create connection with gmail and prepare mail contents.
+ */
+
 package controllers;
 
 import javax.mail.*;

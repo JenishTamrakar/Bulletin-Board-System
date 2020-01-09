@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="feeDetailsPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FeeDetailsController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1038.0">
+         <top>
+            <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="eventsTop" alignment="CENTER" layoutX="498.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="facultyTop" alignment="CENTER" layoutX="587.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="assignmentsTop" alignment="CENTER" layoutX="774.0" onAction="#goToAssignments" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="912.0" onAction="#goToNotices" prefHeight="75.0" prefWidth="116.0" text="Notices" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="338.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="169.0" text="Student Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="studentRecordTop1" alignment="CENTER" layoutX="219.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="123.0" text="Dashboard" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label layoutX="14.0" layoutY="20.0" text="BULLETINBOARD" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="705.0" fitWidth="1038.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/bg.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="408.0" layoutY="52.0" text="FEE DETAILS" textFill="#49306b" underline="true">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#49306b" layoutX="526.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee amount">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="526.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="31.0" layoutY="170.0" text="List Of Fee Details" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="520.0" layoutY="215.0" text="Fee Notice" textFill="#49306b" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#49306b" layoutX="526.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadline Date">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="526.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student level">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="526.0" layoutY="255.0" text="Student Course" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="FeeStdCourse" layoutX="632.0" layoutY="249.0" prefHeight="31.0" prefWidth="299.0" promptText="Enter Student Course" />
+                  <JFXTextField fx:id="FeeStdLevel" layoutX="631.0" layoutY="291.0" prefHeight="31.0" prefWidth="304.0" promptText="Enter Student Level" />
+                  <JFXTextField fx:id="FeeAmt" focusColor="#9d40a8" layoutX="631.0" layoutY="342.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Amount " />
+                  <JFXDatePicker fx:id="FeeDedDate" defaultColor="#49306b" layoutX="632.0" layoutY="401.0" />
+                  <JFXTextArea fx:id="FeeDet" focusColor="#89009e" layoutX="629.0" layoutY="462.0" prefHeight="121.0" prefWidth="304.0" promptText="Details of Fee" />
+                  <JFXButton fx:id="AddFeeDet" layoutX="515.0" layoutY="608.0" onAction="#addFeeDet" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="UpdtFeeDet" layoutX="632.0" layoutY="608.0" onAction="#updtFeeDetClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="FeeTbl" layoutX="28.0" layoutY="216.0" onMouseClicked="#FeeTblMouseClicked" prefHeight="440.0" prefWidth="474.0">
+                     <columns>
+                        <TableColumn fx:id="fee_SN" prefWidth="75.0" text="SN" />
+                        <TableColumn fx:id="fee_Course" prefWidth="75.0" text="Course" />
+                        <TableColumn fx:id="fee_Level" prefWidth="75.0" text="Level" />
+                        <TableColumn fx:id="fee_Details" prefWidth="75.0" text="Fee Details" />
+                        <TableColumn fx:id="fee_Amt" prefWidth="75.0" text="Fee Amount" />
+                        <TableColumn fx:id="fee_Deadline" prefWidth="98.0" text="Deadline Date" />
+                     </columns>
+                  </TableView>
+                  <JFXTextField fx:id="FeeSN" editable="false" layoutX="521.0" layoutY="158.0" visible="false" />
+                  <JFXButton fx:id="DelFeeDet" layoutX="743.0" layoutY="608.0" onAction="#delFeeDetClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Delete" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="ResetBtn" layoutX="851.0" layoutY="608.0" onAction="#resetBtnClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Reset" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="724.0" layoutY="97.0" text="Today's Rate" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Text fx:id="forex" layoutX="792.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <JFXTextField fx:id="feeNepali" layoutX="575.0" layoutY="168.0" onKeyReleased="#feeNepaliKeyReleased" />
+                  <JFXTextField fx:id="feePound" editable="false" layoutX="822.0" layoutY="168.0" />
+                  <JFXButton fx:id="btnConvert" layoutX="734.0" layoutY="168.0" onAction="#btnConvertClicked" style="-fx-background-color: #49306b;" text="Convert" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="572.0" layoutY="145.0" text="Nepali Rupees (NRs)" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="821.0" layoutY="145.0" text="Pound Sterling (GBP)" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="717.0" layoutY="124.0" prefHeight="17.0" prefWidth="71.0" text="GBP 1 = NRs" />
+                  <JFXButton fx:id="logout" layoutX="916.0" layoutY="25.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Log Out" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

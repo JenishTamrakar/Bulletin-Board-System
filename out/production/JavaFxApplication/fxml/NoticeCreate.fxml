@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="noticePane" prefHeight="776.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NoticeCreateController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1032.0">
+         <top>
+            <Pane prefHeight="75.0" prefWidth="1024.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="eventsTop" alignment="CENTER" layoutX="468.0" onAction="#goToEvents" prefHeight="75.0" prefWidth="100.0" text="Events" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="facultyTop" alignment="CENTER" layoutX="567.0" onAction="#goToFacultyRecords" prefHeight="75.0" prefWidth="187.0" text="Faculty Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="assignmentsTop" alignment="CENTER" layoutX="754.0" onAction="#goToAssignments" prefHeight="75.0" prefWidth="135.0" text="Assignments" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="feeDetailsTop" alignment="CENTER" layoutX="889.0" onAction="#goToFeeDetails" prefHeight="75.0" prefWidth="139.0" text="Fee Details" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="studentRecordTop" alignment="CENTER" layoutX="294.0" onAction="#goToStudentRecords" prefHeight="75.0" prefWidth="175.0" text="Student Records" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="studentRecordTop1" alignment="CENTER" layoutX="136.0" onAction="#goToDashboard" prefHeight="75.0" prefWidth="175.0" text="Dashboard" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="703.0" fitWidth="1032.0" layoutX="1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/bg.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="28.0" layoutY="51.0" text="ADMIN" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="470.0" layoutY="100.0" text="NOTICES" textFill="#49306b" underline="true">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="NoticeTitle" focusColor="#9d40a8" layoutX="630.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Notice Title " />
+                  <JFXTextArea fx:id="NoticeDesc" focusColor="#89009e" layoutX="630.0" layoutY="370.0" prefHeight="121.0" prefWidth="304.0" promptText="Description of Notice" />
+                  <JFXButton fx:id="AddNtc" layoutX="525.0" layoutY="547.0" onAction="#addNotice" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Add" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="UpdtNtc" layoutX="637.0" layoutY="547.0" onAction="#updtNtcClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Update" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Text fill="#49306b" layoutX="525.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#49306b" layoutX="525.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="31.0" layoutY="170.0" text="List Of Notices" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="170.0" text="New Notice" textFill="#49306b" underline="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#49306b" layoutX="525.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXDatePicker fx:id="NoticeDate" defaultColor="#49306b" layoutX="630.0" layoutY="309.0" prefHeight="31.0" prefWidth="186.0" promptText="Date" />
+                  <JFXButton fx:id="DelNtc" layoutX="750.0" layoutY="547.0" onAction="#delNtcClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Delete" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="ResetBtn" layoutX="863.0" layoutY="547.0" onAction="#resetBtnClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #49306b;" text="Reset" textFill="#ace4aa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="NoticeTbl" layoutX="31.0" layoutY="215.0" onMouseClicked="#NoticeTblClicked" prefHeight="377.0" prefWidth="471.0">
+                    <columns>
+                      <TableColumn fx:id="notice_SN" prefWidth="37.0" text="SN" />
+                      <TableColumn fx:id="notice_Title" prefWidth="156.0" text="Notice Title" />
+                        <TableColumn fx:id="notice_Desc" prefWidth="159.0" text="Notice Description" />
+                        <TableColumn fx:id="notice_Date" minWidth="0.0" prefWidth="118.0" text="Notice Posted Date" />
+                    </columns>
+                  </TableView>
+                  <JFXTextField fx:id="NtcSN" editable="false" layoutX="533.0" layoutY="203.0" visible="false" />
+                  <JFXButton fx:id="logout" layoutX="906.0" layoutY="14.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Logout" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

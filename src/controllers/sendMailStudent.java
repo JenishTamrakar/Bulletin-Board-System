@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller class is used to connect with gmail and send the mail to the user
+ */
+
 package controllers;
 
 import javax.mail.*;

@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This is interface for adding new user to the table and update the user password.
+ */
+
 package dao;
 import bll.Register;
 

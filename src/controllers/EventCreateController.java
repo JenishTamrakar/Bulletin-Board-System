@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller is used to add, update and dekete event by the admin.
+ */
+
 package controllers;
 
 import bll.Event;

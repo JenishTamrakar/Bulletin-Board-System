@@ -1,3 +1,9 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller class is used to add, update or delete the fee details by the admin.
+ * Foreign currency converter API is also implemented to convert the GBP currency into the NPR currency.
+ */
+
 package controllers;
 
 import bll.FeeDetails;
@@ -23,7 +29,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

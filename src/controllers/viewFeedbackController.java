@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller class is used to display the feedbacks to the admin in the card layout.
+ */
+
 package controllers;
 
 import bll.Event;

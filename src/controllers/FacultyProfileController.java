@@ -1,7 +1,10 @@
+/**
+ * @author Rashim Joshi
+ * This controller is used to view the faculty profile. Faculty password can also be changed from this controller.
+ */
 package controllers;
 
 import bll.Faculty;
-import bll.Student;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -84,13 +87,14 @@ public class FacultyProfileController implements Initializable {
 
 
 
-
+    //navigation to faculty dashboard window
     @FXML
     void backClicked(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/facultyDashboard.fxml"));
         facultyProfile.getChildren().setAll(pane);
     }
 
+    //display password pane when the button is clicked
     @FXML
     void changePassword(ActionEvent event) {
         changePasswordBtn.setOnMouseClicked((event1 -> {
@@ -98,7 +102,10 @@ public class FacultyProfileController implements Initializable {
         }));
     }
 
-
+    /**
+     * update password details
+     * @param event
+     */
     @FXML
     void updatePassword(ActionEvent event) {
         try
@@ -121,8 +128,7 @@ public class FacultyProfileController implements Initializable {
         }
     }
 
-
-
+    //navigation to login screen window
     @FXML
     void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/loginScreen.fxml")));
@@ -133,7 +139,7 @@ public class FacultyProfileController implements Initializable {
     private TableColumn<Faculty, String> student_Email;
     ObservableList<Faculty> slist = FXCollections.observableArrayList();
 
-
+    //load faculty data from faculty profile
     void loadFacultyProfile()
     {
         try {
@@ -168,6 +174,11 @@ public class FacultyProfileController implements Initializable {
         }
     }
 
+    /**
+     * initialize the methods
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {

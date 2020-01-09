@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="studentFeeDetPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #49306b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentFeeDetailsController">
+   <children>
+      <ImageView fitHeight="793.0" fitWidth="1050.0" pickOnBounds="true">
+         <image>
+            <Image url="@../pictures/sbg.jpg" />
+         </image>
+      </ImageView>
+      <Label ellipsisString="" layoutX="26.0" layoutY="14.0" prefHeight="35.0" prefWidth="109.0" text="Welcome " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="330.0" layoutY="20.0" prefHeight="729.0" prefWidth="683.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;">
+         <children>
+            <TableView fx:id="FeeTbl" layoutX="6.0" layoutY="12.0" prefHeight="473.0" prefWidth="669.0">
+               <columns>
+                  <TableColumn fx:id="fee_SN" prefWidth="41.0" resizable="false" text="SN" />
+                  <TableColumn fx:id="fee_Description" editable="false" prefWidth="352.0" text="Fee Description" />
+                  <TableColumn fx:id="fee_Amount" minWidth="7.0" prefWidth="171.0" text="Fee Amount" />
+                  <TableColumn fx:id="fee_Deadline" minWidth="0.0" prefWidth="104.0" text="Deadline" />
+               </columns>
+            </TableView>
+            <Label layoutX="285.0" layoutY="508.0" text="Today's Rate" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Text fx:id="forex" layoutX="351.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label layoutX="138.0" layoutY="580.0" text="Nepali Rupees (NRs)" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="382.0" layoutY="580.0" text="Pound Sterling (GBP)" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="280.0" layoutY="542.0" prefHeight="17.0" prefWidth="71.0" text="GBP 1 = NRs" />
+            <JFXTextField fx:id="feeNepali" layoutX="138.0" layoutY="606.0" onKeyReleased="#feeNepaliKeyReleased" />
+            <JFXTextField fx:id="feePound" editable="false" layoutX="385.0" layoutY="606.0" />
+            <JFXButton fx:id="btnConvert" layoutX="297.0" layoutY="606.0" onAction="#btnConvertClicked" style="-fx-background-color: #49306b;" text="Convert" textFill="#ace4aa">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="14.0" layoutY="662.0" text="Source: Nepal Rastra Bank (NRB)" textFill="#49306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="682.0" text="https://www.nrb.org.np/fxmexchangerate.php" textFill="#49306b" />
+            <Line endX="100.0" layoutX="316.0" layoutY="498.0" startX="-100.0" />
+         </children></Pane>
+      <JFXButton layoutX="49.0" layoutY="149.0" onAction="#goToEvents" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="E" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="52.0" layoutY="289.0" onAction="#goToNotice" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="N" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="182.0" layoutY="718.0" onAction="#goToFeedback" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: ace4aa;" text="Feedback" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="47.0" layoutY="558.0" onAction="#goToFeeDetails" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="F" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="49.0" layoutY="419.0" onAction="#goToAssignments" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: ace4aa;" text="A" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#49306b" layoutX="76.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Events">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fill="#49306b" layoutX="75.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notices">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fill="#49306b" layoutX="59.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assignments">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fill="#49306b" layoutX="61.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <JFXButton layoutX="26.0" layoutY="722.0" onAction="#logOut" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: ace4aa;" text="Log Out" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="263.0" layoutY="20.0" onAction="#goToProfile" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: ace4aa; -fx-background-radius: 30;" text="P" textFill="#49306b">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Text fill="#ace4aa" layoutX="266.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <Text fill="#49306b" layoutX="48.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee Details" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="txtStudentName" layoutX="38.0" layoutY="55.0" prefHeight="35.0" prefWidth="196.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

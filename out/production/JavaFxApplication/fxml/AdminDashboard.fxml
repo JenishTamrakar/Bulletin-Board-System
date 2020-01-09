@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="adminDashboard" prefHeight="768.0" prefWidth="1012.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminDashboardController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="778.0" prefWidth="1035.0">
+         <top>
+            <Pane prefHeight="75.0" prefWidth="978.0" style="-fx-background-color: #ACE4AA;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="23.0" text="BULLETINBOARD" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </top>
+         <center>
+
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1cdb5;" BorderPane.alignment="CENTER" />
+      <!--         <children>-->
+                  <Pane layoutX="29.0" layoutY="145.0" prefHeight="430.0" prefWidth="300.0" style="-fx-background-color: #49306b;" />
+      <!--               <children>-->
+                        <JFXButton layoutX="-3.0" layoutY="-1.0" prefHeight="430.0" prefWidth="300.0" text="STUDENT RECORDS" textFill="#ace4aa" />
+
+            <Pane prefHeight="693.0" prefWidth="996.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="29.0" layoutY="375.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;" />
+                  <Pane layoutX="29.0" layoutY="145.0" prefHeight="203.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
+                     <children>
+                        <ImageView blendMode="OVERLAY" fitHeight="203.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pictures/stdrec.jpg" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="studentRecordButton" layoutY="-2.0" onAction="#goToStudentRecords" prefHeight="207.0" prefWidth="300.0" text="STUDENT RECORDS" textFill="#ace4aa">
+
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="350.0" layoutY="145.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
+                     <children>
+                        <ImageView blendMode="OVERLAY" fitHeight="203.0" fitWidth="300.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pictures/evenrt.jpg" />
+                           </image>
+                        </ImageView>
+
+                        <JFXButton fx:id="eventsButton" onAction="#goToEvents" prefHeight="200.0" prefWidth="300.0" text="EVENTS" textFill="#ace4aa">
+
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="350.0" layoutY="375.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
+                     <children>
+                        <ImageView blendMode="OVERLAY" fitHeight="203.0" fitWidth="300.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../pictures/Assign.jpg" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="assignmetsButton" onAction="#goToAssignments" prefHeight="200.0" prefWidth="300.0" text="ASSIGNMENTS" textFill="#ace4aa">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="670.0" layoutY="145.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
+                     <children>
+                        <ImageView blendMode="OVERLAY" fitHeight="203.0" fitWidth="300.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pictures/Notice.jpg" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="noticebutton" onAction="#goToNotices" prefHeight="200.0" prefWidth="300.0" text="NOTICES" textFill="#ace4aa">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="670.0" layoutY="375.0" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #49306b;">
+                     <children>
+                        <ImageView blendMode="OVERLAY" fitHeight="203.0" fitWidth="300.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../pictures/feedet%20(2).jpg" />
+                           </image>
+                        </ImageView>
+
+                        <JFXButton layoutX="-7.0" onAction="#goToFeeDetails" prefHeight="200.0" prefWidth="300.0" text="FEE DETAILS" textFill="#ace4aa">
+
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+
+                  <JFXButton layoutX="891.0" layoutY="624.0" onAction="#goToFeedback" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Feedbacks" textFill="#ace4aa">
+
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView blendMode="OVERLAY" fitHeight="203.0" fitWidth="300.0" layoutX="29.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pictures/facRec.jpg" />
+                     </image>
+                  </ImageView>
+
+                  <Label layoutX="28.0" layoutY="51.0" text="ADMIN DASHBOARD" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+
+                  <JFXButton layoutX="29.0" layoutY="375.0" onAction="#goToFacultyRecords" prefHeight="200.0" prefWidth="300.0" text="FACULTY RECORDS" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXButton>
+                  <Label layoutX="870.0" layoutY="25.0" text="Hello Admin" textFill="#49306b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <JFXButton fx:id="logout" layoutX="864.0" layoutY="67.0" onAction="#logOut" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: #49306b;" text="Logout" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="showChartBtn" layoutX="39.0" layoutY="627.0" onAction="#showChartBtnClicked" prefHeight="39.0" prefWidth="162.0" style="-fx-background-color: #49306b;" text="Show Charts" textFill="#ace4aa">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

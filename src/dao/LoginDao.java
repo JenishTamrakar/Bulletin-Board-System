@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This is the interface for checking the user credentials for the login to the system.
+ */
+
 package dao;
 
 import java.rmi.Remote;

@@ -1,3 +1,8 @@
+/**
+ * @author Rashim Joshi
+ * This controller is used to view the student profile. Student password can also be changed from this controller.
+ */
+
 package controllers;
 
 import bll.Student;

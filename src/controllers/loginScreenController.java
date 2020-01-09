@@ -1,6 +1,10 @@
+/**
+ * @author Roshan Shrestha
+ * This controller class is used to check the user details and login to the system.
+ */
+
 package controllers;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import dao.LoginDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

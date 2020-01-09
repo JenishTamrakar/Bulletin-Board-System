@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller class is used to display the notices from the database table in card layout.
+ */
+
 package controllers;
 
 import bll.Notice;

@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This is the interface for adding, updating and deleting the notice details as well as retrieve them.
+ */
+
 package dao;
 
 import bll.Notice;

@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller class is used to submit feedbacks by the students.
+ */
+
 package controllers;
 
 import bll.viewFeedback;

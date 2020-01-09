@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller is used to display the events to the student in card layout.
+ */
+
 package controllers;
 
 import bll.Event;
@@ -267,4 +272,6 @@ public class EventStdController implements Initializable {
         loadStudentProfile();
     }
 
+    public void goToEvents(ActionEvent actionEvent) {
+    }
 }

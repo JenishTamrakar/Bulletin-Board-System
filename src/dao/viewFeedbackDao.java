@@ -1,3 +1,8 @@
+/**
+ * @author Rashim Joshi
+ * This is the interface to add feedback details and retrieve them.
+ */
+
 package dao;
 
 import bll.viewFeedback;

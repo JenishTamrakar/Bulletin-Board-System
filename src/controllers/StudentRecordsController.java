@@ -1,3 +1,8 @@
+/**
+ * @author
+ * This controller class is used to display the student records into the table.
+ */
+
 package controllers;
 
 import bll.Register;
@@ -17,7 +22,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;

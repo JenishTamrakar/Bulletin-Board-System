@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller is used to show assignment data from database table into the table to the students.
+ */
+
 package controllers;
 
 import bll.Assignment;
@@ -191,5 +196,8 @@ public class AssignmentDisplayController implements Initializable {
     {
         loadStudentProfile();
         loadAssignDetails();
+    }
+
+    public void goToAssignments(ActionEvent actionEvent) {
     }
 }

@@ -1,3 +1,9 @@
+/**
+ * @author Rashim Joshi
+ * This is a completely encapsulated java class.
+ * It has a private data member and getter and setter methods.
+ */
+
 package bll;
 
 import java.io.Serializable;

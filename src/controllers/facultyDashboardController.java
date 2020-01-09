@@ -1,3 +1,8 @@
+/**
+ * @author Susan Tamrakar
+ * This controller is used to control the faculty actions.
+ */
+
 package controllers;
 
 import bll.Faculty;
@@ -12,7 +17,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;

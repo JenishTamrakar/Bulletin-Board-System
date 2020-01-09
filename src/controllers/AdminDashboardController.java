@@ -1,3 +1,8 @@
+/**
+ * @author Susan Tamrakar
+ * This controller class is used to control admin activities.
+ */
+
 package controllers;
 
 import com.jfoenix.controls.JFXButton;

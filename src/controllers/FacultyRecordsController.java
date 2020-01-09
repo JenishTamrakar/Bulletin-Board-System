@@ -1,3 +1,9 @@
+/**
+ * @author Roshan Shrestha
+ * This controller is used to add, update and delete the faculty data.
+ * Random String generator method is also implemented to be used as password.
+ */
+
 package controllers;
 
 import bll.Faculty;

@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller class is used to add, update and delete the notices by the admin.
+ */
+
 package controllers;
 
 import bll.Notice;

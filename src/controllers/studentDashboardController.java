@@ -1,3 +1,8 @@
+/**
+ * @author Susan Tamrakar
+ * This controller class is used to control the student actions.
+ */
+
 package controllers;
 
 import bll.Student;

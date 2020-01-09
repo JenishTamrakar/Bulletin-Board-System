@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This is the interface for checking the user credentials for registering the user.
+ */
+
 package dao;
 
 import java.rmi.RemoteException;

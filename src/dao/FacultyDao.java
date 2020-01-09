@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This is the interface for adding, updating and deleting the faculty details as well as retrieving the faculty details.
+ */
+
 package dao;
 
 import bll.Faculty;

@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller is used to the data in the pie chart.
+ */
+
 package controllers;
 
 import com.jfoenix.controls.JFXButton;

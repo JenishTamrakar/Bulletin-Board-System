@@ -1,3 +1,8 @@
+/**
+ * @author Rashim Joshi
+ * This is the interface for adding, updating and deleting the student details as well as retrieve them.
+ */
+
 package dao;
 
 import bll.Student;

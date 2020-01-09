@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This is the interface for adding, updating and deleting the fee details as well as retrieving the fee deails.
+ */
+
 package dao;
 
 import bll.FeeDetails;

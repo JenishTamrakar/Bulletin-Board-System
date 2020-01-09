@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller is used to get exchange rate data from API in JSON format
+ */
+
 package controllers;
 
 import javax.net.ssl.HttpsURLConnection;

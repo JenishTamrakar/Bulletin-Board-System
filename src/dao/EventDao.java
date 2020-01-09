@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This is the interface for add, updating and deleting the events as well as retrieving event details and user profile.
+ */
+
 package dao;
 
 import bll.Event;

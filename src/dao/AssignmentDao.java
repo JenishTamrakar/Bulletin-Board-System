@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This is the interface for adding, updating and deleting the assignment details and retrieve assignment details.
+ */
+
 package dao;
 
 import bll.Assignment;

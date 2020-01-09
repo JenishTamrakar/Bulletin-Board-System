@@ -1,3 +1,8 @@
+/**
+ * @author Roshan Shrestha
+ * This controller is used to display the events to the faculty in card layout.
+ */
+
 package controllers;
 
 import bll.Event;

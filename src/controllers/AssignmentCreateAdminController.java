@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller in used to add, update and delete assignments by the admin.
+ */
+
 package controllers;
 
 import bll.Assignment;

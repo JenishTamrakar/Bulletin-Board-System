@@ -1,3 +1,8 @@
+/**
+ * @author Jenish Tamrakar
+ * This controller is used to add, update and delete assignments by the faculty.
+ */
+
 package controllers;
 
 import bll.Assignment;
