@@ -68,7 +68,6 @@ public class loginScreenController {
             System.out.println("login btn clicked");
             String user_id = UID.getText();
             String user_password = Password.getText();
-
             le=UID.getText();
             System.out.println("UID = "+user_id+" Password = "+user_password);
             try {
@@ -87,14 +86,16 @@ public class loginScreenController {
                     {
                         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/studentDashboard.fxml"));
                         loginPane.getChildren().setAll(pane);
-                    }else {
+                    }
+                }
+                else {
+
                         Alert alert = new Alert(Alert.AlertType.WARNING);
                         alert.setTitle("Warning");
-                        alert.setHeaderText("Worng login details !");
+                        alert.setHeaderText("Wrong login details !");
                         alert.setContentText("Either user ID or password field is invalid !");
 
                         alert.showAndWait();
-                    }
                 }
 
             }catch (RemoteException re){

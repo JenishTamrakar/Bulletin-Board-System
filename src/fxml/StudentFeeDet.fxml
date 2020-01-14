@@ -42,12 +42,12 @@
                </font>
             </Label>
             <Text fx:id="forex" layoutX="351.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-            <Label layoutX="138.0" layoutY="580.0" text="Nepali Rupees (NRs)" textFill="#49306b">
+            <Label layoutX="385.0" layoutY="569.0" text="Nepali Rupees (NRs)" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="382.0" layoutY="580.0" text="Pound Sterling (GBP)" textFill="#49306b">
+            <Label layoutX="135.0" layoutY="569.0" text="Pound Sterling (GBP)" textFill="#49306b">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

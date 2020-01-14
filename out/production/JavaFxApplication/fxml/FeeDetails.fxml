@@ -191,12 +191,12 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="572.0" layoutY="145.0" text="Nepali Rupees (NRs)" textFill="#49306b">
+                  <Label layoutX="822.0" layoutY="145.0" text="Nepali Rupees (NRs)" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="821.0" layoutY="145.0" text="Pound Sterling (GBP)" textFill="#49306b">
+                  <Label layoutX="572.0" layoutY="145.0" text="Pound Sterling (GBP)" textFill="#49306b">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

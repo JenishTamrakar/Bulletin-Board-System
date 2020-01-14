@@ -65,37 +65,32 @@ public class viewFeedbackController implements Initializable {
     @FXML
     private Button backBtn;
 
-        ObservableList<viewFeedback> feedbackList = FXCollections.observableArrayList();
+    ObservableList<viewFeedback> feedbackList = FXCollections.observableArrayList();
 
-    //navigation to assignments window
     @FXML
     void goToAssignments(ActionEvent event) throws  IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AssignmentCreate.fxml")));
         feedbackPane.getChildren().setAll(pane);
     }
 
-    //navigation to dashboard window
     @FXML
     void goToDashboard(ActionEvent event) throws IOException{
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/AdminDashboard.fxml")));
         feedbackPane.getChildren().setAll(pane);
     }
 
-    //navigation to events window
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/EventCreate.fxml")));
         feedbackPane.getChildren().setAll(pane);
     }
 
-    //navigation to faculty records window
     @FXML
     void goToFacultyRecords(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FacultyRecords.fxml")));
         feedbackPane.getChildren().setAll(pane);
     }
 
-    //navigation to fee details window
     @FXML
     void goToFeeDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load((getClass().getResource("../fxml/FeeDetails.fxml")));
@@ -113,8 +108,6 @@ public class viewFeedbackController implements Initializable {
         StackPane pane = FXMLLoader.load((getClass().getResource("../fxml/studentDashboard.fxml")));
         feedbackPane.getChildren().setAll(pane);
     }
-
-    //load feedback details from the feedback table
     @FXML
     void feedbackRecords() {
         try {
@@ -213,11 +206,6 @@ public class viewFeedbackController implements Initializable {
 
     }
 
-    /**
-     * initialize the methods
-     * @param location
-     * @param resources
-     */
     public void initialize(URL location, ResourceBundle resources){
 
         feedbackRecords();
@@ -226,3 +214,4 @@ public class viewFeedbackController implements Initializable {
     }
 
 }
+

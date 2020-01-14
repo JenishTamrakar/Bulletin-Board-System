@@ -13,10 +13,10 @@ import java.time.LocalTime;
 public class CreateEvent implements Serializable {
 
     //private data  member
-    public String eventTitle;
-    public String eventDescription;
-    public String eventDate;
-    public String eventTime;
+    private String eventTitle;
+    private String eventDescription;
+    private String eventDate;
+    private String eventTime;
 
     private static final long serialVersionUID = 1L;
 
